@@ -39,6 +39,15 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate {
         // Configure it
         editor.delegate = self
         editor.theme = CustomTheme()
+        
+        // Add toolbar to editor
+        let toolbar = UIToolbar()
+        toolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: .done, target: editor.contentTextView, action: #selector(UIResponder.resignFirstResponder))
+        ]
+        toolbar.sizeToFit()
+        editor.contentTextView.inputAccessoryView = toolbar
     }
     
     // Give the OCaml lexer

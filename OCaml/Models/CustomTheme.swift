@@ -11,7 +11,18 @@ import Sourceful
 struct CustomTheme: SourceCodeTheme {
     
     let font: UIFont = .monospacedSystemFont(ofSize: 14, weight: .regular)
+    
     let backgroundColor: UIColor = .systemBackground
+    
+    let lineNumbersStyle: LineNumbersStyle? = .init(
+        font: .monospacedSystemFont(ofSize: 14, weight: .regular),
+        textColor: UIColor.tertiaryLabel
+    )
+    
+    let gutterStyle: GutterStyle = .init(
+        backgroundColor: .systemBackground,
+        minimumWidth: 30
+    )
     
     func globalAttributes() -> [NSAttributedString.Key: Any] {
         var attributes = [NSAttributedString.Key: Any]()
@@ -33,15 +44,5 @@ struct CustomTheme: SourceCodeTheme {
             case .editorPlaceholder: return .systemGray
         }
     }
-    
-    var lineNumbersStyle: LineNumbersStyle? = .init(
-        font: .monospacedSystemFont(ofSize: 14, weight: .regular),
-        textColor: UIColor.tertiaryLabel
-    )
-    
-    var gutterStyle: GutterStyle = .init(
-        backgroundColor: .systemBackground,
-        minimumWidth: 30
-    )
     
 }

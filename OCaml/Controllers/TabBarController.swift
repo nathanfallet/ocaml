@@ -10,7 +10,7 @@ import UIKit
 class TabBarController: UITabBarController {
     
     // Subviews
-    let learn = UIViewController()
+    let learn = LearnTableViewController(style: .insetGrouped)
     let code = CodeViewController()
     let about = AboutTableViewController(style: .insetGrouped)
 
