@@ -3,27 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6A83943725A4CF9A0033FA88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83943625A4CF9A0033FA88 /* AppDelegate.swift */; };
-		6A83943925A4CF9A0033FA88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83943825A4CF9A0033FA88 /* SceneDelegate.swift */; };
-		6A83943B25A4CF9A0033FA88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83943A25A4CF9A0033FA88 /* ViewController.swift */; };
-		6A83943E25A4CF9A0033FA88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A83943C25A4CF9A0033FA88 /* Main.storyboard */; };
 		6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A83943F25A4CF9D0033FA88 /* Assets.xcassets */; };
 		6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */; };
+		6A83944D25A4D1B70033FA88 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6A83944C25A4D1B70033FA88 /* Sourceful */; };
+		6A83945925A4D29E0033FA88 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945825A4D29E0033FA88 /* TabBarController.swift */; };
+		6A83945C25A4D3240033FA88 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945B25A4D3240033FA88 /* CodeViewController.swift */; };
+		6A83946025A4D4190033FA88 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945F25A4D4190033FA88 /* StringExtension.swift */; };
+		6A83946325A4D4550033FA88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A83946225A4D4550033FA88 /* Localizable.strings */; };
+		6A83946625A4D5090033FA88 /* CustomSyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */; };
+		6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946825A4D7320033FA88 /* OCamlLexer.swift */; };
+		6A83946C25A4D9910033FA88 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946B25A4D9910033FA88 /* CustomTheme.swift */; };
+		6A83947825A4FCB90033FA88 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 6A83947725A4FCB90033FA88 /* main.js */; };
+		6A83947B25A4FD3E0033FA88 /* OCamlExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83947A25A4FD3E0033FA88 /* OCamlExecutor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A83943325A4CF9A0033FA88 /* OCaml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCaml.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A83943625A4CF9A0033FA88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A83943825A4CF9A0033FA88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6A83943A25A4CF9A0033FA88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6A83943D25A4CF9A0033FA88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A83943F25A4CF9D0033FA88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A83944225A4CF9D0033FA88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A83944425A4CF9D0033FA88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A83945825A4D29E0033FA88 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		6A83945B25A4D3240033FA88 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		6A83945F25A4D4190033FA88 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		6A83946225A4D4550033FA88 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSyntaxTextView.swift; sourceTree = "<group>"; };
+		6A83946825A4D7320033FA88 /* OCamlLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlLexer.swift; sourceTree = "<group>"; };
+		6A83946B25A4D9910033FA88 /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
+		6A83947325A4DD600033FA88 /* OCaml.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCaml.entitlements; sourceTree = "<group>"; };
+		6A83947725A4FCB90033FA88 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = main.js; path = dist/main.js; sourceTree = "<group>"; };
+		6A83947A25A4FD3E0033FA88 /* OCamlExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlExecutor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A83944D25A4D1B70033FA88 /* Sourceful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +71,62 @@
 		6A83943525A4CF9A0033FA88 /* OCaml */ = {
 			isa = PBXGroup;
 			children = (
+				6A83945125A4D1CD0033FA88 /* Controllers */,
+				6A83944F25A4D1C50033FA88 /* Extensions */,
+				6A83947125A4DABD0033FA88 /* JavaScript */,
+				6A83945325A4D1DE0033FA88 /* Models */,
+				6A83945225A4D1D80033FA88 /* Views */,
 				6A83943625A4CF9A0033FA88 /* AppDelegate.swift */,
-				6A83943825A4CF9A0033FA88 /* SceneDelegate.swift */,
-				6A83943A25A4CF9A0033FA88 /* ViewController.swift */,
-				6A83943C25A4CF9A0033FA88 /* Main.storyboard */,
 				6A83943F25A4CF9D0033FA88 /* Assets.xcassets */,
+				6A83947325A4DD600033FA88 /* OCaml.entitlements */,
 				6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */,
 				6A83944425A4CF9D0033FA88 /* Info.plist */,
+				6A83946225A4D4550033FA88 /* Localizable.strings */,
 			);
 			path = OCaml;
+			sourceTree = "<group>";
+		};
+		6A83944F25A4D1C50033FA88 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6A83945F25A4D4190033FA88 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6A83945125A4D1CD0033FA88 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6A83945B25A4D3240033FA88 /* CodeViewController.swift */,
+				6A83945825A4D29E0033FA88 /* TabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6A83945225A4D1D80033FA88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6A83945325A4D1DE0033FA88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6A83947A25A4FD3E0033FA88 /* OCamlExecutor.swift */,
+				6A83946825A4D7320033FA88 /* OCamlLexer.swift */,
+				6A83946B25A4D9910033FA88 /* CustomTheme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6A83947125A4DABD0033FA88 /* JavaScript */ = {
+			isa = PBXGroup;
+			children = (
+				6A83947725A4FCB90033FA88 /* main.js */,
+			);
+			path = JavaScript;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +145,9 @@
 			dependencies = (
 			);
 			name = OCaml;
+			packageProductDependencies = (
+				6A83944C25A4D1B70033FA88 /* Sourceful */,
+			);
 			productName = OCaml;
 			productReference = 6A83943325A4CF9A0033FA88 /* OCaml.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 6A83942A25A4CF9A0033FA88;
+			packageReferences = (
+				6A83944B25A4D1B70033FA88 /* XCRemoteSwiftPackageReference "Sourceful" */,
+			);
 			productRefGroup = 6A83943425A4CF9A0033FA88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -124,9 +192,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A83947825A4FCB90033FA88 /* main.js in Resources */,
 				6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */,
+				6A83946325A4D4550033FA88 /* Localizable.strings in Resources */,
 				6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */,
-				6A83943E25A4CF9A0033FA88 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +206,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A83943B25A4CF9A0033FA88 /* ViewController.swift in Sources */,
+				6A83946C25A4D9910033FA88 /* CustomTheme.swift in Sources */,
+				6A83947B25A4FD3E0033FA88 /* OCamlExecutor.swift in Sources */,
+				6A83946025A4D4190033FA88 /* StringExtension.swift in Sources */,
+				6A83945C25A4D3240033FA88 /* CodeViewController.swift in Sources */,
+				6A83946625A4D5090033FA88 /* CustomSyntaxTextView.swift in Sources */,
 				6A83943725A4CF9A0033FA88 /* AppDelegate.swift in Sources */,
-				6A83943925A4CF9A0033FA88 /* SceneDelegate.swift in Sources */,
+				6A83945925A4D29E0033FA88 /* TabBarController.swift in Sources */,
+				6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6A83943C25A4CF9A0033FA88 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A83943D25A4CF9A0033FA88 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,15 +352,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OCaml/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				INFOPLIST_FILE = OCaml/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,15 +374,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OCaml/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				INFOPLIST_FILE = OCaml/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -341,6 +413,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6A83944B25A4D1B70033FA88 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Sourceful";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6A83944C25A4D1B70033FA88 /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A83944B25A4D1B70033FA88 /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A83942B25A4CF9A0033FA88 /* Project object */;
 }
