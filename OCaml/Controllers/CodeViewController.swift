@@ -10,15 +10,23 @@ import Sourceful
 
 class CodeViewController: UIViewController, SyntaxTextViewDelegate {
     
+    // Views
     let editor = CustomSyntaxTextView()
     let executor = OCamlExecutor()
+    
+    // Buttons
+    let play = UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(execute(_:)))
+    let open = UIBarButtonItem(image: UIImage(systemName: "doc.fill"), style: .plain, target: self, action: #selector(close(_:)))
+    let save = UIBarButtonItem(image: UIImage(systemName: "arrow.down.doc.fill"), style: .plain, target: self, action: #selector(close(_:)))
+    let close = UIBarButtonItem(image: UIImage(systemName: "clear.fill"), style: .plain, target: self, action: #selector(close(_:)))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Navigation bar
         title = "code".localized()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "play"), style: .plain, target: self, action: #selector(execute(_:)))
+        navigationItem.leftBarButtonItems = [open, save, close]
+        navigationItem.rightBarButtonItem = play
         
         // Setup view
         view.addSubview(editor)
@@ -66,6 +74,12 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate {
                 }
             }
         }
+    }
+    
+    // Close file
+    @objc func close(_ sender: UIBarButtonItem) {
+        // Clear source code
+        self.editor.text = ""
     }
     
 }

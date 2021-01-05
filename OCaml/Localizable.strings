@@ -10,3 +10,12 @@
 "code" = "Code";
 "about" = "About";
 "console" = "Console";
+"developer" = "Developer";
+"developer_text" = "Developed by Nathan Fallet at Groupe MINASTE";
+"more" = "More by our team";
+"button_ok" = "OK";
+"button_cancel" = "Cancel";
+"donate_title" = "Donate";
+"donate_header" = "Select an amount to donate:";
+"donate_footer" = "This donation will help our organization to develop its projects, mainly Extopy, the social network we are working on, which will require some storage for its servers.";
+"donate_thanks" = "Thanks for donating to our organization!";

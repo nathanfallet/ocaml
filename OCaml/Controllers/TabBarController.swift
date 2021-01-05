@@ -12,7 +12,7 @@ class TabBarController: UITabBarController {
     // Subviews
     let learn = UIViewController()
     let code = CodeViewController()
-    let about = UIViewController()
+    let about = AboutTableViewController(style: .insetGrouped)
 
     override func viewDidLoad() {
         super.viewDidLoad()
