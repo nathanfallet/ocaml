@@ -10,6 +10,9 @@ import Sourceful
 
 struct CustomTheme: SourceCodeTheme {
     
+    let font: UIFont = .monospacedSystemFont(ofSize: 14, weight: .regular)
+    let backgroundColor: UIColor = .systemBackground
+    
     func globalAttributes() -> [NSAttributedString.Key: Any] {
         var attributes = [NSAttributedString.Key: Any]()
         
@@ -40,9 +43,5 @@ struct CustomTheme: SourceCodeTheme {
         backgroundColor: .systemBackground,
         minimumWidth: 30
     )
-    
-    var font: UIFont = .monospacedSystemFont(ofSize: 14, weight: .regular)
-    
-    var backgroundColor: UIColor = .systemBackground
     
 }

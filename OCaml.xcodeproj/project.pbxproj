@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A43E11B25A502D80067B166 /* ConsoleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E11A25A502D80067B166 /* ConsoleEntry.swift */; };
+		6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */; };
 		6A83943725A4CF9A0033FA88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83943625A4CF9A0033FA88 /* AppDelegate.swift */; };
 		6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A83943F25A4CF9D0033FA88 /* Assets.xcassets */; };
 		6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A43E11A25A502D80067B166 /* ConsoleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleEntry.swift; sourceTree = "<group>"; };
+		6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		6A83943325A4CF9A0033FA88 /* OCaml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCaml.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A83943625A4CF9A0033FA88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A83943F25A4CF9D0033FA88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				6A83945B25A4D3240033FA88 /* CodeViewController.swift */,
+				6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */,
 				6A83945825A4D29E0033FA88 /* TabBarController.swift */,
 			);
 			path = Controllers;
@@ -114,6 +119,7 @@
 		6A83945325A4D1DE0033FA88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6A43E11A25A502D80067B166 /* ConsoleEntry.swift */,
 				6A83947A25A4FD3E0033FA88 /* OCamlExecutor.swift */,
 				6A83946825A4D7320033FA88 /* OCamlLexer.swift */,
 				6A83946B25A4D9910033FA88 /* CustomTheme.swift */,
@@ -209,10 +215,12 @@
 				6A83946C25A4D9910033FA88 /* CustomTheme.swift in Sources */,
 				6A83947B25A4FD3E0033FA88 /* OCamlExecutor.swift in Sources */,
 				6A83946025A4D4190033FA88 /* StringExtension.swift in Sources */,
+				6A43E11B25A502D80067B166 /* ConsoleEntry.swift in Sources */,
 				6A83945C25A4D3240033FA88 /* CodeViewController.swift in Sources */,
 				6A83946625A4D5090033FA88 /* CustomSyntaxTextView.swift in Sources */,
 				6A83943725A4CF9A0033FA88 /* AppDelegate.swift in Sources */,
 				6A83945925A4D29E0033FA88 /* TabBarController.swift in Sources */,
+				6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */,
 				6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
