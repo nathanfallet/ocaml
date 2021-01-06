@@ -76,11 +76,17 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate {
                 }
             } else {
                 // Handler errors
-                if let error = error {
-                    print("Error: \(error)")
-                } else {
-                    print("Unknown error")
+                let alert = UIAlertController(title: "error".localized(), message: nil, preferredStyle: .alert)
+                switch error {
+                    case .commentsNotSupported:
+                        alert.message = "error_commentsNotSupported".localized()
+                    case .fromJS(let jsError):
+                        alert.message = "error_fromJS".localized().format(jsError)
+                    default:
+                        alert.message = "error_unknown".localized()
                 }
+                alert.addAction(UIAlertAction(title: "button_ok".localized(), style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

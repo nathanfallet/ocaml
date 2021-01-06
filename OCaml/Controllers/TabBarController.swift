@@ -10,9 +10,9 @@ import UIKit
 class TabBarController: UITabBarController {
     
     // Subviews
-    let learn = LearnTableViewController(style: .insetGrouped)
+    let learn = LearnTableViewController()
     let code = CodeViewController()
-    let about = AboutTableViewController(style: .insetGrouped)
+    let about = AboutTableViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()

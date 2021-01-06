@@ -6,6 +6,9 @@
   
 */
 
+/*
+ App strings
+ */
 "learn" = "Learn";
 "code" = "Code";
 "about" = "About";
@@ -14,8 +17,21 @@
 "developer_text" = "Developed by Nathan Fallet at Groupe MINASTE";
 "more" = "More by our team";
 "button_ok" = "OK";
+"error" = "Error while compiling code";
+"error_commentsNotSupported" = "Line comments are not yet supported. Use /* block comments */ instead.";
+"error_fromJS" = "%s";
+"error_unknown" = "Unknown error";
 "button_cancel" = "Cancel";
 "donate_title" = "Donate";
 "donate_header" = "Select an amount to donate:";
 "donate_footer" = "This donation will help our organization to develop its projects, mainly Extopy, the social network we are working on, which will require some storage for its servers.";
 "donate_thanks" = "Thanks for donating to our organization!";
+
+/*
+ OCaml course content
+ */
+"type_chapter" = "Chapter";
+"sequence_basics" = "The basics";
+"chapter_discover_title" = "Discover OCaml";
+"chapter_discover_welcome" = "Welcome to this first part of the OCaml course!";
+"chapter_variables_title" = "Variables";

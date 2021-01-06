@@ -9,6 +9,14 @@ import UIKit
 
 class LearnTableViewController: UITableViewController {
 
+    init() {
+        super.init(style: .insetGrouped)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +25,7 @@ class LearnTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         // Register cells
-        tableView.register(LabelTableViewCell.self, forCellReuseIdentifier: "labelCell")
+        tableView.register(LearnTableViewCell.self, forCellReuseIdentifier: "learnCell")
     }
 
     // MARK: - Table view data source
@@ -39,7 +47,18 @@ class LearnTableViewController: UITableViewController {
         let element = OCamlCourse.content[indexPath.section].elements[indexPath.row]
         
         // Inject in cell
-        return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: element.title.localized())
+        return (tableView.dequeueReusableCell(withIdentifier: "learnCell", for: indexPath) as! LearnTableViewCell).with(model: element)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get element
+        let element = OCamlCourse.content[indexPath.section].elements[indexPath.row]
+        
+        // Open appropriate controller
+        if let chapter = element as? LearnChapter {
+            // Chapter
+            navigationController?.pushViewController(LearnChapterTableViewController(chapter: chapter), animated: true)
+        }
     }
 
 }
