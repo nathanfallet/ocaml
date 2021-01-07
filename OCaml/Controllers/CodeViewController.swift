@@ -8,7 +8,7 @@
 import UIKit
 import Sourceful
 
-class CodeViewController: UIViewController, SyntaxTextViewDelegate {
+class CodeViewController: UIViewController, SyntaxTextViewDelegate, UIDocumentPickerDelegate {
     
     // Views
     let editor = CustomSyntaxTextView()
@@ -16,9 +16,12 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate {
     
     // Buttons
     let play = UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(execute(_:)))
-    let open = UIBarButtonItem(image: UIImage(systemName: "doc.fill"), style: .plain, target: self, action: #selector(close(_:)))
-    let save = UIBarButtonItem(image: UIImage(systemName: "arrow.down.doc.fill"), style: .plain, target: self, action: #selector(close(_:)))
+    let open = UIBarButtonItem(image: UIImage(systemName: "doc.fill"), style: .plain, target: self, action: #selector(open(_:)))
+    let save = UIBarButtonItem(image: UIImage(systemName: "arrow.down.doc.fill"), style: .plain, target: self, action: #selector(save(_:)))
     let close = UIBarButtonItem(image: UIImage(systemName: "clear.fill"), style: .plain, target: self, action: #selector(close(_:)))
+    
+    // File properties
+    var currentFile: URL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,10 +94,49 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate {
         }
     }
     
+    // Open file
+    @objc func open(_ sender: UIBarButtonItem) {
+        // Create a document picker
+        let picker = UIDocumentPickerViewController(documentTypes: ["ml"], in: .open)
+        
+        // Handle selected file
+        picker.delegate = self
+        
+        // Show picker
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    // Save file
+    @objc func save(_ sender: UIBarButtonItem) {
+        // Check if a file is opened
+        if let currentFile = currentFile {
+            // Save file content
+            try? editor.text.write(to: currentFile, atomically: true, encoding: .utf8)
+        } else {
+            // Create a document picker
+            // TODO
+        }
+    }
+    
     // Close file
     @objc func close(_ sender: UIBarButtonItem) {
         // Clear source code
         self.editor.text = ""
+        
+        // Close current file
+        self.currentFile = nil
+    }
+    
+    // Handle selected file
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        // Check mode
+        if controller.documentPickerMode == .open, let url = urls.first {
+            // Get URL
+            self.currentFile = url
+            
+            // Open file in editor
+            self.editor.text = (try? String(contentsOf: url)) ?? ""
+        }
     }
     
 }
