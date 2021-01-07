@@ -8,40 +8,41 @@
 import UIKit
 import Sourceful
 
-class CodeViewController: UIViewController, SyntaxTextViewDelegate, UIDocumentPickerDelegate {
+class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxTextViewDelegate {
     
     // Views
     let editor = CustomSyntaxTextView()
     let executor = OCamlExecutor()
     
-    // Buttons
-    let play = UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(execute(_:)))
-    let open = UIBarButtonItem(image: UIImage(systemName: "doc.fill"), style: .plain, target: self, action: #selector(open(_:)))
-    let save = UIBarButtonItem(image: UIImage(systemName: "arrow.down.doc.fill"), style: .plain, target: self, action: #selector(save(_:)))
-    let close = UIBarButtonItem(image: UIImage(systemName: "clear.fill"), style: .plain, target: self, action: #selector(close(_:)))
-    
     // File properties
-    var currentFile: URL?
+    var currentFile: URL? { didSet { updateTitle() }}
+    var edited = false { didSet { updateTitle() }}
+    var loading = true
 
+    // Load view
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Navigation bar
         title = "code".localized()
-        navigationItem.leftBarButtonItems = [open, save, close]
-        navigationItem.rightBarButtonItem = play
+        navigationItem.leftBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "folder.fill.badge.plus"), style: .plain, target: self, action: #selector(open(_:))),
+            UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down.fill"), style: .plain, target: self, action: #selector(save(_:))),
+            UIBarButtonItem(image: UIImage(systemName: "clear.fill"), style: .plain, target: self, action: #selector(close(_:)))
+        ]
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(execute(_:)))
+        ]
         
         // Setup view
         view.addSubview(editor)
+        editor.setup()
         editor.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         editor.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         editor.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         editor.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         editor.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Configure it
         editor.delegate = self
-        editor.theme = CustomTheme()
         
         // Add toolbar to editor
         let toolbar = UIToolbar()
@@ -53,13 +54,39 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate, UIDocumentPi
         editor.contentTextView.inputAccessoryView = toolbar
     }
     
+    // Update title
+    func updateTitle() {
+        navigationItem.title = (currentFile?.lastPathComponent ?? "code".localized()) + (edited ? " (*)" : "")
+    }
+    
     // Give the OCaml lexer
     func lexerForSource(_ source: String) -> Lexer {
         return OCamlLexer()
     }
     
+    // Listen for content change
+    func didChangeText(_ syntaxTextView: SyntaxTextView) {
+        // Check for loading
+        if loading {
+            // Mark as loaded
+            self.loading = false
+        } else {
+            // Mark as edited
+            self.edited = true
+        }
+    }
+    
+    // Get keyboard shortcuts for iPad and Mac
+    override var keyCommands: [UIKeyCommand]? {
+        return [
+            UIKeyCommand(input: "o", modifierFlags: .command, action: #selector(open(_:))),
+            UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(save(_:))),
+            UIKeyCommand(input: "r", modifierFlags: .command, action: #selector(execute(_:)))
+        ]
+    }
+    
     // Execute content (play button)
-    @objc func execute(_ sender: UIBarButtonItem) {
+    @objc func execute(_ sender: Any) {
         // Get source code
         let source = self.editor.text
         
@@ -81,10 +108,8 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate, UIDocumentPi
                 // Handler errors
                 let alert = UIAlertController(title: "error".localized(), message: nil, preferredStyle: .alert)
                 switch error {
-                    case .commentsNotSupported:
-                        alert.message = "error_commentsNotSupported".localized()
                     case .fromJS(let jsError):
-                        alert.message = "error_fromJS".localized().format(jsError)
+                        alert.message = jsError
                     default:
                         alert.message = "error_unknown".localized()
                 }
@@ -95,7 +120,7 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate, UIDocumentPi
     }
     
     // Open file
-    @objc func open(_ sender: UIBarButtonItem) {
+    @objc func open(_ sender: Any) {
         // Create a document picker
         let picker = UIDocumentPickerViewController(documentTypes: ["ml"], in: .open)
         
@@ -107,20 +132,33 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate, UIDocumentPi
     }
     
     // Save file
-    @objc func save(_ sender: UIBarButtonItem) {
+    @objc func save(_ sender: Any) {
         // Check if a file is opened
         if let currentFile = currentFile {
             // Save file content
             try? editor.text.write(to: currentFile, atomically: true, encoding: .utf8)
+            self.edited = false
         } else {
+            // Save document in temp folder
+            let file = FileManager.default.temporaryDirectory.appendingPathComponent("source.ml")
+            try? editor.text.write(to: file, atomically: true, encoding: .utf8)
+            
             // Create a document picker
-            // TODO
+            let picker = UIDocumentPickerViewController(url: file, in: .moveToService)
+            
+            // Handle selected file
+            picker.delegate = self
+            
+            // Show picker
+            self.present(picker, animated: true, completion: nil)
         }
     }
     
     // Close file
-    @objc func close(_ sender: UIBarButtonItem) {
+    @objc func close(_ sender: Any) {
         // Clear source code
+        self.loading = true
+        self.edited = false
         self.editor.text = ""
         
         // Close current file
@@ -129,13 +167,22 @@ class CodeViewController: UIViewController, SyntaxTextViewDelegate, UIDocumentPi
     
     // Handle selected file
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        // Check mode
+        // Open
         if controller.documentPickerMode == .open, let url = urls.first {
             // Get URL
             self.currentFile = url
             
             // Open file in editor
+            self.loading = true
             self.editor.text = (try? String(contentsOf: url)) ?? ""
+            self.edited = false
+        }
+        
+        // Save
+        else if controller.documentPickerMode == .moveToService, let url = urls.first {
+            // Save URL
+            self.currentFile = url
+            self.edited = false
         }
     }
     

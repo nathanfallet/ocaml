@@ -18,8 +18,6 @@
 "more" = "More by our team";
 "button_ok" = "OK";
 "error" = "Error while compiling code";
-"error_commentsNotSupported" = "Line comments are not yet supported. Use /* block comments */ instead.";
-"error_fromJS" = "%s";
 "error_unknown" = "Unknown error";
 "button_cancel" = "Cancel";
 "donate_title" = "Donate";

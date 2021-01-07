@@ -8,16 +8,19 @@
 import UIKit
 import Sourceful
 
-class CustomSyntaxTextView: SyntaxTextView {
+class CustomSyntaxTextView: SyntaxTextView, SyntaxTextViewDelegate {
     
-    let margin: CGFloat = 10
+    var margin: CGFloat { shouldAddMargin ? 10 : 0 }
+    var shouldAddMargin = true
     
-    override func didMoveToWindow() {
-        super.didMoveToWindow()
+    func setup() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         contentInset = .init(top: margin, left: 0, bottom: margin, right: 0)
+        
+        delegate = self
+        theme = CustomTheme()
     }
     
     deinit {
@@ -34,6 +37,10 @@ class CustomSyntaxTextView: SyntaxTextView {
 
     @objc func keyboardWillHide(aNotification:NSNotification) {
         contentInset = .init(top: margin, left: 0, bottom: margin, right: 0)
+    }
+    
+    func lexerForSource(_ source: String) -> Lexer {
+        return OCamlLexer()
     }
     
 }

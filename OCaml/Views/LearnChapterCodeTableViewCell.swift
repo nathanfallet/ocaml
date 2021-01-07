@@ -8,7 +8,7 @@
 import UIKit
 import Sourceful
 
-class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell, SyntaxTextViewDelegate {
+class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell {
 
     static var identifier: String { return "codeCell" }
 
@@ -21,6 +21,7 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell, SyntaxTe
         
         contentView.addSubview(box)
         
+        box.setup()
         box.translatesAutoresizingMaskIntoConstraints = false
         box.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor).isActive = true
         box.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
@@ -28,10 +29,9 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell, SyntaxTe
         box.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
         box.contentTextView.isEditable = false
         box.contentTextView.isScrollEnabled = false
-        box.delegate = self
-        box.theme = CustomTheme()
         box.clipsToBounds = true
         box.layer.cornerRadius = 8
+        box.shouldAddMargin = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,10 +49,6 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell, SyntaxTe
         }
         
         return self
-    }
-    
-    func lexerForSource(_ source: String) -> Lexer {
-        return OCamlLexer()
     }
 
 }

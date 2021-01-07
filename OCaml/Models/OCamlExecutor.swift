@@ -22,13 +22,6 @@ class OCamlExecutor {
     
     public func compile(source: String, completionHandler: @escaping (String?, ExecutorError?) -> ()) {
         // Compile the OCaml source to JavaScript
-        guard !source.contains("//") else {
-            // Crashes the JS engine
-            completionHandler(nil, .commentsNotSupported)
-            return
-        }
-        
-        // Call the compile method from js
         guard let jsContext = self.jsContext,
             let window = jsContext.globalObject,
             let runtime = window.objectForKeyedSubscript("javascript"),
@@ -113,7 +106,6 @@ class OCamlExecutor {
 
 enum ExecutorError {
     
-    case commentsNotSupported
     case jsContextError
     case fromJS(String)
 
