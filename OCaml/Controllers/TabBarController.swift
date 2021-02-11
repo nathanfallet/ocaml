@@ -12,7 +12,7 @@ class TabBarController: UITabBarController {
     // Subviews
     let learn = LearnTableViewController()
     let code = CodeViewController()
-    let about = AboutTableViewController()
+    let about = SettingsTableViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
         // Set items
         learnNav.tabBarItem = UITabBarItem(title: "learn".localized(), image: UIImage(systemName: "book"), tag: 0)
         codeNav.tabBarItem = UITabBarItem(title: "code".localized(), image: UIImage(systemName: "chevron.left.slash.chevron.right"), tag: 1)
-        aboutNav.tabBarItem = UITabBarItem(title: "about".localized(), image: UIImage(systemName: "info.circle"), tag: 2)
+        aboutNav.tabBarItem = UITabBarItem(title: "settings".localized(), image: UIImage(systemName: "gearshape"), tag: 2)
 
         // Set controllers
         viewControllers = [learnNav, codeNav, aboutNav]

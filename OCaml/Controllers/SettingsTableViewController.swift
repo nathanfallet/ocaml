@@ -1,5 +1,5 @@
 //
-//  AboutTableViewController.swift
+//  SettingsTableViewController.swift
 //  OCaml
 //
 //  Created by Nathan FALLET on 05/01/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AboutTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController {
     
     init() {
         super.init(style: .insetGrouped)
@@ -21,7 +21,7 @@ class AboutTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Navigation bar
-        title = "about".localized()
+        title = "settings".localized()
         navigationController?.navigationBar.prefersLargeTitles = true
         
         // Register cells
@@ -31,20 +31,24 @@ class AboutTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return section == 0 ? 0 : 3
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "developer".localized()
+        return section == 0 ? "editor_settings".localized() : "about".localized()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Developer
+        // Settings
         if indexPath.section == 0 {
+            
+        }
+        // Developer
+        else if indexPath.section == 1 {
             // Name
             if indexPath.row == 0 {
                 return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "developer_text".localized())

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A43E11B25A502D80067B166 /* ConsoleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E11A25A502D80067B166 /* ConsoleEntry.swift */; };
 		6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */; };
-		6A43E12325A51E5C0067B166 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E12225A51E5C0067B166 /* AboutTableViewController.swift */; };
+		6A43E12325A51E5C0067B166 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */; };
 		6A43E12825A51FE70067B166 /* DonateViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 6A43E12725A51FE70067B166 /* DonateViewController */; };
 		6A43E12B25A51FFB0067B166 /* CustomDonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E12A25A51FFB0067B166 /* CustomDonateViewController.swift */; };
 		6A43E12F25A520890067B166 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E12E25A520890067B166 /* LabelTableViewCell.swift */; };
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		6A43E11A25A502D80067B166 /* ConsoleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleEntry.swift; sourceTree = "<group>"; };
 		6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
-		6A43E12225A51E5C0067B166 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6A43E12A25A51FFB0067B166 /* CustomDonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDonateViewController.swift; sourceTree = "<group>"; };
 		6A43E12E25A520890067B166 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		6A43E13225A524280067B166 /* LearnTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTableViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		6A83945125A4D1CD0033FA88 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6A43E12225A51E5C0067B166 /* AboutTableViewController.swift */,
+				6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */,
 				6A83945B25A4D3240033FA88 /* CodeViewController.swift */,
 				6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */,
 				6A43E12A25A51FFB0067B166 /* CustomDonateViewController.swift */,
@@ -255,7 +255,7 @@
 				6A83947B25A4FD3E0033FA88 /* OCamlExecutor.swift in Sources */,
 				6A83946025A4D4190033FA88 /* StringExtension.swift in Sources */,
 				6AEE7C1525A64FED00D6D266 /* LearnChapterTableViewController.swift in Sources */,
-				6A43E12325A51E5C0067B166 /* AboutTableViewController.swift in Sources */,
+				6A43E12325A51E5C0067B166 /* SettingsTableViewController.swift in Sources */,
 				6A43E12B25A51FFB0067B166 /* CustomDonateViewController.swift in Sources */,
 				6A43E11B25A502D80067B166 /* ConsoleEntry.swift in Sources */,
 				6AEE7C2025A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift in Sources */,
