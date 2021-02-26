@@ -26,12 +26,12 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         // Navigation bar
         title = "code".localized()
         navigationItem.leftBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "folder.fill.badge.plus"), style: .plain, target: self, action: #selector(open(_:))),
-            UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down.fill"), style: .plain, target: self, action: #selector(save(_:))),
-            UIBarButtonItem(image: UIImage(systemName: "clear.fill"), style: .plain, target: self, action: #selector(close(_:)))
+            UIBarButtonItem(image: UIImage(systemName: "doc.badge.plus"), style: .plain, target: self, action: #selector(open(_:))),
+            UIBarButtonItem(image: UIImage(systemName: "arrow.down.doc"), style: .plain, target: self, action: #selector(save(_:))),
+            UIBarButtonItem(image: UIImage(systemName: "clear"), style: .plain, target: self, action: #selector(close(_:)))
         ]
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(execute(_:)))
+            UIBarButtonItem(image: UIImage(systemName: "play"), style: .plain, target: self, action: #selector(execute(_:)))
         ]
         
         // Setup view
@@ -122,7 +122,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     // Open file
     @objc func open(_ sender: Any) {
         // Create a document picker
-        let picker = UIDocumentPickerViewController(documentTypes: ["ml"], in: .open)
+        let picker = UIDocumentPickerViewController(documentTypes: ["public.ocaml"], in: .open)
         
         // Handle selected file
         picker.delegate = self
@@ -135,6 +135,10 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     @objc func save(_ sender: Any) {
         // Check if a file is opened
         if let currentFile = currentFile {
+            // Start accessing a security-scoped resource.
+            guard currentFile.startAccessingSecurityScopedResource() else { return }
+            defer { currentFile.stopAccessingSecurityScopedResource() }
+            
             // Save file content
             try? editor.text.write(to: currentFile, atomically: true, encoding: .utf8)
             self.edited = false
@@ -169,6 +173,10 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         // Open
         if controller.documentPickerMode == .open, let url = urls.first {
+            // Start accessing a security-scoped resource.
+            guard url.startAccessingSecurityScopedResource() else { return }
+            defer { url.stopAccessingSecurityScopedResource() }
+            
             // Get URL
             self.currentFile = url
             
@@ -180,6 +188,10 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         
         // Save
         else if controller.documentPickerMode == .moveToService, let url = urls.first {
+            // Start accessing a security-scoped resource.
+            guard url.startAccessingSecurityScopedResource() else { return }
+            defer { url.stopAccessingSecurityScopedResource() }
+            
             // Save URL
             self.currentFile = url
             self.edited = false

@@ -23,9 +23,9 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell {
         
         box.setup()
         box.translatesAutoresizingMaskIntoConstraints = false
-        box.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor).isActive = true
+        box.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         box.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
-        box.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
+        box.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15).isActive = true
         box.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
         box.contentTextView.isEditable = false
         box.contentTextView.isScrollEnabled = false
@@ -41,11 +41,6 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell {
     func with(element: LearnChapterElement, in tableView: UITableView) -> UITableViewCell {
         if let code = element as? LearnCode {
             box.text = code.content
-            
-            DispatchQueue.main.async {
-                tableView.beginUpdates()
-                tableView.endUpdates()
-            }
         }
         
         return self

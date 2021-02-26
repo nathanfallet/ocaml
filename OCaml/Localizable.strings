@@ -15,7 +15,7 @@
 "about" = "About";
 "console" = "Console";
 "developer" = "Developer";
-"developer_text" = "Developed by Nathan Fallet at Groupe MINASTE";
+"developer_text" = "Developed by Nathan Fallet";
 "more" = "More by our team";
 "button_ok" = "OK";
 "error" = "Error while compiling code";

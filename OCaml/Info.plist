@@ -45,5 +45,30 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.xml</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>OCaml file</string>
+			<key>UTTypeIconFiles</key>
+			<array/>
+			<key>UTTypeIdentifier</key>
+			<string>public.ocaml</string>
+			<key>UTTypeReferenceURL</key>
+			<string>https://ocaml.org/learn/tutorials/filenames.html</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>ml</string>
+					<string>mli</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

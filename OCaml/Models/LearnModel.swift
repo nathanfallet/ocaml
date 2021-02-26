@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Sourceful
 
 /*
  Sequence
@@ -66,6 +67,7 @@ struct LearnQuiz: LearnSequenceElement {
 protocol LearnChapterElement {
     
     var cell: LearnChapterCell.Type { get }
+    func height() -> CGFloat
     
 }
 
@@ -80,6 +82,7 @@ struct LearnTitle: LearnChapterElement {
     
     var cell: LearnChapterCell.Type { return LearnChapterTitleTableViewCell.self }
     var content: String
+    func height() -> CGFloat { return UITableView.automaticDimension }
     
 }
 
@@ -87,6 +90,7 @@ struct LearnParagraph: LearnChapterElement {
     
     var cell: LearnChapterCell.Type { return LearnChapterParagraphTableViewCell.self }
     var content: String
+    func height() -> CGFloat { return UITableView.automaticDimension }
     
 }
 
@@ -94,5 +98,11 @@ struct LearnCode: LearnChapterElement {
     
     var cell: LearnChapterCell.Type { return LearnChapterCodeTableViewCell.self }
     var content: String
+    
+    func height() -> CGFloat {
+        let theme = CustomTheme()
+        let size = (content as NSString).size(withAttributes: theme.globalAttributes())
+        return size.height + 32
+    }
     
 }
