@@ -61,3 +61,16 @@
 "chapter_operations_funcs_intro" = "Usual functions like 'sin' are also available in OCaml:";
 "chapter_operations_print" = "Print numbers to the console";
 "chapter_operations_print_intro" = "You can convert numbers to strings using 'string_of_int' and 'string_of_float' to print them in the console:";
+"chapter_conditions_title" = "Conditions";
+"chapter_conditions_inline" = "Inline conditions";
+"chapter_conditions_inline_intro" = "You can use inline conditions in any expression with an 'if ... then ... else ...' statement like this example does:";
+"chapter_conditions_multiline" = "Multiline conditions";
+"chapter_conditions_multiline_intro" = "In case you need to execute more than one instruction, you can create multiline conditions too by adding 'begin' and 'end' keywords.";
+"chapter_conditions_operators" = "Conditional operators";
+"chapter_conditions_operators_intro" = "Classical comparison operators '<', '>', '<=' and '>=' are the same as usual. For equality operators, '=' is used for a comparison by value, while '==' is used for a comparison by memory address. The same way, '<>' is the inequality by value and '!=' by memory address.";
+"chapter_conditions_operators_logical" = "You can combine condition using logical operators: '&&' for and, '||' for or, and 'not' for not.";
+"chapter_loops_title" = "Loops";
+"chapter_loops_conditional" = "Conditional loops";
+"chapter_loops_conditional_intro" = "A 'while' loop will run while a condition is true:";
+"chapter_loops_unconditional" = "Unconditional loops";
+"chapter_loops_unconditional_intro" = "A 'for' loop will run for a defined set of values:";

@@ -110,8 +110,56 @@ class OCamlCourse {
             ]),
             
             // Conditions
+            LearnChapter(title: "chapter_conditions_title", elements: [
+                LearnTitle(content: "chapter_conditions_inline"),
+                LearnParagraph(content: "chapter_conditions_inline_intro"),
+                LearnCode(content: """
+                    let a = 7 in
+                    let b = if a > 5 then "++" else "--" in
+                    print_endline b;; (* ++ *)
+                    """),
+                LearnTitle(content: "chapter_conditions_multiline"),
+                LearnParagraph(content: "chapter_conditions_multiline_intro"),
+                LearnCode(content: """
+                    let a = 7 in
+                    if a > 5 then begin
+                        let b = "++" in
+                        print_endline b
+                    end else begin
+                        let b = "--" in
+                        print_endline b
+                    end;;
+                    """),
+                LearnTitle(content: "chapter_conditions_operators"),
+                LearnParagraph(content: "chapter_conditions_operators_intro"),
+                LearnParagraph(content: "chapter_conditions_operators_logical"),
+                LearnCode(content: """
+                    let a = 7 in
+                    let b = 5 in
+                    let t = if a > b && a - b <> 1 then "ok" else "not ok" in
+                    print_endline t;; (* ok *)
+                    """),
+            ]),
             
             // Loops
+            LearnChapter(title: "chapter_loops_title", elements: [
+                LearnTitle(content: "chapter_loops_conditional"),
+                LearnParagraph(content: "chapter_loops_conditional_intro"),
+                LearnCode(content: """
+                    let i = ref 10 in
+                    while !i > 0 do
+                        print_endline "Hello world";
+                        i := !i - 1
+                    done;;
+                    """),
+                LearnTitle(content: "chapter_loops_unconditional"),
+                LearnParagraph(content: "chapter_loops_unconditional_intro"),
+                LearnCode(content: """
+                    for k = 1 to 10 do
+                        print_endline ("Hello world " ^ (string_of_int k));
+                    done;;
+                    """),
+            ]),
             
             // Arrays
             

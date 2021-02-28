@@ -101,7 +101,7 @@ struct LearnCode: LearnChapterElement {
     
     func height(width: CGFloat) -> CGFloat {
         let theme = CustomTheme()
-        let box = CGSize(width: width - 96, height: .greatestFiniteMagnitude)
+        let box = CGSize(width: width - 92, height: .greatestFiniteMagnitude)
         let size = NSAttributedString(string: content, attributes: theme.globalAttributes()).boundingRect(with: box, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
         return size.height + 48
     }
