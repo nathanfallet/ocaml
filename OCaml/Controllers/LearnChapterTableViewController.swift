@@ -47,7 +47,7 @@ class LearnChapterTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return chapter.elements[indexPath.row].height()
+        return chapter.elements[indexPath.row].height(width: tableView.contentSize.width)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -25,6 +25,7 @@
 "donate_header" = "Select an amount to donate:";
 "donate_footer" = "This donation will help our organization to develop its projects, mainly Extopy, the social network we are working on, which will require some storage for its servers.";
 "donate_thanks" = "Thanks for donating to our organization!";
+"editor_settings" = "Editor settings";
 
 /*
  OCaml course content
@@ -51,3 +52,12 @@
 "chapter_variables_references_intro" = "We can declare mutable variables, called references:";
 "chapter_variables_references_def" = "Here, x is not containing the value 3, but a reference to the value 3. That way, we can change the value that x points to, which is not possible with a classic variable. References can be useful for loops where you need to increment a value for each round, for example.";
 "chapter_variables_references_details" = "The statement 1 set the value of the reference to 4. Note the usage of ':=' instead of '=' to set the value to the reference instead of the value to the variable (which won't work). The statement 2 returns the reference (of type 'int ref'), while the statement 3 returns the value of the reference (here '4', of type 'int').";
+"chapter_operations_title" = "Operations on numbers";
+"chapter_operations_integers" = "Operations on integers";
+"chapter_operations_integers_intro" = "In OCaml, like in any language, we can add, subtract, multiply and divide numbers. '+' is the sum, '-' the difference, '*' the product, '/' the quotient, and 'mod' the remainder.";
+"chapter_operations_floats" = "Operations on floating point numbers";
+"chapter_operations_floats_intro" = "The same kind of operations can be applied to floating point numbers, but operators are not the same and contain a '.' to indicate that they apply on floating point numbers instead of integers.";
+"chapter_operations_funcs" = "Usual functions";
+"chapter_operations_funcs_intro" = "Usual functions like 'sin' are also available in OCaml:";
+"chapter_operations_print" = "Print numbers to the console";
+"chapter_operations_print_intro" = "You can convert numbers to strings using 'string_of_int' and 'string_of_float' to print them in the console:";

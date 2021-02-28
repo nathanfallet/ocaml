@@ -67,7 +67,7 @@ struct LearnQuiz: LearnSequenceElement {
 protocol LearnChapterElement {
     
     var cell: LearnChapterCell.Type { get }
-    func height() -> CGFloat
+    func height(width: CGFloat) -> CGFloat
     
 }
 
@@ -82,7 +82,7 @@ struct LearnTitle: LearnChapterElement {
     
     var cell: LearnChapterCell.Type { return LearnChapterTitleTableViewCell.self }
     var content: String
-    func height() -> CGFloat { return UITableView.automaticDimension }
+    func height(width: CGFloat) -> CGFloat { return UITableView.automaticDimension }
     
 }
 
@@ -90,7 +90,7 @@ struct LearnParagraph: LearnChapterElement {
     
     var cell: LearnChapterCell.Type { return LearnChapterParagraphTableViewCell.self }
     var content: String
-    func height() -> CGFloat { return UITableView.automaticDimension }
+    func height(width: CGFloat) -> CGFloat { return UITableView.automaticDimension }
     
 }
 
@@ -99,10 +99,11 @@ struct LearnCode: LearnChapterElement {
     var cell: LearnChapterCell.Type { return LearnChapterCodeTableViewCell.self }
     var content: String
     
-    func height() -> CGFloat {
+    func height(width: CGFloat) -> CGFloat {
         let theme = CustomTheme()
-        let size = (content as NSString).size(withAttributes: theme.globalAttributes())
-        return size.height + 32
+        let box = CGSize(width: width - 96, height: .greatestFiniteMagnitude)
+        let size = NSAttributedString(string: content, attributes: theme.globalAttributes()).boundingRect(with: box, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+        return size.height + 48
     }
     
 }

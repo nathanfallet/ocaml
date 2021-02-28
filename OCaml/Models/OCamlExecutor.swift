@@ -21,13 +21,17 @@ class OCamlExecutor {
     }
     
     public func compile(source: String, completionHandler: @escaping (String?, ExecutorError?) -> ()) {
+        // Some fix to code to execute it without errors
+        let fixed_source = source
+            .replacingOccurrences(of: "string_of_float", with: "Js.Float.toString") // string_of_float (deprecated)
+        
         // Compile the OCaml source to JavaScript
         guard let jsContext = self.jsContext,
             let window = jsContext.globalObject,
             let runtime = window.objectForKeyedSubscript("javascript"),
             let out = runtime.invokeMethod(
                 "compile",
-                withArguments: ["ml", source]
+                withArguments: ["ml", fixed_source]
             ),
             let errors = out.objectAtIndexedSubscript(0),
             let javascript = out.objectAtIndexedSubscript(1) else {
