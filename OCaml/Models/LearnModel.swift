@@ -100,7 +100,7 @@ struct LearnCode: LearnChapterElement {
     var content: String
     
     func height() -> CGFloat {
-        let theme = CustomTheme()
+        let theme = CustomTheme.shared
         let size = (content as NSString).size(withAttributes: theme.globalAttributes())
         return size.height + 54
     }

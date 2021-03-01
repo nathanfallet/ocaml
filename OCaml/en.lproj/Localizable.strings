@@ -28,6 +28,13 @@
 "delta" = "Math algorithms made easy";
 "baseconverter" = "Convert numbers and more!";
 "editor_settings" = "Editor settings";
+"backgroundColor" = "Background color";
+"plainColor" = "Plain text color";
+"numberColor" = "Numbers color";
+"stringColor" = "Strings color";
+"identifierColor" = "Identifiers color";
+"keywordColor" = "Keywords color";
+"commentColor" = "Comments color";
 
 /*
  OCaml course content

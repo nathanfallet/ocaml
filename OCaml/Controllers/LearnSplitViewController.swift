@@ -26,7 +26,7 @@ class LearnSplitViewController: UISplitViewController, UISplitViewControllerDele
         viewControllers = [leftNavigationController, rightNavigationController]
         
         // Some configuration
-        preferredDisplayMode = .allVisible
+        preferredDisplayMode = .oneBesideSecondary
         delegate = self
         primaryBackgroundStyle = .sidebar
     }

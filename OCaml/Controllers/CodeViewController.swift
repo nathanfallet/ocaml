@@ -7,6 +7,7 @@
 
 import UIKit
 import Sourceful
+import UniformTypeIdentifiers
 
 class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxTextViewDelegate {
     
@@ -18,6 +19,8 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     var currentFile: URL? { didSet { updateTitle() }}
     var edited = false { didSet { updateTitle() }}
     var loading = true
+    var opening = false
+    var saving = false
 
     // Load view
     override func viewDidLoad() {
@@ -52,6 +55,11 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         ]
         toolbar.sizeToFit()
         editor.contentTextView.inputAccessoryView = toolbar
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Reload content to be sure to have updated colors
+        CustomTheme.shared.loadColors()
     }
     
     // Update title
@@ -121,11 +129,15 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     
     // Open file
     @objc func open(_ sender: Any) {
+        // Get identifier
+        guard let identifier = UTType("public.ocaml") else { return }
+        
         // Create a document picker
-        let picker = UIDocumentPickerViewController(documentTypes: ["public.ocaml"], in: .open)
+        let picker = UIDocumentPickerViewController(forOpeningContentTypes: [identifier])
         
         // Handle selected file
         picker.delegate = self
+        opening = true
         
         // Show picker
         self.present(picker, animated: true, completion: nil)
@@ -148,10 +160,11 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
             try? editor.text.write(to: file, atomically: true, encoding: .utf8)
             
             // Create a document picker
-            let picker = UIDocumentPickerViewController(url: file, in: .moveToService)
+            let picker = UIDocumentPickerViewController(forExporting: [file])
             
             // Handle selected file
             picker.delegate = self
+            saving = true
             
             // Show picker
             self.present(picker, animated: true, completion: nil)
@@ -172,7 +185,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     // Handle selected file
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         // Open
-        if controller.documentPickerMode == .open, let url = urls.first {
+        if opening, let url = urls.first {
             // Start accessing a security-scoped resource.
             guard url.startAccessingSecurityScopedResource() else { return }
             defer { url.stopAccessingSecurityScopedResource() }
@@ -184,10 +197,11 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
             self.loading = true
             self.editor.text = (try? String(contentsOf: url)) ?? ""
             self.edited = false
+            self.opening = false
         }
         
         // Save
-        else if controller.documentPickerMode == .moveToService, let url = urls.first {
+        else if saving, let url = urls.first {
             // Start accessing a security-scoped resource.
             guard url.startAccessingSecurityScopedResource() else { return }
             defer { url.stopAccessingSecurityScopedResource() }
@@ -195,7 +209,13 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
             // Save URL
             self.currentFile = url
             self.edited = false
+            self.saving = false
         }
+    }
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        self.opening = false
+        self.saving = false
     }
     
 }

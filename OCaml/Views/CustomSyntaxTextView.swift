@@ -20,7 +20,7 @@ class CustomSyntaxTextView: SyntaxTextView, SyntaxTextViewDelegate {
         contentInset = .init(top: margin, left: 0, bottom: margin, right: 0)
         
         delegate = self
-        theme = CustomTheme()
+        theme = CustomTheme.shared
     }
     
     deinit {
