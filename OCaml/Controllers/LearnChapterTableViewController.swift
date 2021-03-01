@@ -9,11 +9,14 @@ import UIKit
 
 class LearnChapterTableViewController: UITableViewController {
     
-    let chapter: LearnChapter
+    var chapter: LearnChapter? {
+        didSet {
+            title = chapter?.title.localized()
+            tableView.reloadData()
+        }
+    }
     
-    init(chapter: LearnChapter) {
-        self.chapter = chapter
-        
+    init() {
         super.init(style: .insetGrouped)
     }
     
@@ -23,9 +26,6 @@ class LearnChapterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Navigation bar
-        title = chapter.title.localized()
         
         // Remove separators
         tableView.separatorStyle = .none
@@ -43,16 +43,16 @@ class LearnChapterTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chapter.elements.count
+        return chapter?.elements.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return chapter.elements[indexPath.row].height(width: tableView.contentSize.width)
+        return chapter?.elements[indexPath.row].height() ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Get element
-        let element = chapter.elements[indexPath.row]
+        guard let element = chapter?.elements[indexPath.row] else { fatalError() }
         
         // Inject in cell
         return (tableView.dequeueReusableCell(withIdentifier: element.cell.identifier, for: indexPath) as! LearnChapterCell).with(element: element, in: tableView)

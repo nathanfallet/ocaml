@@ -8,6 +8,8 @@
 import UIKit
 
 class LearnTableViewController: UITableViewController {
+    
+    weak var delegate: LearnElementSelectionDelegate?
 
     init() {
         super.init(style: .insetGrouped)
@@ -55,10 +57,13 @@ class LearnTableViewController: UITableViewController {
         let element = OCamlCourse.content[indexPath.section].elements[indexPath.row]
         
         // Open appropriate controller
-        if let chapter = element as? LearnChapter {
-            // Chapter
-            navigationController?.pushViewController(LearnChapterTableViewController(chapter: chapter), animated: true)
-        }
+        delegate?.selectElement(element)
     }
+
+}
+
+protocol LearnElementSelectionDelegate: class {
+    
+    func selectElement(_ element: LearnSequenceElement)
 
 }

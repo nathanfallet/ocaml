@@ -28,7 +28,7 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell {
         box.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15).isActive = true
         box.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
         box.contentTextView.isEditable = false
-        box.contentTextView.isScrollEnabled = false
+        box.contentTextView.isScrollEnabled = true
         box.clipsToBounds = true
         box.layer.cornerRadius = 8
         box.shouldAddMargin = false
