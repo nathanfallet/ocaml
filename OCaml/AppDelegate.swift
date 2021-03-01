@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBarController.selectedIndex = 1
             
             // Open file in code view controller
-            tabBarController.code.openFile(url: url)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                tabBarController.code.openFile(url: url)
+            }
         }
         
         return true

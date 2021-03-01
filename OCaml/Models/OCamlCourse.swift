@@ -238,7 +238,43 @@ class OCamlCourse {
         
         // Functions
         LearnSequence(title: "sequence_functions", elements: [
+            // Declare a function
+            LearnChapter(title: "chapter_functions_declaration_title", elements: [
+                LearnTitle(content: "chapter_functions_declaration_title"),
+                LearnParagraph(content: "chapter_functions_declaration_intro"),
+                LearnCode(content: """
+                    let multiply a b =
+                        a * b;;
+
+                    let n = multiply 3 4;; (* n = 12 *)
+                    """),
+                LearnParagraph(content: "chapter_functions_declaration_details"),
+                LearnParagraph(content: "chapter_functions_declaration_returns"),
+                LearnParagraph(content: "chapter_functions_declaration_calls"),
+            ]),
             
+            // Function signatures
+            LearnChapter(title: "chapter_function_signature_title", elements: [
+                LearnTitle(content: "chapter_function_signature_title"),
+                LearnParagraph(content: "chapter_function_signature_intro"),
+                LearnCode(content: """
+                    let multiply a b =
+                        a * b;;
+                    """),
+                LearnParagraph(content: "chapter_function_signature_details"),
+                LearnParagraph(content: "chapter_function_signature_auto"),
+            ]),
+            
+            // Recursive functions
+            LearnChapter(title: "chapter_function_recursive_title", elements: [
+                LearnTitle(content: "chapter_function_recursive_title"),
+                LearnParagraph(content: "chapter_function_recursive_intro"),
+                LearnCode(content: """
+                    let rec factorial n =
+                        if n = 0 then 1 else n * (factorial (n-1));;
+                    """),
+                LearnParagraph(content: "chapter_function_recursive_example"),
+            ]),
         ])
     ]
     

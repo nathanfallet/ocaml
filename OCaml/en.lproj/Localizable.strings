@@ -104,3 +104,15 @@
 "chapter_strings_concatenation" = "String concatenation";
 "chapter_strings_concatenation_intro" = "You can concatenate strings using the '^' operator:";
 "sequence_functions" = "Functions";
+"chapter_functions_declaration_title" = "Declare a function";
+"chapter_functions_declaration_intro" = "A function is a block. It can take arguments, and it returns a something. Let's see an example to understand how it works:";
+"chapter_functions_declaration_details" = "In this example, we create a function called 'multiply', with two arguments, 'a' and 'b'. Then, after the '=', we write instructions to tell to our function what it does.";
+"chapter_functions_declaration_returns" = "There is no 'return' keywork in OCaml: the last thing on the stack is automatically returned by the function (and if the stack is empty then 'unit' is returned). In this example, the last thing on the stack is 'a * b', so the product of both arguments is returned.";
+"chapter_functions_declaration_calls" = "Finally, we can call a function by using its name, and passing arguments after the name (without paranthesis)";
+"chapter_function_signature_title" = "Function signatures";
+"chapter_function_signature_intro" = "Let's take back our 'multiply' function to see what's a signature:";
+"chapter_function_signature_details" = "Here, the signature of the function is 'int -> int -> int'. It corresponds, from left to right, to argument types and return type, separated by arrows.";
+"chapter_function_signature_auto" = "The signature is automatically determined by the compiler, depending on what the function does with arguments. In our example, we multiply both arguments using the '*' operator, so the only possible signature is the one we have. If we write the same function using '*.', we will have another signature: 'float -> float -> float', because '*.' is defined for floats.";
+"chapter_function_recursive_title" = "Recursive functions";
+"chapter_function_recursive_intro" = "A recursive function is a function calling itself again and again. The keyword 'rec' should be added to the declaration to let the compiler know that the function is recursive.";
+"chapter_function_recursive_example" = "This is one of the most common example of recursive function: factorial.";
