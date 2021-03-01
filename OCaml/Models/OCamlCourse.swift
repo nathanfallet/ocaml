@@ -22,7 +22,7 @@ class OCamlCourse {
                     print_endline "Hello, world!";;
                     """),
                 LearnParagraph(content: "chapter_discover_first"),
-                LearnParagraph(content: "chapter_discover_second")
+                LearnParagraph(content: "chapter_discover_second"),
             ]),
             
             // Variables
@@ -190,11 +190,54 @@ class OCamlCourse {
                     done;;
                     """),
                 LearnParagraph(content: "chapter_arrays_interate_details"),
+                LearnTitle(content: "chapter_arrays_set"),
+                LearnParagraph(content: "chapter_arrays_set_intro"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|] in
+                    let len = Array.length array1 in
+                    for k = 0 to len-1 do
+                        array1.(k) <- 2 * array1.(k)
+                    done;;
+                    (* array1 = [|2; 4; 6; 8|] *)
+                    """),
+                LearnParagraph(content: "chapter_arrays_set_details"),
             ]),
             
             // Strings
-            
-            // Functions
+            LearnChapter(title: "chapter_strings_title", elements: [
+                LearnTitle(content: "chapter_strings_character"),
+                LearnCode(content: """
+                    let c = 'A';;
+                    """),
+                LearnTitle(content: "chapter_strings_title"),
+                LearnParagraph(content: "chapter_strings_intro"),
+                LearnCode(content: """
+                    let str1 = "Hello world";;
+                    let str2 = String.make 5 'A';;
+                    """),
+                LearnParagraph(content: "chapter_strings_length"),
+                LearnCode(content: """
+                    let str1 = "Hello world";;
+                    let len = String.length str1;; (* len = 11 *)
+                    """),
+                LearnTitle(content: "chapter_strings_get"),
+                LearnParagraph(content: "chapter_strings_get_intro"),
+                LearnCode(content: """
+                    let str1 = "Hello world!";;
+                    let c = str1.[3];; (* c = 'o' *)
+                    """),
+                LearnTitle(content: "chapter_strings_concatenation"),
+                LearnParagraph(content: "chapter_strings_concatenation_intro"),
+                LearnCode(content: """
+                    let name = "Nathan" in
+                    let hello = "Hello " ^ name in
+                    print_endline hello;;
+                    """),
+            ]),
+        ]),
+        
+        // Functions
+        LearnSequence(title: "sequence_functions", elements: [
             
         ])
     ]
