@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A35DC1425ECE8BA0092B6CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A35DC1625ECE8BA0092B6CA /* Localizable.strings */; };
 		6A43E11B25A502D80067B166 /* ConsoleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E11A25A502D80067B166 /* ConsoleEntry.swift */; };
 		6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */; };
 		6A43E12325A51E5C0067B166 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */; };
@@ -23,7 +24,6 @@
 		6A83945925A4D29E0033FA88 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945825A4D29E0033FA88 /* TabBarController.swift */; };
 		6A83945C25A4D3240033FA88 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945B25A4D3240033FA88 /* CodeViewController.swift */; };
 		6A83946025A4D4190033FA88 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945F25A4D4190033FA88 /* StringExtension.swift */; };
-		6A83946325A4D4550033FA88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A83946225A4D4550033FA88 /* Localizable.strings */; };
 		6A83946625A4D5090033FA88 /* CustomSyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */; };
 		6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946825A4D7320033FA88 /* OCamlLexer.swift */; };
 		6A83946C25A4D9910033FA88 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946B25A4D9910033FA88 /* CustomTheme.swift */; };
@@ -37,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A35DC1525ECE8BA0092B6CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6A35DC1825ECE8CC0092B6CA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A43E11A25A502D80067B166 /* ConsoleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleEntry.swift; sourceTree = "<group>"; };
 		6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +55,6 @@
 		6A83945825A4D29E0033FA88 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6A83945B25A4D3240033FA88 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		6A83945F25A4D4190033FA88 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		6A83946225A4D4550033FA88 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSyntaxTextView.swift; sourceTree = "<group>"; };
 		6A83946825A4D7320033FA88 /* OCamlLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlLexer.swift; sourceTree = "<group>"; };
 		6A83946B25A4D9910033FA88 /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
@@ -109,7 +110,7 @@
 				6A83947325A4DD600033FA88 /* OCaml.entitlements */,
 				6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */,
 				6A83944425A4CF9D0033FA88 /* Info.plist */,
-				6A83946225A4D4550033FA88 /* Localizable.strings */,
+				6A35DC1625ECE8BA0092B6CA /* Localizable.strings */,
 			);
 			path = OCaml;
 			sourceTree = "<group>";
@@ -215,6 +216,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 6A83942A25A4CF9A0033FA88;
 			packageReferences = (
@@ -237,7 +239,7 @@
 			files = (
 				6A83947825A4FCB90033FA88 /* main.js in Resources */,
 				6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */,
-				6A83946325A4D4550033FA88 /* Localizable.strings in Resources */,
+				6A35DC1425ECE8BA0092B6CA /* Localizable.strings in Resources */,
 				6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +278,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		6A35DC1625ECE8BA0092B6CA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A35DC1525ECE8BA0092B6CA /* en */,
+				6A35DC1825ECE8CC0092B6CA /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -352,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
