@@ -16,7 +16,6 @@
 "console" = "Console";
 "developer" = "Developer";
 "developer_text" = "Developed by Nathan Fallet";
-"more" = "More by our team";
 "button_ok" = "OK";
 "error" = "Error while compiling code";
 "error_unknown" = "Unknown error";
@@ -25,6 +24,9 @@
 "donate_header" = "Select an amount to donate:";
 "donate_footer" = "This donation will help our organization to develop its projects, mainly Extopy, the social network we are working on, which will require some storage for its servers.";
 "donate_thanks" = "Thanks for donating to our organization!";
+"apps" = "Apps in the same collection";
+"delta" = "Math algorithms made easy";
+"baseconverter" = "Convert numbers and more!";
 "editor_settings" = "Editor settings";
 
 /*
