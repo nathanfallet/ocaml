@@ -127,7 +127,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         }
     }
     
-    // Open file
+    // Open button
     @objc func open(_ sender: Any) {
         // Get identifier
         guard let identifier = UTType("public.ocaml") else { return }
@@ -143,7 +143,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         self.present(picker, animated: true, completion: nil)
     }
     
-    // Save file
+    // Save button
     @objc func save(_ sender: Any) {
         // Check if a file is opened
         if let currentFile = currentFile {
@@ -171,7 +171,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         }
     }
     
-    // Close file
+    // Close button
     @objc func close(_ sender: Any) {
         // Clear source code
         self.loading = true
@@ -182,37 +182,48 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         self.currentFile = nil
     }
     
+    // Open file from url
+    func openFile(url: URL) {
+        // Start accessing a security-scoped resource.
+        guard url.startAccessingSecurityScopedResource() else { return }
+        defer { url.stopAccessingSecurityScopedResource() }
+        
+        // Get URL
+        self.currentFile = url
+        
+        // Open file in editor
+        self.loading = true
+        self.editor.text = (try? String(contentsOf: url)) ?? ""
+        self.edited = false
+        self.opening = false
+    }
+    
+    // Save file to URL
+    func saveFile(to url: URL) {
+        // Start accessing a security-scoped resource.
+        guard url.startAccessingSecurityScopedResource() else { return }
+        defer { url.stopAccessingSecurityScopedResource() }
+        
+        // Save URL
+        self.currentFile = url
+        self.edited = false
+        self.saving = false
+    }
+    
     // Handle selected file
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         // Open
         if opening, let url = urls.first {
-            // Start accessing a security-scoped resource.
-            guard url.startAccessingSecurityScopedResource() else { return }
-            defer { url.stopAccessingSecurityScopedResource() }
-            
-            // Get URL
-            self.currentFile = url
-            
-            // Open file in editor
-            self.loading = true
-            self.editor.text = (try? String(contentsOf: url)) ?? ""
-            self.edited = false
-            self.opening = false
+            openFile(url: url)
         }
         
         // Save
         else if saving, let url = urls.first {
-            // Start accessing a security-scoped resource.
-            guard url.startAccessingSecurityScopedResource() else { return }
-            defer { url.stopAccessingSecurityScopedResource() }
-            
-            // Save URL
-            self.currentFile = url
-            self.edited = false
-            self.saving = false
+            saveFile(to: url)
         }
     }
     
+    // Handle picker cancel
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         self.opening = false
         self.saving = false
