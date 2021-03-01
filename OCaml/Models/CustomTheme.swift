@@ -38,11 +38,11 @@ class CustomTheme: SourceCodeTheme {
         // Then we get colors (or defaults if not customized)
         backgroundColor = (datas.value(forKey: "backgroundColor") as? Int)?.toUIColor() ?? .systemBackground
         plainColor = (datas.value(forKey: "plainColor") as? Int)?.toUIColor() ?? .label
-        numberColor = (datas.value(forKey: "numberColor") as? Int)?.toUIColor() ?? .systemYellow
-        stringColor = (datas.value(forKey: "stringColor") as? Int)?.toUIColor() ?? .systemRed
-        identifierColor = (datas.value(forKey: "identifierColor") as? Int)?.toUIColor() ?? .systemTeal
+        numberColor = (datas.value(forKey: "numberColor") as? Int)?.toUIColor() ?? .systemBlue
+        stringColor = (datas.value(forKey: "stringColor") as? Int)?.toUIColor() ?? .systemOrange
+        identifierColor = (datas.value(forKey: "identifierColor") as? Int)?.toUIColor() ?? .systemIndigo
         keywordColor = (datas.value(forKey: "keywordColor") as? Int)?.toUIColor() ?? .systemPurple
-        commentColor = (datas.value(forKey: "commentColor") as? Int)?.toUIColor() ?? .systemGreen
+        commentColor = (datas.value(forKey: "commentColor") as? Int)?.toUIColor() ?? .systemGray
     }
     
     // Some styles

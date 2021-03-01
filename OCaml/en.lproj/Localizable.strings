@@ -83,3 +83,12 @@
 "chapter_loops_conditional_intro" = "A 'while' loop will run while a condition is true:";
 "chapter_loops_unconditional" = "Unconditional loops";
 "chapter_loops_unconditional_intro" = "A 'for' loop will run for a defined set of values:";
+"chapter_arrays_title" = "Arrays";
+"chapter_arrays_create" = "Create an array";
+"chapter_arrays_create_intro" = "An array is a fixed length set of elements. There are two ways to create an array: either by specifing each element, semicolon separated, between '[|' and '|]', or by repeting an element a fixed number of times.";
+"chapter_arrays_length" = "Array length";
+"chapter_arrays_length_intro" = "You can get the length of an array using the Array.length method:";
+"chapter_arrays_get" = "Get an element from an array";
+"chapter_arrays_get_intro" = "You can get elements from an array using its index. The first element's index is 0, and the last one's index is n-1, for an array of length n.";
+"chapter_arrays_interate" = "Using a for loop, you can iterate elements of an array like in this example:";
+"chapter_arrays_interate_details" = "In this example, k will be incremented from 0 to 3 (len is 4 so len-1 is 3), and for each value of k, the element with the index k will be printed. That way, we can print all elements of an array.";

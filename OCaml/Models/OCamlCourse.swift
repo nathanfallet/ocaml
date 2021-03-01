@@ -162,6 +162,35 @@ class OCamlCourse {
             ]),
             
             // Arrays
+            LearnChapter(title: "chapter_arrays_title", elements: [
+                LearnTitle(content: "chapter_arrays_create"),
+                LearnParagraph(content: "chapter_arrays_create_intro"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|];;
+                    let array2 = Array.make 3 0;; (* [|0; 0; 0|] *)
+                    """),
+                LearnTitle(content: "chapter_arrays_length"),
+                LearnParagraph(content: "chapter_arrays_length_intro"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|];;
+                    let len = Array.length array1;; (* len = 4 *)
+                    """),
+                LearnTitle(content: "chapter_arrays_get"),
+                LearnParagraph(content: "chapter_arrays_get_intro"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|] in
+                    print_endline (string_of_int array1.(2));; (* 3 *)
+                    """),
+                LearnParagraph(content: "chapter_arrays_interate"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|] in
+                    let len = Array.length array1 in
+                    for k = 0 to len-1 do
+                        print_endline (string_of_int array1.(k))
+                    done;;
+                    """),
+                LearnParagraph(content: "chapter_arrays_interate_details"),
+            ]),
             
             // Strings
             
