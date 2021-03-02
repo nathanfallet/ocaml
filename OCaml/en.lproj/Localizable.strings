@@ -35,7 +35,6 @@
 "identifierColor" = "Identifiers color";
 "keywordColor" = "Keywords color";
 "commentColor" = "Comments color";
-
 /*
  OCaml course content
  */
@@ -72,7 +71,7 @@
 "chapter_operations_print_intro" = "You can convert numbers to strings using 'string_of_int' and 'string_of_float' to print them in the console:";
 "chapter_conditions_title" = "Conditions";
 "chapter_conditions_inline" = "Inline conditions";
-"chapter_conditions_inline_intro" = "You can use inline conditions in any expression with an 'if ... then ... else ...' statement like this example does:";
+"chapter_conditions_inline_intro" = "You can use inline conditions in any expression with an 'if … then … else …' statement like this example does:";
 "chapter_conditions_multiline" = "Multiline conditions";
 "chapter_conditions_multiline_intro" = "In case you need to execute more than one instruction, you can create multiline conditions too by adding 'begin' and 'end' keywords.";
 "chapter_conditions_operators" = "Conditional operators";
