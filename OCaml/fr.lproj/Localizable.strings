@@ -6,3 +6,42 @@
   
 */
 
+"chapter_discover_second" = "Vous pouvez essayer d'exécuter ce code dans l'onglet 'Coder' et voir ce qu'il fait. Quand vous êtes prêt, vous pouvez passer au chapitre suivant sur les variables pour commencer les bases d'OCaml.";
+"chapter_discover_first" = "Expliquons ce premier morceau de code. Ce qui se trouve entre '(*' et '*) est un commentaire. Il n'est pas exécuté et est là pour donner des explications sur notre code. Ensuite, il y a un 'print_endline' : c'est une fonction qui affiche une chaine de caractères à l'écran et retourne à la ligne. Ensuite, ce qui se trouve entre guillemets (\") est la chaine de caractères qui sera affichée à l'écran. Enfin, les ';;' finissent l'instruction et retournent la dernière chose sur la pile. (ici unit, on détaillera ça plus tard)";
+"chapter_discover_comment" = "Ceci est du code OCaml";
+"chapter_discover_welcome" = "Bienvenue sur cette première partie du cours sur OCaml !";
+"chapter_discover_title" = "Découvrir OCaml";
+"sequence_basics" = "Les bases";
+/*
+ OCaml course content
+ */
+"type_chapter" = "Chapitre";
+"commentColor" = "Couleur des commentaires";
+"keywordColor" = "Couleur des mots clés";
+"identifierColor" = "Couleur des identifiants";
+"stringColor" = "Couleur des chaines de caractères";
+"numberColor" = "Couleur des nombres";
+"plainColor" = "Couleur du texte";
+"backgroundColor" = "Couleur d'arrière plan";
+"editor_settings" = "Paramètres de l'éditeur";
+"baseconverter" = "Conversion de nombres et plus !";
+"delta" = "Algorithmes de maths faciles";
+"apps" = "Dans la même collection";
+"donate_thanks" = "Merci du don pour notre association !";
+"donate_footer" = "Ce don va aider notre association à développer ses projets, notamment Extopy, le réseau social que nous développons, qui va nécessiter principalement du stockage sur ses serveurs.";
+"donate_header" = "Sélectionnez le montant à donner :";
+"donate_title" = "Faire un don";
+"button_cancel" = "Annuler";
+"error_unknown" = "Erreur inconnue";
+"error" = "Erreur lors de la compilation du code";
+"button_ok" = "OK";
+"developer_text" = "Développé par Nathan Fallet";
+"developer" = "Développeur";
+"console" = "Console";
+"about" = "A propos";
+"settings" = "Paramètres";
+"code" = "Coder";
+/*
+ App strings
+ */
+"learn" = "Apprendre";
