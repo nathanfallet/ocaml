@@ -13,7 +13,6 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     
     // Views
     let editor = CustomSyntaxTextView()
-    let executor = OCamlExecutor()
     
     // File properties
     var currentFile: URL? { didSet { updateTitle() }}
@@ -21,6 +20,9 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     var loading = true
     var opening = false
     var saving = false
+    
+    // Delegate
+    weak var delegate: CodeExecutorDelegate?
 
     // Load view
     override func viewDidLoad() {
@@ -98,32 +100,13 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         // Get source code
         let source = self.editor.text
         
+        // Disable button while compiling
+        //navigationItem.rightBarButtonItem?.isEnabled = false
+        
         // Compile it
-        self.executor.compile(source: source) { javascript, error in
-            // Check if it was compiled
-            if let javascript = javascript {
-                // Execute it
-                self.executor.run(javascript: javascript) { entries in
-                    // Process entries
-                    let output = entries.map{ $0.description }.joined(separator: "\n")
-                    
-                    // Present output in a console view controller
-                    let controller = ConsoleViewController()
-                    controller.output.text = output
-                    self.navigationController?.pushViewController(controller, animated: true)
-                }
-            } else {
-                // Handler errors
-                let alert = UIAlertController(title: "error".localized(), message: nil, preferredStyle: .alert)
-                switch error {
-                    case .fromJS(let jsError):
-                        alert.message = jsError
-                    default:
-                        alert.message = "error_unknown".localized()
-                }
-                alert.addAction(UIAlertAction(title: "button_ok".localized(), style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
+        delegate?.execute(source) {
+            // Enable back button
+            //self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
     }
     
@@ -229,4 +212,10 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         self.saving = false
     }
     
+}
+
+protocol CodeExecutorDelegate: class {
+    
+    func execute(_ source: String, completionHandler: @escaping () -> ())
+
 }

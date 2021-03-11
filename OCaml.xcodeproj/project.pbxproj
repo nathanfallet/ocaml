@@ -22,6 +22,7 @@
 		6A43E13325A524280067B166 /* LearnTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13225A524280067B166 /* LearnTableViewController.swift */; };
 		6A43E13A25A526FA0067B166 /* OCamlCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13925A526FA0067B166 /* OCamlCourse.swift */; };
 		6A43E13F25A528CD0067B166 /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13525A5266A0067B166 /* LearnModel.swift */; };
+		6A48F54825FA4FD800FF9BF5 /* CodeSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48F54725FA4FD800FF9BF5 /* CodeSplitViewController.swift */; };
 		6A83943725A4CF9A0033FA88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83943625A4CF9A0033FA88 /* AppDelegate.swift */; };
 		6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A83943F25A4CF9D0033FA88 /* Assets.xcassets */; };
 		6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */; };
@@ -57,6 +58,7 @@
 		6A43E13225A524280067B166 /* LearnTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTableViewController.swift; sourceTree = "<group>"; };
 		6A43E13525A5266A0067B166 /* LearnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnModel.swift; sourceTree = "<group>"; };
 		6A43E13925A526FA0067B166 /* OCamlCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlCourse.swift; sourceTree = "<group>"; };
+		6A48F54725FA4FD800FF9BF5 /* CodeSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSplitViewController.swift; sourceTree = "<group>"; };
 		6A83943325A4CF9A0033FA88 /* OCaml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCaml.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A83943625A4CF9A0033FA88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A83943F25A4CF9D0033FA88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				6A83945B25A4D3240033FA88 /* CodeViewController.swift */,
+				6A48F54725FA4FD800FF9BF5 /* CodeSplitViewController.swift */,
 				6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */,
 				6A43E12A25A51FFB0067B166 /* CustomDonateViewController.swift */,
 				6AEE7C1425A64FED00D6D266 /* LearnChapterTableViewController.swift */,
@@ -287,6 +290,7 @@
 				6A292A4A25ED13D5008053D3 /* UIColorExtension.swift in Sources */,
 				6A83943725A4CF9A0033FA88 /* AppDelegate.swift in Sources */,
 				6A83945925A4D29E0033FA88 /* TabBarController.swift in Sources */,
+				6A48F54825FA4FD800FF9BF5 /* CodeSplitViewController.swift in Sources */,
 				6A187EBF25ECFB9600645721 /* AppTableViewCell.swift in Sources */,
 				6A43E12F25A520890067B166 /* LabelTableViewCell.swift in Sources */,
 				6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */,
@@ -443,7 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OCaml/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				INFOPLIST_FILE = OCaml/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -466,7 +470,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OCaml/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				INFOPLIST_FILE = OCaml/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
