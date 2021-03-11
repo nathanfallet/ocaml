@@ -115,3 +115,7 @@
 "chapter_function_recursive_title" = "Recursive functions";
 "chapter_function_recursive_intro" = "A recursive function is a function calling itself again and again. The keyword 'rec' should be added to the declaration to let the compiler know that the function is recursive.";
 "chapter_function_recursive_example" = "This is one of the most common example of recursive function: factorial.";
+/*
+ Mac Menu Bar
+ */
+"menuBarItem.preferences" = "Preferences...";

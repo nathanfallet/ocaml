@@ -115,3 +115,7 @@
 "chapter_variables_intro" = "Une variable est un endroit en mémoire dans lequel on enregistre une valeur. On déclare une variable en OCaml de cette façon :";
 "chapter_variables_def" = "Définition de variables locales et globales";
 "chapter_variables_title" = "Variables";
+/*
+ Mac Menu Bar
+ */
+"menuBarItem.preferences" = "Préférences...";
