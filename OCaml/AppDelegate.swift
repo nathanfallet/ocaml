@@ -39,12 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Mac Menu Bar
     
     override func buildMenu(with builder: UIMenuBuilder) {
+        // Remove useless items
         builder.remove(menu: .services)
         builder.remove(menu: .format)
-        builder.remove(menu: .help)
-        // preferences
+        
+        // Preferences
         let preferencesCommand = UIKeyCommand(input: ",", modifierFlags: [.command], action: #selector(openPreferences))
-        let title = Bundle.main.localizedString(forKey: "menuBarItem.preferences", value: nil, table: nil)
+        let title = "menuBarItem.preferences".localized()
         preferencesCommand.title = title
         let openPreferences = UIMenu(title: title, image: nil, identifier: UIMenu.Identifier("openPreferences"), options: .displayInline, children: [preferencesCommand])
         builder.insertSibling(openPreferences, afterMenu: .about)
