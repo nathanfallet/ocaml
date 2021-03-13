@@ -1,9 +1,21 @@
-//
-//  SettingsTableViewController.swift
-//  OCaml
-//
-//  Created by Nathan FALLET on 05/01/2021.
-//
+/*
+*  Copyright (C) 2021 Groupe MINASTE
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along
+* with this program; if not, write to the Free Software Foundation, Inc.,
+* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*
+*/
 
 import UIKit
 
@@ -45,7 +57,7 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 7 : section == 1 ? 2 : 2
+        return section == 0 ? 7 : section == 1 ? 3 : 2
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -79,8 +91,12 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
             if indexPath.row == 0 {
                 return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "developer_text".localized())
             }
-            // Donate
+            // Source code (GitHub)
             else if indexPath.row == 1 {
+                return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "source_code".localized())
+            }
+            // Donate
+            else if indexPath.row == 2 {
                 return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "donate_title".localized())
             }
         }
@@ -123,8 +139,14 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
                     UIApplication.shared.open(url)
                 }
             }
-            // Donate
+            // Source code (GitHub)
             else if indexPath.row == 1 {
+                if let url = URL(string: "https://github.com/GroupeMINASTE/OCaml-iOS") {
+                    UIApplication.shared.open(url)
+                }
+            }
+            // Donate
+            else if indexPath.row == 2 {
                 present(UINavigationController(rootViewController: CustomDonateViewController()), animated: true, completion: nil)
             }
         }
