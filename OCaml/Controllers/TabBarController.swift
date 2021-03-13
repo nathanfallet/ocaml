@@ -39,6 +39,9 @@ class TabBarController: UITabBarController {
 
         // Set controllers
         viewControllers = [learn, code, aboutNav]
+        
+        // Set default tab to code
+        selectedIndex = 1
     }
 
 }

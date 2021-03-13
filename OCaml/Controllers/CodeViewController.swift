@@ -18,6 +18,7 @@
 */
 
 import UIKit
+import StoreKit
 import Sourceful
 import UniformTypeIdentifiers
 
@@ -149,6 +150,9 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
             // Save file content
             try? editor.text.write(to: currentFile, atomically: true, encoding: .utf8)
             self.edited = false
+            
+            // Check to ask for a review
+            self.checkForReview()
         } else {
             // Save document in temp folder
             let file = FileManager.default.temporaryDirectory.appendingPathComponent("source.ml")
@@ -222,6 +226,24 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         self.opening = false
         self.saving = false
+    }
+    
+    // Check for review
+    func checkForReview() {
+        // Retrieve the number of save and increment it
+        let datas = UserDefaults.standard
+        let savesCount = datas.integer(forKey: "savesCount") + 1
+        datas.set(savesCount, forKey: "savesCount")
+        datas.synchronize()
+        
+        // Check number of saves to ask for a review
+        if savesCount == 10 || savesCount == 50 || savesCount % 100 == 0 {
+            // Get main app scene
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                // Request review
+                SKStoreReviewController.requestReview(in: scene)
+            }
+        }
     }
     
 }
