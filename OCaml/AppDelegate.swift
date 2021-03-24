@@ -34,6 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        // Copy url
+        var url = url
+        
+        // If file comes from AirDrop, move it
+        if url.deletingLastPathComponent().lastPathComponent == "Inbox" {
+            let newURL = url.deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("airdrop-" + url.lastPathComponent)
+            let _ = try? FileManager.default.moveItem(at: url, to: newURL)
+            url = newURL
+        }
+        
         // Get tab bar controller
         if let tabBarController = window?.rootViewController as? TabBarController {
             // Show code tab
@@ -41,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Open file in code view controller
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                print("Opening \(url.absoluteString)")
                 tabBarController.code.openFile(url: url)
             }
         }

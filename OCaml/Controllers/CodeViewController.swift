@@ -144,7 +144,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         // Check if a file is opened
         if let currentFile = currentFile {
             // Start accessing a security-scoped resource.
-            guard currentFile.startAccessingSecurityScopedResource() else { return }
+            let _ = currentFile.startAccessingSecurityScopedResource()
             defer { currentFile.stopAccessingSecurityScopedResource() }
             
             // Save file content
@@ -184,7 +184,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     // Open file from url
     func openFile(url: URL) {
         // Start accessing a security-scoped resource.
-        guard url.startAccessingSecurityScopedResource() else { return }
+        let _ = url.startAccessingSecurityScopedResource()
         defer { url.stopAccessingSecurityScopedResource() }
         
         // Get URL
@@ -200,7 +200,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     // Save file to URL
     func saveFile(to url: URL) {
         // Start accessing a security-scoped resource.
-        guard url.startAccessingSecurityScopedResource() else { return }
+        let _ = url.startAccessingSecurityScopedResource()
         defer { url.stopAccessingSecurityScopedResource() }
         
         // Save URL
