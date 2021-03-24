@@ -51,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Open file in code view controller
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                print("Opening \(url.absoluteString)")
                 tabBarController.code.openFile(url: url)
             }
         }
@@ -67,16 +66,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         builder.remove(menu: .format)
         
         // Preferences
-        let preferencesCommand = UIKeyCommand(input: ",", modifierFlags: [.command], action: #selector(openPreferences))
-        let title = "menuBarItem.preferences".localized()
-        preferencesCommand.title = title
-        let openPreferences = UIMenu(title: title, image: nil, identifier: UIMenu.Identifier("openPreferences"), options: .displayInline, children: [preferencesCommand])
+        let preferencesTitle = "menuBarItem.preferences".localized()
+        let preferencesCommand = UIKeyCommand(input: ",", modifierFlags: .command, action: #selector(openPreferences(_:)))
+        preferencesCommand.title = preferencesTitle
+        let openPreferences = UIMenu(title: preferencesTitle, image: nil, identifier: UIMenu.Identifier("openPreferences"), options: .displayInline, children: [preferencesCommand])
         builder.insertSibling(openPreferences, afterMenu: .about)
+        
+        // File menu
+        let openCommand = UIKeyCommand(input: "o", modifierFlags: .command, action: #selector(openFile(_:)))
+        openCommand.title = "open".localized()
+        let saveCommand = UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(saveFile(_:)))
+        saveCommand.title = "save".localized()
+        let executeCommand = UIKeyCommand(input: "r", modifierFlags: .command, action: #selector(executeFile(_:)))
+        executeCommand.title = "execute".localized()
+        let fileMenu = UIMenu(title: "", image: nil, identifier: UIMenu.Identifier("OCamlFile"), options: .displayInline, children: [openCommand, saveCommand, executeCommand])
+        builder.insertChild(fileMenu, atStartOfMenu: .file)
     }
     
-    @objc func openPreferences() {
+    @objc func openPreferences(_ sender: Any) {
         if let tabBarController = window?.rootViewController as? TabBarController {
             tabBarController.selectedIndex = 2
+        }
+    }
+    
+    @objc func openFile(_ sender: Any) {
+        if let tabBarController = window?.rootViewController as? TabBarController {
+            tabBarController.selectedIndex = 1
+            tabBarController.code.codeViewController.open(sender)
+        }
+    }
+    
+    @objc func saveFile(_ sender: Any) {
+        if let tabBarController = window?.rootViewController as? TabBarController {
+            tabBarController.selectedIndex = 1
+            tabBarController.code.codeViewController.save(sender)
+        }
+    }
+    
+    @objc func executeFile(_ sender: Any) {
+        if let tabBarController = window?.rootViewController as? TabBarController {
+            tabBarController.selectedIndex = 1
+            tabBarController.code.codeViewController.execute(sender)
         }
     }
 

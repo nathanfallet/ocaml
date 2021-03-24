@@ -99,15 +99,6 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         }
     }
     
-    // Get keyboard shortcuts for iPad and Mac
-    override var keyCommands: [UIKeyCommand]? {
-        return [
-            UIKeyCommand(input: "o", modifierFlags: .command, action: #selector(open(_:))),
-            UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(save(_:))),
-            UIKeyCommand(input: "r", modifierFlags: .command, action: #selector(execute(_:)))
-        ]
-    }
-    
     // Execute content (play button)
     @objc func execute(_ sender: Any) {
         // Get source code

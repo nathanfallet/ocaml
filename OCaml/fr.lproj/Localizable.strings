@@ -51,6 +51,9 @@
 "developer" = "Développeur";
 "console" = "Console";
 "about" = "A propos";
+"open" = "Ouvrir";
+"save" = "Enregistrer";
+"execute" = "Executer";
 "settings" = "Paramètres";
 "code" = "Coder";
 /*

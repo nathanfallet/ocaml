@@ -24,6 +24,9 @@
 "code" = "Code";
 "settings" = "Settings";
 "about" = "About";
+"open" = "Open";
+"save" = "Save";
+"execute" = "Execute";
 "console" = "Console";
 "developer" = "Developer";
 "developer_text" = "Developed by Nathan Fallet";
