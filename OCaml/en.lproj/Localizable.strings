@@ -34,6 +34,7 @@
 "button_ok" = "OK";
 "error" = "Error while compiling code";
 "error_unknown" = "Unknown error";
+"console_failed" = "Failed to load console";
 "button_cancel" = "Cancel";
 "donate_title" = "Donate";
 "donate_header" = "Select an amount to donate:";

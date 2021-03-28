@@ -35,4 +35,10 @@ extension String {
         return String(format: self, locale: .current, arguments: args)
     }
     
+    // Code escape
+    
+    func escapeCode() -> String {
+        replacingOccurrences(of: "`", with: "\\`")
+    }
+    
 }

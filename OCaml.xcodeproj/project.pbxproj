@@ -33,8 +33,10 @@
 		6A83946625A4D5090033FA88 /* CustomSyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */; };
 		6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946825A4D7320033FA88 /* OCamlLexer.swift */; };
 		6A83946C25A4D9910033FA88 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946B25A4D9910033FA88 /* CustomTheme.swift */; };
-		6A83947825A4FCB90033FA88 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 6A83947725A4FCB90033FA88 /* main.js */; };
 		6A83947B25A4FD3E0033FA88 /* OCamlExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83947A25A4FD3E0033FA88 /* OCamlExecutor.swift */; };
+		6AA55ACE261097AF0021436C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACB261097AF0021436C /* index.html */; };
+		6AA55ACF261097AF0021436C /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACC261097AF0021436C /* bootstrap.min.css */; };
+		6AA55AD0261097AF0021436C /* toplevel.js in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACD261097AF0021436C /* toplevel.js */; };
 		6AEE7C1225A646F700D6D266 /* LearnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1125A646F700D6D266 /* LearnTableViewCell.swift */; };
 		6AEE7C1525A64FED00D6D266 /* LearnChapterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1425A64FED00D6D266 /* LearnChapterTableViewController.swift */; };
 		6AEE7C1925A6533400D6D266 /* LearnChapterTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1825A6533400D6D266 /* LearnChapterTitleTableViewCell.swift */; };
@@ -71,8 +73,10 @@
 		6A83946825A4D7320033FA88 /* OCamlLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlLexer.swift; sourceTree = "<group>"; };
 		6A83946B25A4D9910033FA88 /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
 		6A83947325A4DD600033FA88 /* OCaml.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCaml.entitlements; sourceTree = "<group>"; };
-		6A83947725A4FCB90033FA88 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = main.js; path = dist/main.js; sourceTree = "<group>"; };
 		6A83947A25A4FD3E0033FA88 /* OCamlExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlExecutor.swift; sourceTree = "<group>"; };
+		6AA55ACB261097AF0021436C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		6AA55ACC261097AF0021436C /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
+		6AA55ACD261097AF0021436C /* toplevel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = toplevel.js; sourceTree = "<group>"; };
 		6AEE7C1125A646F700D6D266 /* LearnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTableViewCell.swift; sourceTree = "<group>"; };
 		6AEE7C1425A64FED00D6D266 /* LearnChapterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterTableViewController.swift; sourceTree = "<group>"; };
 		6AEE7C1825A6533400D6D266 /* LearnChapterTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -184,7 +188,9 @@
 		6A83947125A4DABD0033FA88 /* JavaScript */ = {
 			isa = PBXGroup;
 			children = (
-				6A83947725A4FCB90033FA88 /* main.js */,
+				6AA55ACC261097AF0021436C /* bootstrap.min.css */,
+				6AA55ACB261097AF0021436C /* index.html */,
+				6AA55ACD261097AF0021436C /* toplevel.js */,
 			);
 			path = JavaScript;
 			sourceTree = "<group>";
@@ -255,8 +261,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A83947825A4FCB90033FA88 /* main.js in Resources */,
+				6AA55ACF261097AF0021436C /* bootstrap.min.css in Resources */,
+				6AA55AD0261097AF0021436C /* toplevel.js in Resources */,
 				6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */,
+				6AA55ACE261097AF0021436C /* index.html in Resources */,
 				6A35DC1425ECE8BA0092B6CA /* Localizable.strings in Resources */,
 				6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */,
 			);
