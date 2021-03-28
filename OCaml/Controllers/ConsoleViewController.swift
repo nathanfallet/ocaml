@@ -22,9 +22,6 @@ import WebKit
 
 class ConsoleViewController: UIViewController, WKNavigationDelegate {
     
-    // Executor
-    let executor = OCamlExecutor()
-    
     // Views
     let output = WKWebView()
     let loading = UIActivityIndicatorView()
@@ -70,29 +67,35 @@ class ConsoleViewController: UIViewController, WKNavigationDelegate {
         // Start loading
         self.loading.startAnimating()
         
-        // Create JS script to execute in console
-        // Put current script into console and press enter to execute
-        let js = """
-        var t = document.getElementById("userinput");
-        t.value = `\(source.escapeCode())`;
-        t.onkeydown({"keyCode": 13, "preventDefault": function (){}});
-        """
-        
-        // Put source in top level
-        output.evaluateJavaScript(js) { _, _ in
-            // Present output
-            DispatchQueue.main.async {
-                self.loading.stopAnimating()
-                completionHandler()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            // Create JS script to execute in console
+            // Put current script into console and press enter to execute
+            let js = """
+            var t = document.getElementById("userinput");
+            t.value = `\(source.escapeCode())`;
+            t.onkeydown({"keyCode": 13, "preventDefault": function (){}});
+            """
+            
+            // Put source in top level
+            self.output.evaluateJavaScript(js) { _, _ in
+                // Present output
+                DispatchQueue.main.async {
+                    self.loading.stopAnimating()
+                    completionHandler()
+                }
             }
         }
     }
     
     @objc func reloadConsole(_ sender: Any?) {
-        // Hide console to reload it
+        // Reload console
+        output.reloadFromOrigin()
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        // Hide while it starts loading
         loading.startAnimating()
         output.isHidden = true
-        output.reloadFromOrigin()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

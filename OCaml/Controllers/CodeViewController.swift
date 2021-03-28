@@ -70,6 +70,9 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         ]
         toolbar.sizeToFit()
         editor.contentTextView.inputAccessoryView = toolbar
+        
+        // Pre load console
+        delegate?.execute("", show: false, completionHandler: {})
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,7 +111,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         //navigationItem.rightBarButtonItem?.isEnabled = false
         
         // Compile it
-        delegate?.execute(source) {
+        delegate?.execute(source, show: true) {
             // Enable back button
             //self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
@@ -241,6 +244,6 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
 
 protocol CodeExecutorDelegate: class {
     
-    func execute(_ source: String, completionHandler: @escaping () -> ())
+    func execute(_ source: String, show: Bool, completionHandler: @escaping () -> ())
 
 }

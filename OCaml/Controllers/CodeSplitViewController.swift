@@ -42,6 +42,11 @@ class CodeSplitViewController: UISplitViewController, UISplitViewControllerDeleg
         preferredPrimaryColumnWidthFraction = 0.5
         maximumPrimaryColumnWidth = view.bounds.size.width
         delegate = self
+        
+        // Load controllers
+        viewControllers.forEach { controller in
+            controller.loadView()
+        }
     }
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
@@ -54,9 +59,9 @@ class CodeSplitViewController: UISplitViewController, UISplitViewControllerDeleg
         codeViewController.openFile(url: url)
     }
     
-    func execute(_ source: String, completionHandler: @escaping () -> ()) {
+    func execute(_ source: String, show: Bool, completionHandler: @escaping () -> ()) {
         // Present console
-        if let navigationController = self.consoleViewController.navigationController {
+        if show, let navigationController = self.consoleViewController.navigationController {
             self.showDetailViewController(navigationController, sender: nil)
         }
         
