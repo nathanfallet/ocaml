@@ -20,7 +20,7 @@
 import UIKit
 import WebKit
 
-class ConsoleViewController: UIViewController {
+class ConsoleViewController: UIViewController, WKNavigationDelegate {
     
     // Executor
     let executor = OCamlExecutor()
@@ -34,8 +34,12 @@ class ConsoleViewController: UIViewController {
 
         // Navigation bar
         title = "console".localized()
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(reloadConsole(_:)))
+        ]
         
         // Setup view
+        view.backgroundColor = .systemBackground
         view.addSubview(output)
         output.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
         output.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -49,10 +53,12 @@ class ConsoleViewController: UIViewController {
         loading.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
         loading.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor).isActive = true
         loading.hidesWhenStopped = true
+        loading.startAnimating()
         
         // Configure it
-        output.backgroundColor = .systemBackground
+        output.isHidden = true
         output.scrollView.isScrollEnabled = false
+        output.navigationDelegate = self
         if let url = Bundle.main.url(forResource: "index", withExtension: "html") {
             output.loadFileURL(url, allowingReadAccessTo: url)
         } else {
@@ -80,6 +86,19 @@ class ConsoleViewController: UIViewController {
                 completionHandler()
             }
         }
+    }
+    
+    @objc func reloadConsole(_ sender: Any?) {
+        // Hide console to reload it
+        loading.startAnimating()
+        output.isHidden = true
+        output.reloadFromOrigin()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // Show console and stop loading
+        output.isHidden = false
+        loading.stopAnimating()
     }
 
 }

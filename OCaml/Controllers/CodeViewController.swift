@@ -46,7 +46,7 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         navigationItem.leftBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "doc.badge.plus"), style: .plain, target: self, action: #selector(open(_:))),
             UIBarButtonItem(image: UIImage(systemName: "arrow.down.doc"), style: .plain, target: self, action: #selector(save(_:))),
-            UIBarButtonItem(image: UIImage(systemName: "clear"), style: .plain, target: self, action: #selector(close(_:)))
+            UIBarButtonItem(image: UIImage(systemName: "xmark.circle"), style: .plain, target: self, action: #selector(close(_:)))
         ]
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "play"), style: .plain, target: self, action: #selector(execute(_:)))
