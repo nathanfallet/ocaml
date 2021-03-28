@@ -107,7 +107,7 @@
 "chapter_conditions_multiline" = "Conditions sur plusieurs lignes";
 "chapter_conditions_inline_intro" = "Vous pouvez utiliser des conditions en ligne dans n'importe quelle expression avec une instruction 'if … then … else …' comme le fait cet exemple :";
 "chapter_conditions_inline" = "Conditions en ligne";
-"chapter_operations_print_intro" = "Vous pouvez convertir les nombres en chaines de caractères en utilisant 'string_of_int' et 'string_of_float' pour les afficher dans la console :";
+"chapter_operations_print_intro" = "Vous pouvez afficher des nombres dans la console en utilisant 'print_int' et 'print_float' :";
 "chapter_operations_print" = "Afficher des nombres dans la console";
 "chapter_operations_funcs_intro" = "Les fonctions usuelles comme 'sin' sont aussi disponibles en OCaml :";
 "chapter_operations_funcs" = "Fonctions usuelles";

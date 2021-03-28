@@ -84,7 +84,7 @@
 "chapter_operations_funcs" = "Usual functions";
 "chapter_operations_funcs_intro" = "Usual functions like 'sin' are also available in OCaml:";
 "chapter_operations_print" = "Print numbers to the console";
-"chapter_operations_print_intro" = "You can convert numbers to strings using 'string_of_int' and 'string_of_float' to print them in the console:";
+"chapter_operations_print_intro" = "You can print numbers to the console using 'print_int' and 'print_float':";
 "chapter_conditions_title" = "Conditions";
 "chapter_conditions_inline" = "Inline conditions";
 "chapter_conditions_inline_intro" = "You can use inline conditions in any expression with an 'if … then … else …' statement like this example does:";

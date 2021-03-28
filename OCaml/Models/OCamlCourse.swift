@@ -115,9 +115,9 @@ class OCamlCourse {
                 LearnParagraph(content: "chapter_operations_print_intro"),
                 LearnCode(content: """
                     let a = 2 + 3 - 1 in
-                    print_endline (string_of_int a);;
+                    print_int a;;
                     let b = 2.7 +. 3.2 -. 0.5 in
-                    print_endline (string_of_float b);;
+                    print_float b;;
                     """),
             ]),
             
@@ -191,14 +191,14 @@ class OCamlCourse {
                 LearnParagraph(content: "chapter_arrays_get_intro"),
                 LearnCode(content: """
                     let array1 = [|1; 2; 3; 4|] in
-                    print_endline (string_of_int array1.(2));; (* 3 *)
+                    print_int array1.(2);; (* 3 *)
                     """),
                 LearnParagraph(content: "chapter_arrays_interate"),
                 LearnCode(content: """
                     let array1 = [|1; 2; 3; 4|] in
                     let len = Array.length array1 in
                     for k = 0 to len-1 do
-                        print_endline (string_of_int array1.(k))
+                        print_int array1.(k)
                     done;;
                     """),
                 LearnParagraph(content: "chapter_arrays_interate_details"),
