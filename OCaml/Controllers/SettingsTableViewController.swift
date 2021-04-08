@@ -102,9 +102,9 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
         }
         // Apps in the same collection
         else if indexPath.section == 2 {
-            // Delta: Math helper
+            // Delta: Algorithms
             if indexPath.row == 0 {
-                return (tableView.dequeueReusableCell(withIdentifier: "appCell", for: indexPath) as! AppTableViewCell).with(name: "Delta: Math helper", desc: "delta".localized(), icon: UIImage(named: "Delta"))
+                return (tableView.dequeueReusableCell(withIdentifier: "appCell", for: indexPath) as! AppTableViewCell).with(name: "Delta: Algorithms", desc: "delta".localized(), icon: UIImage(named: "Delta"))
             }
             // BaseConverter: All in one
             else if indexPath.row == 1 {
@@ -152,9 +152,9 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
         }
         // Apps in the same collection
         else if indexPath.section == 2 {
-            // Delta: Math helper
+            // Delta: Algorithms
             if indexPath.row == 0 {
-                if let url = URL(string: "https://apps.apple.com/app/delta-math-helper/id1436506800") {
+                if let url = URL(string: "https://apps.apple.com/app/delta-algorithms/id1436506800") {
                     UIApplication.shared.open(url)
                 }
             }
