@@ -40,6 +40,8 @@
 		6AEE7C1925A6533400D6D266 /* LearnChapterTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1825A6533400D6D266 /* LearnChapterTitleTableViewCell.swift */; };
 		6AEE7C1D25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1C25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift */; };
 		6AEE7C2025A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1F25A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift */; };
+		6AF779DC2620508300B6A820 /* OpenSourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF779DB2620508300B6A820 /* OpenSourceTableViewController.swift */; };
+		6AF779E3262057CC00B6A820 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF779E2262057CC00B6A820 /* URLImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		6AEE7C1825A6533400D6D266 /* LearnChapterTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterTitleTableViewCell.swift; sourceTree = "<group>"; };
 		6AEE7C1C25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterParagraphTableViewCell.swift; sourceTree = "<group>"; };
 		6AEE7C1F25A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterCodeTableViewCell.swift; sourceTree = "<group>"; };
+		6AF779DB2620508300B6A820 /* OpenSourceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceTableViewController.swift; sourceTree = "<group>"; };
+		6AF779E2262057CC00B6A820 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				6AEE7C1425A64FED00D6D266 /* LearnChapterTableViewController.swift */,
 				6A43E13225A524280067B166 /* LearnTableViewController.swift */,
 				6A35DC1A25ECEC0A0092B6CA /* LearnSplitViewController.swift */,
+				6AF779DB2620508300B6A820 /* OpenSourceTableViewController.swift */,
 				6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */,
 				6A83945825A4D29E0033FA88 /* TabBarController.swift */,
 			);
@@ -164,6 +169,7 @@
 				6AEE7C1C25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift */,
 				6A43E12E25A520890067B166 /* LabelTableViewCell.swift */,
 				6AEE7C1125A646F700D6D266 /* LearnTableViewCell.swift */,
+				6AF779E2262057CC00B6A820 /* URLImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 			files = (
 				6A43E13325A524280067B166 /* LearnTableViewController.swift in Sources */,
 				6AEE7C1D25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift in Sources */,
+				6AF779E3262057CC00B6A820 /* URLImageView.swift in Sources */,
 				6A35DC1B25ECEC0A0092B6CA /* LearnSplitViewController.swift in Sources */,
 				6A83946C25A4D9910033FA88 /* CustomTheme.swift in Sources */,
 				6A292A4D25ED18B9008053D3 /* EditorColorTableViewCell.swift in Sources */,
@@ -293,6 +300,7 @@
 				6A48F54825FA4FD800FF9BF5 /* CodeSplitViewController.swift in Sources */,
 				6A187EBF25ECFB9600645721 /* AppTableViewCell.swift in Sources */,
 				6A43E12F25A520890067B166 /* LabelTableViewCell.swift in Sources */,
+				6AF779DC2620508300B6A820 /* OpenSourceTableViewController.swift in Sources */,
 				6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */,
 				6A43E13F25A528CD0067B166 /* LearnModel.swift in Sources */,
 				6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */,

@@ -30,12 +30,13 @@
 "console" = "Console";
 "developer" = "Developer";
 "developer_text" = "Developed by Nathan Fallet";
-"source_code" = "Source code (GitHub)";
+"opensource" = "Open source";
 "button_ok" = "OK";
 "error" = "Error while compiling code";
 "error_unknown" = "Unknown error";
 "console_failed" = "Failed to load console";
 "button_cancel" = "Cancel";
+"button_close" = "Close";
 "donate_title" = "Donate";
 "donate_header" = "Select an amount to donate:";
 "donate_footer" = "This donation will help our organization to develop its projects, mainly Extopy, the social network we are working on, which will require some storage for its servers.";
@@ -51,6 +52,12 @@
 "identifierColor" = "Identifiers color";
 "keywordColor" = "Keywords color";
 "commentColor" = "Comments color";
+"opensource_swiftpackages" = "Swift packages";
+"opensource_others" = "Others";
+"opensource_repo_OCaml-iOS" = "The app itself";
+"opensource_repo_DonateViewController" = "A view controller to make donations.";
+"opensource_repo_Sourceful" = "A syntax highlighting source editor for iOS and macOS using UITextView and NSTextView.";
+"opensource_repo_js_of_ocaml" = "Compiler from OCaml to Javascript.";
 /*
  OCaml course content
  */

@@ -91,9 +91,9 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
             if indexPath.row == 0 {
                 return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "developer_text".localized())
             }
-            // Source code (GitHub)
+            // Open source
             else if indexPath.row == 1 {
-                return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "source_code".localized())
+                return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "opensource".localized())
             }
             // Donate
             else if indexPath.row == 2 {
@@ -139,11 +139,10 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
                     UIApplication.shared.open(url)
                 }
             }
-            // Source code (GitHub)
+            // Open source
             else if indexPath.row == 1 {
-                if let url = URL(string: "https://github.com/GroupeMINASTE/OCaml-iOS") {
-                    UIApplication.shared.open(url)
-                }
+                let vc = UINavigationController(rootViewController: OpenSourceTableViewController(style: .insetGrouped))
+                present(vc, animated: true, completion: nil)
             }
             // Donate
             else if indexPath.row == 2 {

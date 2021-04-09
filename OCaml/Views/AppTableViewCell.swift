@@ -21,7 +21,7 @@ import UIKit
 
 class AppTableViewCell: UITableViewCell {
 
-    let icon = UIImageView()
+    let icon = URLImageView()
     let name = UILabel()
     let desc = UILabel()
     
@@ -65,6 +65,14 @@ class AppTableViewCell: UITableViewCell {
         self.name.text = name
         self.desc.text = desc
         self.icon.image = icon
+        
+        return self
+    }
+    
+    func with(name: String, desc: String, url: String) -> AppTableViewCell {
+        self.name.text = name
+        self.desc.text = desc
+        self.icon.loadImage(url: url)
         
         return self
     }
