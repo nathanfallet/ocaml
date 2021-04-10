@@ -20,7 +20,7 @@
 import UIKit
 import WebKit
 
-class ConsoleViewController: UIViewController, WKNavigationDelegate {
+class ConsoleViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     // Views
     let output = WKWebView()
@@ -61,6 +61,9 @@ class ConsoleViewController: UIViewController, WKNavigationDelegate {
         } else {
             output.loadHTMLString("console_failed".localized(), baseURL: nil)
         }
+        
+        // Handle text input
+        output.uiDelegate = self
     }
     
     func execute(_ source: String, completionHandler: @escaping () -> ()) {
@@ -102,6 +105,19 @@ class ConsoleViewController: UIViewController, WKNavigationDelegate {
         // Show console and stop loading
         output.isHidden = false
         loading.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+        // Show a UIAlert controller
+        let alert = UIAlertController(title: prompt, message: nil, preferredStyle: .alert)
+        alert.addTextField { _ in }
+        alert.addAction(UIAlertAction(title: "button_ok".localized(), style: .default, handler: { _ in
+            completionHandler(alert.textFields?.first?.text)
+        }))
+        alert.addAction(UIAlertAction(title: "button_cancel".localized(), style: .cancel, handler: { _ in
+            completionHandler(nil)
+        }))
+        present(alert, animated: true, completion: nil)
     }
 
 }

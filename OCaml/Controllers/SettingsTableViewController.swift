@@ -91,9 +91,9 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
             if indexPath.row == 0 {
                 return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "developer_text".localized())
             }
-            // Source code (GitHub)
+            // Open source
             else if indexPath.row == 1 {
-                return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "source_code".localized())
+                return (tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelTableViewCell).with(text: "opensource".localized())
             }
             // Donate
             else if indexPath.row == 2 {
@@ -102,9 +102,9 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
         }
         // Apps in the same collection
         else if indexPath.section == 2 {
-            // Delta: Math helper
+            // Delta: Algorithms
             if indexPath.row == 0 {
-                return (tableView.dequeueReusableCell(withIdentifier: "appCell", for: indexPath) as! AppTableViewCell).with(name: "Delta: Math helper", desc: "delta".localized(), icon: UIImage(named: "Delta"))
+                return (tableView.dequeueReusableCell(withIdentifier: "appCell", for: indexPath) as! AppTableViewCell).with(name: "Delta: Algorithms", desc: "delta".localized(), icon: UIImage(named: "Delta"))
             }
             // BaseConverter: All in one
             else if indexPath.row == 1 {
@@ -139,11 +139,10 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
                     UIApplication.shared.open(url)
                 }
             }
-            // Source code (GitHub)
+            // Open source
             else if indexPath.row == 1 {
-                if let url = URL(string: "https://github.com/GroupeMINASTE/OCaml-iOS") {
-                    UIApplication.shared.open(url)
-                }
+                let vc = UINavigationController(rootViewController: OpenSourceTableViewController(style: .insetGrouped))
+                present(vc, animated: true, completion: nil)
             }
             // Donate
             else if indexPath.row == 2 {
@@ -152,9 +151,9 @@ class SettingsTableViewController: UITableViewController, UIColorPickerViewContr
         }
         // Apps in the same collection
         else if indexPath.section == 2 {
-            // Delta: Math helper
+            // Delta: Algorithms
             if indexPath.row == 0 {
-                if let url = URL(string: "https://apps.apple.com/app/delta-math-helper/id1436506800") {
+                if let url = URL(string: "https://apps.apple.com/app/delta-algorithms/id1436506800") {
                     UIApplication.shared.open(url)
                 }
             }
