@@ -133,4 +133,12 @@
 /*
  Mac Menu Bar
  */
-"menuBarItem.preferences" = "Préférences...";
+"menuBarItem.preferences" = "Préférences…";
+"opensource_repo_js_of_ocaml" = "Compilateur OCaml vers Javascript.";
+"opensource_repo_Sourceful" = "Un éditeur avec coloration syntaxique pour iOS et macOS avec UITextView et NSTextView.";
+"opensource_repo_DonateViewController" = "Une vue pour faire des dons.";
+"opensource_repo_OCaml-iOS" = "L'app elle-même";
+"opensource_others" = "Autres";
+"opensource_swiftpackages" = "Swift packages";
+"button_close" = "Fermer";
+"opensource" = "Open source";
