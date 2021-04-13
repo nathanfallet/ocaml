@@ -172,7 +172,51 @@ class OCamlCourse {
                     done;;
                     """),
             ]),
+        ]),
+        
+        // Functions
+        LearnSequence(title: "sequence_functions", elements: [
+            // Declare a function
+            LearnChapter(title: "chapter_functions_declaration_title", elements: [
+                LearnTitle(content: "chapter_functions_declaration_title"),
+                LearnParagraph(content: "chapter_functions_declaration_intro"),
+                LearnCode(content: """
+                    let multiply a b =
+                        a * b;;
+
+                    let n = multiply 3 4;; (* n = 12 *)
+                    """),
+                LearnParagraph(content: "chapter_functions_declaration_details"),
+                LearnParagraph(content: "chapter_functions_declaration_returns"),
+                LearnParagraph(content: "chapter_functions_declaration_calls"),
+            ]),
             
+            // Function signatures
+            LearnChapter(title: "chapter_function_signature_title", elements: [
+                LearnTitle(content: "chapter_function_signature_title"),
+                LearnParagraph(content: "chapter_function_signature_intro"),
+                LearnCode(content: """
+                    let multiply a b =
+                        a * b;;
+                    """),
+                LearnParagraph(content: "chapter_function_signature_details"),
+                LearnParagraph(content: "chapter_function_signature_auto"),
+            ]),
+            
+            // Recursive functions
+            LearnChapter(title: "chapter_function_recursive_title", elements: [
+                LearnTitle(content: "chapter_function_recursive_title"),
+                LearnParagraph(content: "chapter_function_recursive_intro"),
+                LearnCode(content: """
+                    let rec factorial n =
+                        if n = 0 then 1 else n * (factorial (n-1));;
+                    """),
+                LearnParagraph(content: "chapter_function_recursive_example"),
+            ]),
+        ]),
+        
+        // Collections
+        LearnSequence(title: "sequence_collections", elements: [
             // Arrays
             LearnChapter(title: "chapter_arrays_title", elements: [
                 LearnTitle(content: "chapter_arrays_create"),
@@ -215,6 +259,43 @@ class OCamlCourse {
                 LearnParagraph(content: "chapter_arrays_set_details"),
             ]),
             
+            // Lists
+            LearnChapter(title: "chapter_lists_title", elements: [
+                LearnTitle(content: "chapter_lists_create"),
+                LearnParagraph(content: "chapter_lists_create_intro"),
+                LearnCode(content: """
+                    let list1 = [1; 2; 3; 4];;
+                    let list2 = 1 :: 2 :: 3 :: 4 :: [];;
+                    let list3 = 0 :: list1;; (* [0; 1; 2; 3; 4] *)
+                    """),
+                LearnTitle(content: "chapter_lists_length"),
+                LearnParagraph(content: "chapter_lists_length_intro"),
+                LearnCode(content: """
+                    let list1 = [1; 2; 3; 4];;
+                    let len = List.length list1;; (* len = 4 *)
+                    """),
+                LearnTitle(content: "chapter_lists_get"),
+                LearnParagraph(content: "chapter_lists_get_intro"),
+                LearnCode(content: """
+                    let list1 = [1; 2; 3; 4];;
+                    let head = List.hd list1;; (* head = 1 *)
+                    let tail = List.tl list1;; (* tail = [2; 3; 4] *)
+                    """),
+                LearnParagraph(content: "chapter_lists_match"),
+                LearnCode(content: """
+                    let rec iterate list =
+                        match list with
+                        | [] -> print_newline()
+                        | head :: tail ->
+                            print_int head;
+                            print_string " ";
+                            iterate tail;;
+                    
+                    iterate [1; 2; 3; 4];;
+                    """),
+                LearnParagraph(content: "chapter_lists_interate_details"),
+            ]),
+            
             // Strings
             LearnChapter(title: "chapter_strings_title", elements: [
                 LearnTitle(content: "chapter_strings_character"),
@@ -247,47 +328,6 @@ class OCamlCourse {
                     """),
             ]),
         ]),
-        
-        // Functions
-        LearnSequence(title: "sequence_functions", elements: [
-            // Declare a function
-            LearnChapter(title: "chapter_functions_declaration_title", elements: [
-                LearnTitle(content: "chapter_functions_declaration_title"),
-                LearnParagraph(content: "chapter_functions_declaration_intro"),
-                LearnCode(content: """
-                    let multiply a b =
-                        a * b;;
-
-                    let n = multiply 3 4;; (* n = 12 *)
-                    """),
-                LearnParagraph(content: "chapter_functions_declaration_details"),
-                LearnParagraph(content: "chapter_functions_declaration_returns"),
-                LearnParagraph(content: "chapter_functions_declaration_calls"),
-            ]),
-            
-            // Function signatures
-            LearnChapter(title: "chapter_function_signature_title", elements: [
-                LearnTitle(content: "chapter_function_signature_title"),
-                LearnParagraph(content: "chapter_function_signature_intro"),
-                LearnCode(content: """
-                    let multiply a b =
-                        a * b;;
-                    """),
-                LearnParagraph(content: "chapter_function_signature_details"),
-                LearnParagraph(content: "chapter_function_signature_auto"),
-            ]),
-            
-            // Recursive functions
-            LearnChapter(title: "chapter_function_recursive_title", elements: [
-                LearnTitle(content: "chapter_function_recursive_title"),
-                LearnParagraph(content: "chapter_function_recursive_intro"),
-                LearnCode(content: """
-                    let rec factorial n =
-                        if n = 0 then 1 else n * (factorial (n-1));;
-                    """),
-                LearnParagraph(content: "chapter_function_recursive_example"),
-            ]),
-        ])
     ]
     
 }
