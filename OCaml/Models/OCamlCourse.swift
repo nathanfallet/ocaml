@@ -353,6 +353,19 @@ class OCamlCourse {
                     """),
             ]),
         ]),
+        
+        // Exercices
+        LearnSequence(title: "sequence_exercices", elements: [
+            // Basics
+            LearnChapter(title: "chapter_exercices_basics", elements: [
+                LearnTitle(content: "chapter_exercices_basics"),
+                LearnParagraph(content: "chapter_exercices_basics_function1"),
+                LearnParagraph(content: "chapter_exercices_basics_function2"),
+                LearnTitle(content: "chapter_exercices_arrays"),
+                LearnParagraph(content: "chapter_exercices_arrays_print"),
+                LearnParagraph(content: "chapter_exercices_arrays_sum"),
+            ]),
+        ]),
     ]
     
 }
