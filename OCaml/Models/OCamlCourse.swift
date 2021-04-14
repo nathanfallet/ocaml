@@ -172,6 +172,31 @@ class OCamlCourse {
                     done;;
                     """),
             ]),
+            
+            // Match
+            LearnChapter(title: "chapter_match_title", elements: [
+                LearnTitle(content: "chapter_match_title"),
+                LearnParagraph(content: "chapter_match_intro"),
+                LearnCode(content: """
+                    let i = 10 in
+                    let name = match i with
+                    | 1 -> "1st"
+                    | 2 -> "2nd"
+                    | 3 -> "3rd"
+                    | _ -> (string_of_int i) ^ "th"
+                    in print_string name;;
+                    """),
+                LearnParagraph(content: "chapter_match_intro_details"),
+                LearnTitle(content: "chapter_match_when_title"),
+                LearnParagraph(content: "chapter_match_when_intro"),
+                LearnCode(content: """
+                    let i = 10 in
+                    let p = match i with
+                    | n when n mod 2 = 0 -> "Even"
+                    | _ -> "Odd"
+                    in print_string p;;
+                    """),
+            ]),
         ]),
         
         // Functions

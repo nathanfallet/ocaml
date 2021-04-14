@@ -148,6 +148,11 @@
 "chapter_lists_get_intro" = "As a list is represented by a head and a tail, you can only get the head and the tail of a list.";
 "chapter_lists_match" = "A better way to get the head and the tail of a list is using the match pattern in a recursive function:";
 "chapter_lists_interate_details" = "In this example function, we print the head, and call the function again for the tail. And when the tail is empty, we print a new line and the function stops.";
+"chapter_match_title" = "Match pattern";
+"chapter_match_intro" = "A match pattern allows to match something with different cases:";
+"chapter_match_intro_details" = "In this example, we match the value of i with different patterns: if i matches 1, it returns 1st, ... and the last case, represented by a '_' matches everything else (it is a default case). Note that every possible value should be associated with a case in the pattern matching: it has to be exhaustive.";
+"chapter_match_when_title" = "Match using 'when' keyword";
+"chapter_match_when_intro" = "The 'when' keyword allows to add a condition to a case:";
 /*
  Mac Menu Bar
  */
