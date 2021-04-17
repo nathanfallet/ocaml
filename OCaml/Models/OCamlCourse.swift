@@ -173,77 +173,28 @@ class OCamlCourse {
                     """),
             ]),
             
-            // Arrays
-            LearnChapter(title: "chapter_arrays_title", elements: [
-                LearnTitle(content: "chapter_arrays_create"),
-                LearnParagraph(content: "chapter_arrays_create_intro"),
+            // Match
+            LearnChapter(title: "chapter_match_title", elements: [
+                LearnTitle(content: "chapter_match_title"),
+                LearnParagraph(content: "chapter_match_intro"),
                 LearnCode(content: """
-                    let array1 = [|1; 2; 3; 4|];;
-                    let array2 = Array.make 3 0;; (* [|0; 0; 0|] *)
+                    let i = 10 in
+                    let name = match i with
+                    | 1 -> "1st"
+                    | 2 -> "2nd"
+                    | 3 -> "3rd"
+                    | _ -> (string_of_int i) ^ "th"
+                    in print_string name;;
                     """),
-                LearnTitle(content: "chapter_arrays_length"),
-                LearnParagraph(content: "chapter_arrays_length_intro"),
+                LearnParagraph(content: "chapter_match_intro_details"),
+                LearnTitle(content: "chapter_match_when_title"),
+                LearnParagraph(content: "chapter_match_when_intro"),
                 LearnCode(content: """
-                    let array1 = [|1; 2; 3; 4|];;
-                    let len = Array.length array1;; (* len = 4 *)
-                    """),
-                LearnTitle(content: "chapter_arrays_get"),
-                LearnParagraph(content: "chapter_arrays_get_intro"),
-                LearnCode(content: """
-                    let array1 = [|1; 2; 3; 4|] in
-                    print_int array1.(2);; (* 3 *)
-                    """),
-                LearnParagraph(content: "chapter_arrays_interate"),
-                LearnCode(content: """
-                    let array1 = [|1; 2; 3; 4|] in
-                    let len = Array.length array1 in
-                    for k = 0 to len-1 do
-                        print_int array1.(k)
-                    done;;
-                    """),
-                LearnParagraph(content: "chapter_arrays_interate_details"),
-                LearnTitle(content: "chapter_arrays_set"),
-                LearnParagraph(content: "chapter_arrays_set_intro"),
-                LearnCode(content: """
-                    let array1 = [|1; 2; 3; 4|] in
-                    let len = Array.length array1 in
-                    for k = 0 to len-1 do
-                        array1.(k) <- 2 * array1.(k)
-                    done;;
-                    (* array1 = [|2; 4; 6; 8|] *)
-                    """),
-                LearnParagraph(content: "chapter_arrays_set_details"),
-            ]),
-            
-            // Strings
-            LearnChapter(title: "chapter_strings_title", elements: [
-                LearnTitle(content: "chapter_strings_character"),
-                LearnCode(content: """
-                    let c = 'A';;
-                    """),
-                LearnTitle(content: "chapter_strings_title"),
-                LearnParagraph(content: "chapter_strings_intro"),
-                LearnCode(content: """
-                    let str1 = "Hello world";;
-                    let str2 = String.make 5 'A';;
-                    """),
-                LearnParagraph(content: "chapter_strings_length"),
-                LearnCode(content: """
-                    let str1 = "Hello world";;
-                    let len = String.length str1;; (* len = 11 *)
-                    """),
-                LearnTitle(content: "chapter_strings_get"),
-                LearnParagraph(content: "chapter_strings_get_intro"),
-                LearnCode(content: """
-                    let str1 = "Hello world!";;
-                    let c = str1.[3];; (* c = 'o' *)
-                    """),
-                LearnTitle(content: "chapter_strings_concatenation"),
-                LearnParagraph(content: "chapter_strings_concatenation_intro"),
-                LearnCode(content: """
-                    let name = "Nathan" in
-                    let hello = "Hello " ^ name in
-                    print_endline hello;;
+                    let i = 10 in
+                    let p = match i with
+                    | n when n mod 2 = 0 -> "Even"
+                    | _ -> "Odd"
+                    in print_string p;;
                     """),
             ]),
         ]),
@@ -287,7 +238,137 @@ class OCamlCourse {
                     """),
                 LearnParagraph(content: "chapter_function_recursive_example"),
             ]),
-        ])
+        ]),
+        
+        // Collections
+        LearnSequence(title: "sequence_collections", elements: [
+            // Arrays
+            LearnChapter(title: "chapter_arrays_title", elements: [
+                LearnTitle(content: "chapter_arrays_create"),
+                LearnParagraph(content: "chapter_arrays_create_intro"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|];;
+                    let array2 = Array.make 3 0;; (* [|0; 0; 0|] *)
+                    """),
+                LearnTitle(content: "chapter_arrays_length"),
+                LearnParagraph(content: "chapter_arrays_length_intro"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|];;
+                    let len = Array.length array1;; (* len = 4 *)
+                    """),
+                LearnTitle(content: "chapter_arrays_get"),
+                LearnParagraph(content: "chapter_arrays_get_intro"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|] in
+                    print_int array1.(2);; (* 3 *)
+                    """),
+                LearnParagraph(content: "chapter_arrays_interate"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|] in
+                    let len = Array.length array1 in
+                    for k = 0 to len-1 do
+                        print_int array1.(k)
+                    done;;
+                    """),
+                LearnParagraph(content: "chapter_arrays_interate_details"),
+                LearnTitle(content: "chapter_arrays_set"),
+                LearnParagraph(content: "chapter_arrays_set_intro"),
+                LearnCode(content: """
+                    let array1 = [|1; 2; 3; 4|] in
+                    let len = Array.length array1 in
+                    for k = 0 to len-1 do
+                        array1.(k) <- 2 * array1.(k)
+                    done;;
+                    (* array1 = [|2; 4; 6; 8|] *)
+                    """),
+                LearnParagraph(content: "chapter_arrays_set_details"),
+            ]),
+            
+            // Lists
+            LearnChapter(title: "chapter_lists_title", elements: [
+                LearnTitle(content: "chapter_lists_create"),
+                LearnParagraph(content: "chapter_lists_create_intro"),
+                LearnCode(content: """
+                    let list1 = [1; 2; 3; 4];;
+                    let list2 = 1 :: 2 :: 3 :: 4 :: [];;
+                    let list3 = 0 :: list1;; (* [0; 1; 2; 3; 4] *)
+                    """),
+                LearnTitle(content: "chapter_lists_length"),
+                LearnParagraph(content: "chapter_lists_length_intro"),
+                LearnCode(content: """
+                    let list1 = [1; 2; 3; 4];;
+                    let len = List.length list1;; (* len = 4 *)
+                    """),
+                LearnTitle(content: "chapter_lists_get"),
+                LearnParagraph(content: "chapter_lists_get_intro"),
+                LearnCode(content: """
+                    let list1 = [1; 2; 3; 4];;
+                    let head = List.hd list1;; (* head = 1 *)
+                    let tail = List.tl list1;; (* tail = [2; 3; 4] *)
+                    """),
+                LearnParagraph(content: "chapter_lists_match"),
+                LearnCode(content: """
+                    let rec iterate list =
+                        match list with
+                        | [] -> print_newline()
+                        | head :: tail ->
+                            print_int head;
+                            print_string " ";
+                            iterate tail;;
+                    
+                    iterate [1; 2; 3; 4];;
+                    """),
+                LearnParagraph(content: "chapter_lists_interate_details"),
+            ]),
+            
+            // Strings
+            LearnChapter(title: "chapter_strings_title", elements: [
+                LearnTitle(content: "chapter_strings_character"),
+                LearnCode(content: """
+                    let c = 'A';;
+                    """),
+                LearnTitle(content: "chapter_strings_title"),
+                LearnParagraph(content: "chapter_strings_intro"),
+                LearnCode(content: """
+                    let str1 = "Hello world";;
+                    let str2 = String.make 5 'A';;
+                    """),
+                LearnParagraph(content: "chapter_strings_length"),
+                LearnCode(content: """
+                    let str1 = "Hello world";;
+                    let len = String.length str1;; (* len = 11 *)
+                    """),
+                LearnTitle(content: "chapter_strings_get"),
+                LearnParagraph(content: "chapter_strings_get_intro"),
+                LearnCode(content: """
+                    let str1 = "Hello world!";;
+                    let c = str1.[3];; (* c = 'o' *)
+                    """),
+                LearnTitle(content: "chapter_strings_concatenation"),
+                LearnParagraph(content: "chapter_strings_concatenation_intro"),
+                LearnCode(content: """
+                    let name = "Nathan" in
+                    let hello = "Hello " ^ name in
+                    print_endline hello;;
+                    """),
+            ]),
+        ]),
+        
+        // Exercices
+        LearnSequence(title: "sequence_exercices", elements: [
+            // Basics
+            LearnChapter(title: "chapter_exercices_basics", elements: [
+                LearnTitle(content: "chapter_exercices_basics"),
+                LearnParagraph(content: "chapter_exercices_basics_function1"),
+                LearnParagraph(content: "chapter_exercices_basics_function2"),
+                LearnTitle(content: "chapter_exercices_arrays"),
+                LearnParagraph(content: "chapter_exercices_arrays_print"),
+                LearnParagraph(content: "chapter_exercices_arrays_sum"),
+                LearnTitle(content: "chapter_exercices_lists"),
+                LearnParagraph(content: "chapter_exercices_lists_arrays"),
+                LearnParagraph(content: "chapter_exercices_lists_filter"),
+            ]),
+        ]),
     ]
     
 }
