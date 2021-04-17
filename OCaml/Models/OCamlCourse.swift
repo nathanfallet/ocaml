@@ -364,6 +364,9 @@ class OCamlCourse {
                 LearnTitle(content: "chapter_exercices_arrays"),
                 LearnParagraph(content: "chapter_exercices_arrays_print"),
                 LearnParagraph(content: "chapter_exercices_arrays_sum"),
+                LearnTitle(content: "chapter_exercices_lists"),
+                LearnParagraph(content: "chapter_exercices_lists_arrays"),
+                LearnParagraph(content: "chapter_exercices_lists_filter"),
             ]),
         ]),
     ]

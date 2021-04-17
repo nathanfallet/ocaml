@@ -160,6 +160,9 @@
 "chapter_exercices_arrays" = "Arrays";
 "chapter_exercices_arrays_print" = "Write a function 'print_int_array' of type 'int array -> unit', which prints elements of an integer array, separated by '\\t'.";
 "chapter_exercices_arrays_sum" = "Write a function 'sum' of type 'int array -> int', which returns the sum of all elements of the array.";
+"chapter_exercices_lists" = "Lists";
+"chapter_exercices_lists_arrays" = "Write a function 'print_int_list' and a function 'sum' with the same goal but for lists.";
+"chapter_exercices_lists_filter" = "Write a function 'filter' of type '('a -> bool) -> 'a list -> 'a list', which takes a function (which takes an element of the list and returns true if the element should be kept) and a list.";
 /*
  Mac Menu Bar
  */
