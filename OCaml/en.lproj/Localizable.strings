@@ -34,6 +34,8 @@
 "button_ok" = "OK";
 "error" = "Error while compiling code";
 "error_unknown" = "Unknown error";
+"file_error" = "Error while opening the file";
+"file_error_description" = "Something went wring while opening the file. Maybe you don't have the right to read it?";
 "console_failed" = "Failed to load console";
 "button_cancel" = "Cancel";
 "button_close" = "Close";

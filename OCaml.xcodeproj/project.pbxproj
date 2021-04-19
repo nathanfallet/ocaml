@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0FA189262C1CB6002D3AA8 /* OCamlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */; };
+		6A0FA18F262C1CE6002D3AA8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FA18B262C1CE6002D3AA8 /* LICENSE */; };
+		6A0FA190262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FA18C262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md */; };
+		6A0FA191262C1CE6002D3AA8 /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FA18D262C1CE6002D3AA8 /* CONTRIBUTING.md */; };
+		6A0FA192262C1CE6002D3AA8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FA18E262C1CE6002D3AA8 /* README.md */; };
 		6A187EBF25ECFB9600645721 /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A187EBE25ECFB9600645721 /* AppTableViewCell.swift */; };
 		6A292A4725ED1303008053D3 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4625ED1303008053D3 /* IntExtension.swift */; };
 		6A292A4A25ED13D5008053D3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4925ED13D5008053D3 /* UIColorExtension.swift */; };
@@ -45,6 +50,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlFile.swift; sourceTree = "<group>"; };
+		6A0FA18B262C1CE6002D3AA8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6A0FA18C262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		6A0FA18D262C1CE6002D3AA8 /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
+		6A0FA18E262C1CE6002D3AA8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6A187EBE25ECFB9600645721 /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
 		6A292A4625ED1303008053D3 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		6A292A4925ED13D5008053D3 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -100,6 +110,10 @@
 		6A83942A25A4CF9A0033FA88 = {
 			isa = PBXGroup;
 			children = (
+				6A0FA18C262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md */,
+				6A0FA18D262C1CE6002D3AA8 /* CONTRIBUTING.md */,
+				6A0FA18B262C1CE6002D3AA8 /* LICENSE */,
+				6A0FA18E262C1CE6002D3AA8 /* README.md */,
 				6A83943525A4CF9A0033FA88 /* OCaml */,
 				6A83943425A4CF9A0033FA88 /* Products */,
 			);
@@ -179,8 +193,9 @@
 			children = (
 				6A83946B25A4D9910033FA88 /* CustomTheme.swift */,
 				6A43E13525A5266A0067B166 /* LearnModel.swift */,
-				6A83946825A4D7320033FA88 /* OCamlLexer.swift */,
 				6A43E13925A526FA0067B166 /* OCamlCourse.swift */,
+				6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */,
+				6A83946825A4D7320033FA88 /* OCamlLexer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,10 +278,14 @@
 			files = (
 				6AA55ACF261097AF0021436C /* bootstrap.min.css in Resources */,
 				6AA55AD0261097AF0021436C /* toplevel.js in Resources */,
+				6A0FA192262C1CE6002D3AA8 /* README.md in Resources */,
+				6A0FA191262C1CE6002D3AA8 /* CONTRIBUTING.md in Resources */,
 				6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */,
+				6A0FA18F262C1CE6002D3AA8 /* LICENSE in Resources */,
 				6AA55ACE261097AF0021436C /* index.html in Resources */,
 				6A35DC1425ECE8BA0092B6CA /* Localizable.strings in Resources */,
 				6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */,
+				6A0FA190262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +322,7 @@
 				6AF779DC2620508300B6A820 /* OpenSourceTableViewController.swift in Sources */,
 				6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */,
 				6A43E13F25A528CD0067B166 /* LearnModel.swift in Sources */,
+				6A0FA189262C1CB6002D3AA8 /* OCamlFile.swift in Sources */,
 				6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

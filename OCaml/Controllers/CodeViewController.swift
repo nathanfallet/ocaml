@@ -27,15 +27,38 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     // Views
     let editor = CustomSyntaxTextView()
     
-    // File properties
-    var currentFile: URL? { didSet { updateTitle() }}
-    var edited = false { didSet { updateTitle() }}
-    var loading = true
+    // Opened files
+    var files = [OCamlFile]()
+    var currentIndex: Int? {
+        didSet {
+            currentIndexChanged()
+        }
+    }
+    
+    // Status management
     var opening = false
     var saving = false
     
     // Delegate
     weak var delegate: CodeExecutorDelegate?
+    
+    // Current file
+    var currentFile: OCamlFile {
+        // Check index
+        if let index = currentIndex {
+            // Return current file
+            return files[index]
+        } else {
+            // Create a file if needed
+            if files.isEmpty {
+                files.append(OCamlFile())
+            }
+            
+            // Set index to zero
+            currentIndex = 0
+            return files[0]
+        }
+    }
 
     // Load view
     override func viewDidLoad() {
@@ -80,9 +103,19 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
         CustomTheme.shared.loadColors()
     }
     
+    // Selected file changed
+    func currentIndexChanged() {
+        // First update the title
+        updateTitle()
+        
+        // Then update editor content
+        editor.text = currentFile.source
+    }
+    
     // Update title
     func updateTitle() {
-        navigationItem.title = (currentFile?.lastPathComponent ?? "code".localized()) + (edited ? " (*)" : "")
+        // Title from file
+        navigationItem.title = (currentFile.name ?? "code".localized()) + (currentFile.edited ? " (*)" : "")
     }
     
     // Give the OCaml lexer
@@ -92,26 +125,20 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     
     // Listen for content change
     func didChangeText(_ syntaxTextView: SyntaxTextView) {
-        // Check for loading
-        if loading {
-            // Mark as loaded
-            self.loading = false
-        } else {
-            // Mark as edited
-            self.edited = true
-        }
+        // Update file with source code
+        currentFile.update(source: syntaxTextView.text)
+        
+        // Also update the title
+        updateTitle()
     }
     
     // Execute content (play button)
     @objc func execute(_ sender: Any) {
-        // Get source code
-        let source = self.editor.text
-        
         // Disable button while compiling
         //navigationItem.rightBarButtonItem?.isEnabled = false
         
         // Compile it
-        delegate?.execute(source, show: true) {
+        delegate?.execute(currentFile.source, show: true) {
             // Enable back button
             //self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
@@ -136,21 +163,16 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     // Save button
     @objc func save(_ sender: Any) {
         // Check if a file is opened
-        if let currentFile = currentFile {
-            // Start accessing a security-scoped resource.
-            let _ = currentFile.startAccessingSecurityScopedResource()
-            defer { currentFile.stopAccessingSecurityScopedResource() }
-            
-            // Save file content
-            try? editor.text.write(to: currentFile, atomically: true, encoding: .utf8)
-            self.edited = false
+        if currentFile.save() {
+            // Update the title
+            updateTitle()
             
             // Check to ask for a review
-            self.checkForReview()
+            checkForReview()
         } else {
             // Save document in temp folder
             let file = FileManager.default.temporaryDirectory.appendingPathComponent("source.ml")
-            try? editor.text.write(to: file, atomically: true, encoding: .utf8)
+            try? currentFile.source.write(to: file, atomically: true, encoding: .utf8)
             
             // Create a document picker
             let picker = UIDocumentPickerViewController(forExporting: [file])
@@ -166,41 +188,42 @@ class CodeViewController: UIViewController, UIDocumentPickerDelegate, SyntaxText
     
     // Close button
     @objc func close(_ sender: Any) {
-        // Clear source code
-        self.loading = true
-        self.edited = false
-        self.editor.text = ""
-        
         // Close current file
-        self.currentFile = nil
+        if let index = currentIndex {
+            // Remove the file at this index
+            files.remove(at: index)
+            
+            // Reset index
+            currentIndex = nil
+        }
     }
     
     // Open file from url
     func openFile(url: URL) {
-        // Start accessing a security-scoped resource.
-        let _ = url.startAccessingSecurityScopedResource()
-        defer { url.stopAccessingSecurityScopedResource() }
-        
-        // Get URL
-        self.currentFile = url
-        
-        // Open file in editor
-        self.loading = true
-        self.editor.text = (try? String(contentsOf: url)) ?? ""
-        self.edited = false
-        self.opening = false
+        // Open file
+        let file = OCamlFile()
+        if file.load(from: url) {
+            // File loaded
+            files.append(file)
+            currentIndex = files.count - 1
+        } else {
+            // Error while opening file
+            let alert = UIAlertController(title: "file_error".localized(), message: "file_error_description".localized(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "button_ok".localized(), style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     // Save file to URL
     func saveFile(to url: URL) {
-        // Start accessing a security-scoped resource.
-        let _ = url.startAccessingSecurityScopedResource()
-        defer { url.stopAccessingSecurityScopedResource() }
+        // Set URL to file
+        currentFile.url = url
         
-        // Save URL
-        self.currentFile = url
-        self.edited = false
-        self.saving = false
+        // And save the file
+        currentFile.save()
+        
+        // Update the title
+        updateTitle()
     }
     
     // Handle selected file

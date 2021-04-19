@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // If file comes from AirDrop, move it
         if url.deletingLastPathComponent().lastPathComponent == "Inbox" {
-            let newURL = url.deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("airdrop-" + url.lastPathComponent)
+            let newURL = url.deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("imported-" + url.lastPathComponent)
             let _ = try? FileManager.default.moveItem(at: url, to: newURL)
             url = newURL
         }

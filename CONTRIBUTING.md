@@ -65,6 +65,7 @@ This folder contains the toplevel itself, built with `js_of_ocaml`. Changes in t
 Here are some models for the app to work.
 
 * `CustomTheme` and `OCamlLexer` are dedicated to the code editor, providing code highlight.
+* `OCamlFile` represents a file opened in the editor. 
 * `LearnModel` provides the structures for the course content.
 * `OCamlCourse.swift` is the registry for the content of the Learn section.
 
