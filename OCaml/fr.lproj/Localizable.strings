@@ -167,3 +167,5 @@
 "chapter_lists_create_intro" = "Une liste est un ensemble d'éléments. Elle est représentée par une tête, le premier élément de la liste, et une queue, une autre liste qui contient les autres éléments. Une liste peut être déclarée comme un tableau, avec des '[' et ']', ou en joignant une tête et une queue avec des '::'.";
 "chapter_lists_create" = "Créer une liste";
 "chapter_lists_title" = "Listes";
+"file_error_description" = "Quelque chose s'est mal passé en ouvrant le fichier. Peut être que vous n'avez pas le droit de le lire ?";
+"file_error" = "Erreur lors de l'ouverture du fichier";
