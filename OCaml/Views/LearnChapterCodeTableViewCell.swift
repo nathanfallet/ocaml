@@ -25,6 +25,7 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell {
     static var identifier: String { return "codeCell" }
 
     var box = CustomSyntaxTextView()
+    var copy = UIButton(type: .custom)
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,6 +33,7 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell {
         selectionStyle = .none
         
         contentView.addSubview(box)
+        contentView.addSubview(copy)
         
         box.setup()
         box.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +46,12 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell {
         box.clipsToBounds = true
         box.layer.cornerRadius = 8
         box.shouldAddMargin = false
+        
+        copy.translatesAutoresizingMaskIntoConstraints = false
+        copy.trailingAnchor.constraint(equalTo: box.trailingAnchor, constant: -10).isActive = true
+        copy.topAnchor.constraint(equalTo: box.topAnchor, constant: 10).isActive = true
+        copy.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
+        copy.addTarget(self, action: #selector(copyCode(_:)), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,6 +64,10 @@ class LearnChapterCodeTableViewCell: UITableViewCell, LearnChapterCell {
         }
         
         return self
+    }
+    
+    @objc func copyCode(_ sender: UIButton) {
+        UIPasteboard.general.string = box.text
     }
 
 }

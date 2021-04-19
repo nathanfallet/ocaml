@@ -29,7 +29,7 @@ class CustomSyntaxTextView: SyntaxTextView, SyntaxTextViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        contentInset = .init(top: margin, left: 0, bottom: margin, right: 0)
+        contentInset = .init(top: margin, left: 0, bottom: margin, right: 40)
         
         delegate = self
         theme = CustomTheme.shared
