@@ -7,46 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A0FA189262C1CB6002D3AA8 /* OCamlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */; };
-		6A0FA18F262C1CE6002D3AA8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FA18B262C1CE6002D3AA8 /* LICENSE */; };
-		6A0FA190262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FA18C262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md */; };
-		6A0FA191262C1CE6002D3AA8 /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FA18D262C1CE6002D3AA8 /* CONTRIBUTING.md */; };
-		6A0FA192262C1CE6002D3AA8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FA18E262C1CE6002D3AA8 /* README.md */; };
-		6A187EBF25ECFB9600645721 /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A187EBE25ECFB9600645721 /* AppTableViewCell.swift */; };
-		6A292A4725ED1303008053D3 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4625ED1303008053D3 /* IntExtension.swift */; };
-		6A292A4A25ED13D5008053D3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4925ED13D5008053D3 /* UIColorExtension.swift */; };
-		6A292A4D25ED18B9008053D3 /* EditorColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4C25ED18B9008053D3 /* EditorColorTableViewCell.swift */; };
-		6A35DC1425ECE8BA0092B6CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A35DC1625ECE8BA0092B6CA /* Localizable.strings */; };
-		6A35DC1B25ECEC0A0092B6CA /* LearnSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35DC1A25ECEC0A0092B6CA /* LearnSplitViewController.swift */; };
-		6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */; };
-		6A43E12325A51E5C0067B166 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */; };
-		6A43E12825A51FE70067B166 /* DonateViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 6A43E12725A51FE70067B166 /* DonateViewController */; };
-		6A43E12B25A51FFB0067B166 /* CustomDonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E12A25A51FFB0067B166 /* CustomDonateViewController.swift */; };
-		6A43E12F25A520890067B166 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E12E25A520890067B166 /* LabelTableViewCell.swift */; };
-		6A43E13325A524280067B166 /* LearnTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13225A524280067B166 /* LearnTableViewController.swift */; };
-		6A43E13A25A526FA0067B166 /* OCamlCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13925A526FA0067B166 /* OCamlCourse.swift */; };
-		6A43E13F25A528CD0067B166 /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13525A5266A0067B166 /* LearnModel.swift */; };
-		6A48F54825FA4FD800FF9BF5 /* CodeSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48F54725FA4FD800FF9BF5 /* CodeSplitViewController.swift */; };
-		6A83943725A4CF9A0033FA88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83943625A4CF9A0033FA88 /* AppDelegate.swift */; };
-		6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A83943F25A4CF9D0033FA88 /* Assets.xcassets */; };
-		6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */; };
-		6A83944D25A4D1B70033FA88 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6A83944C25A4D1B70033FA88 /* Sourceful */; };
-		6A83945925A4D29E0033FA88 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945825A4D29E0033FA88 /* TabBarController.swift */; };
-		6A83945C25A4D3240033FA88 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945B25A4D3240033FA88 /* CodeViewController.swift */; };
-		6A83946025A4D4190033FA88 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945F25A4D4190033FA88 /* StringExtension.swift */; };
-		6A83946625A4D5090033FA88 /* CustomSyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */; };
-		6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946825A4D7320033FA88 /* OCamlLexer.swift */; };
-		6A83946C25A4D9910033FA88 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946B25A4D9910033FA88 /* CustomTheme.swift */; };
-		6AA55ACE261097AF0021436C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACB261097AF0021436C /* index.html */; };
-		6AA55ACF261097AF0021436C /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACC261097AF0021436C /* bootstrap.min.css */; };
-		6AA55AD0261097AF0021436C /* toplevel.js in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACD261097AF0021436C /* toplevel.js */; };
-		6AEE7C1225A646F700D6D266 /* LearnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1125A646F700D6D266 /* LearnTableViewCell.swift */; };
-		6AEE7C1525A64FED00D6D266 /* LearnChapterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1425A64FED00D6D266 /* LearnChapterTableViewController.swift */; };
-		6AEE7C1925A6533400D6D266 /* LearnChapterTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1825A6533400D6D266 /* LearnChapterTitleTableViewCell.swift */; };
-		6AEE7C1D25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1C25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift */; };
-		6AEE7C2025A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE7C1F25A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift */; };
-		6AF779DC2620508300B6A820 /* OpenSourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF779DB2620508300B6A820 /* OpenSourceTableViewController.swift */; };
-		6AF779E3262057CC00B6A820 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF779E2262057CC00B6A820 /* URLImageView.swift */; };
+		6A6562352634B3270064DD6C /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6562342634B3270064DD6C /* Sourceful */; };
+		6A65623A2634B3430064DD6C /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D826349BF5006BF4FE /* CodeEditorView.swift */; };
+		6A65623D2634B3460064DD6C /* ChapterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D426348DE6006BF4FE /* ChapterCardView.swift */; };
+		6A6562402634B3490064DD6C /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850DC26349DC1006BF4FE /* ChapterView.swift */; };
+		6A6562442634B5BA0064DD6C /* EditorColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562432634B5BA0064DD6C /* EditorColorView.swift */; };
+		6A6562452634B5BA0064DD6C /* EditorColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562432634B5BA0064DD6C /* EditorColorView.swift */; };
+		6A6562492634BE870064DD6C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562482634BE870064DD6C /* AppView.swift */; };
+		6A65624A2634BE880064DD6C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562482634BE870064DD6C /* AppView.swift */; };
+		6A6562572634CAEF0064DD6C /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562562634CAEF0064DD6C /* OpenSourceView.swift */; };
+		6A6562582634CAEF0064DD6C /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562562634CAEF0064DD6C /* OpenSourceView.swift */; };
+		6A65625C2634CB280064DD6C /* OpenSourceRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65625B2634CB280064DD6C /* OpenSourceRepositoryView.swift */; };
+		6A65625D2634CB280064DD6C /* OpenSourceRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65625B2634CB280064DD6C /* OpenSourceRepositoryView.swift */; };
+		6A6562622634CBC20064DD6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6562612634CBC20064DD6C /* Kingfisher */; };
+		6A6562662634CBCA0064DD6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6562652634CBCA0064DD6C /* Kingfisher */; };
+		6AE8503426347B77006BF4FE /* OCamlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8502226347B76006BF4FE /* OCamlApp.swift */; };
+		6AE8503526347B77006BF4FE /* OCamlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8502226347B76006BF4FE /* OCamlApp.swift */; };
+		6AE8503826347B77006BF4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AE8502426347B77006BF4FE /* Assets.xcassets */; };
+		6AE8503926347B77006BF4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AE8502426347B77006BF4FE /* Assets.xcassets */; };
+		6AE8504426347D44006BF4FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A35DC1625ECE8BA0092B6CA /* Localizable.strings */; };
+		6AE8504726347D45006BF4FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A35DC1625ECE8BA0092B6CA /* Localizable.strings */; };
+		6AE8504C26347ECC006BF4FE /* OCamlLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946825A4D7320033FA88 /* OCamlLexer.swift */; };
+		6AE8504D26347ECC006BF4FE /* OCamlCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13925A526FA0067B166 /* OCamlCourse.swift */; };
+		6AE8504E26347ECC006BF4FE /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13525A5266A0067B166 /* LearnModel.swift */; };
+		6AE8504F26347ECC006BF4FE /* OCamlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */; };
+		6AE8505026347ECC006BF4FE /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946B25A4D9910033FA88 /* CustomTheme.swift */; };
+		6AE8505326347ECD006BF4FE /* OCamlLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946825A4D7320033FA88 /* OCamlLexer.swift */; };
+		6AE8505426347ECD006BF4FE /* OCamlCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13925A526FA0067B166 /* OCamlCourse.swift */; };
+		6AE8505526347ECD006BF4FE /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13525A5266A0067B166 /* LearnModel.swift */; };
+		6AE8505626347ECD006BF4FE /* OCamlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */; };
+		6AE8505A26347F11006BF4FE /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACC261097AF0021436C /* bootstrap.min.css */; };
+		6AE8505B26347F11006BF4FE /* toplevel.js in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACD261097AF0021436C /* toplevel.js */; };
+		6AE8505C26347F11006BF4FE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACB261097AF0021436C /* index.html */; };
+		6AE8505F26347F12006BF4FE /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACC261097AF0021436C /* bootstrap.min.css */; };
+		6AE8506026347F12006BF4FE /* toplevel.js in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACD261097AF0021436C /* toplevel.js */; };
+		6AE8506126347F12006BF4FE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACB261097AF0021436C /* index.html */; };
+		6AE8506426347F22006BF4FE /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4625ED1303008053D3 /* IntExtension.swift */; };
+		6AE8506526347F22006BF4FE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4925ED13D5008053D3 /* ColorExtension.swift */; };
+		6AE8506626347F22006BF4FE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945F25A4D4190033FA88 /* StringExtension.swift */; };
+		6AE8506926347F23006BF4FE /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4625ED1303008053D3 /* IntExtension.swift */; };
+		6AE8506A26347F23006BF4FE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4925ED13D5008053D3 /* ColorExtension.swift */; };
+		6AE8506B26347F23006BF4FE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945F25A4D4190033FA88 /* StringExtension.swift */; };
+		6AE8507226348030006BF4FE /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946B25A4D9910033FA88 /* CustomTheme.swift */; };
+		6AE8507B26348213006BF4FE /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8507A26348213006BF4FE /* LearnView.swift */; };
+		6AE850842634824D006BF4FE /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850832634824D006BF4FE /* CodeView.swift */; };
+		6AE8508A26348257006BF4FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8508926348257006BF4FE /* SettingsView.swift */; };
+		6AE8508D26348356006BF4FE /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850832634824D006BF4FE /* CodeView.swift */; };
+		6AE850902634835B006BF4FE /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8507A26348213006BF4FE /* LearnView.swift */; };
+		6AE850932634835E006BF4FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8508926348257006BF4FE /* SettingsView.swift */; };
+		6AE8509F26348743006BF4FE /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6AE8509E26348743006BF4FE /* Sourceful */; };
+		6AE850D526348DE6006BF4FE /* ChapterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D426348DE6006BF4FE /* ChapterCardView.swift */; };
+		6AE850D926349BF5006BF4FE /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D826349BF5006BF4FE /* CodeEditorView.swift */; };
+		6AE850DD26349DC1006BF4FE /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850DC26349DC1006BF4FE /* ChapterView.swift */; };
+		6AEE525926356E9300F54038 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE525826356E9300F54038 /* SplitView.swift */; };
+		6AEE525A26356E9300F54038 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE525826356E9300F54038 /* SplitView.swift */; };
+		6AFBF1002636C5CB00A55FFF /* ConsoleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBF0FF2636C5CB00A55FFF /* ConsoleViewModel.swift */; };
+		6AFBF1012636C5CB00A55FFF /* ConsoleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBF0FF2636C5CB00A55FFF /* ConsoleViewModel.swift */; };
+		6AFBF10E2637027000A55FFF /* DonateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBF10D2637027000A55FFF /* DonateView.swift */; };
+		6AFBF10F2637027000A55FFF /* DonateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBF10D2637027000A55FFF /* DonateView.swift */; };
+		6AFDC82E2635AB0E0050FA59 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDC82D2635AB0E0050FA59 /* ConsoleView.swift */; };
+		6AFDC82F2635AB0E0050FA59 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDC82D2635AB0E0050FA59 /* ConsoleView.swift */; };
+		6AFDC8352635AEE20050FA59 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDC8342635AEE20050FA59 /* ViewExtension.swift */; };
+		6AFDC8362635AEE20050FA59 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDC8342635AEE20050FA59 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,58 +77,71 @@
 		6A0FA18C262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		6A0FA18D262C1CE6002D3AA8 /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		6A0FA18E262C1CE6002D3AA8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		6A187EBE25ECFB9600645721 /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
 		6A292A4625ED1303008053D3 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
-		6A292A4925ED13D5008053D3 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		6A292A4C25ED18B9008053D3 /* EditorColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorColorTableViewCell.swift; sourceTree = "<group>"; };
+		6A292A4925ED13D5008053D3 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		6A35DC1525ECE8BA0092B6CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A35DC1825ECE8CC0092B6CA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		6A35DC1A25ECEC0A0092B6CA /* LearnSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSplitViewController.swift; sourceTree = "<group>"; };
-		6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
-		6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		6A43E12A25A51FFB0067B166 /* CustomDonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDonateViewController.swift; sourceTree = "<group>"; };
-		6A43E12E25A520890067B166 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
-		6A43E13225A524280067B166 /* LearnTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTableViewController.swift; sourceTree = "<group>"; };
 		6A43E13525A5266A0067B166 /* LearnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnModel.swift; sourceTree = "<group>"; };
 		6A43E13925A526FA0067B166 /* OCamlCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlCourse.swift; sourceTree = "<group>"; };
-		6A48F54725FA4FD800FF9BF5 /* CodeSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSplitViewController.swift; sourceTree = "<group>"; };
-		6A83943325A4CF9A0033FA88 /* OCaml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCaml.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A83943625A4CF9A0033FA88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A83943F25A4CF9D0033FA88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6A83944225A4CF9D0033FA88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6A83944425A4CF9D0033FA88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A83945825A4D29E0033FA88 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		6A83945B25A4D3240033FA88 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		6A6562432634B5BA0064DD6C /* EditorColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorColorView.swift; sourceTree = "<group>"; };
+		6A6562482634BE870064DD6C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		6A6562562634CAEF0064DD6C /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
+		6A65625B2634CB280064DD6C /* OpenSourceRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceRepositoryView.swift; sourceTree = "<group>"; };
 		6A83945F25A4D4190033FA88 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSyntaxTextView.swift; sourceTree = "<group>"; };
 		6A83946825A4D7320033FA88 /* OCamlLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlLexer.swift; sourceTree = "<group>"; };
 		6A83946B25A4D9910033FA88 /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
-		6A83947325A4DD600033FA88 /* OCaml.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCaml.entitlements; sourceTree = "<group>"; };
 		6AA55ACB261097AF0021436C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		6AA55ACC261097AF0021436C /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
 		6AA55ACD261097AF0021436C /* toplevel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = toplevel.js; sourceTree = "<group>"; };
-		6AEE7C1125A646F700D6D266 /* LearnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTableViewCell.swift; sourceTree = "<group>"; };
-		6AEE7C1425A64FED00D6D266 /* LearnChapterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterTableViewController.swift; sourceTree = "<group>"; };
-		6AEE7C1825A6533400D6D266 /* LearnChapterTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterTitleTableViewCell.swift; sourceTree = "<group>"; };
-		6AEE7C1C25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterParagraphTableViewCell.swift; sourceTree = "<group>"; };
-		6AEE7C1F25A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChapterCodeTableViewCell.swift; sourceTree = "<group>"; };
-		6AF779DB2620508300B6A820 /* OpenSourceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceTableViewController.swift; sourceTree = "<group>"; };
-		6AF779E2262057CC00B6A820 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		6AE8502226347B76006BF4FE /* OCamlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlApp.swift; sourceTree = "<group>"; };
+		6AE8502426347B77006BF4FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AE8502926347B77006BF4FE /* OCaml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCaml.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE8502B26347B77006BF4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AE8503026347B77006BF4FE /* OCaml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCaml.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE8503226347B77006BF4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AE8503326347B77006BF4FE /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		6AE8507A26348213006BF4FE /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		6AE850832634824D006BF4FE /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		6AE8508926348257006BF4FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6AE850D426348DE6006BF4FE /* ChapterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterCardView.swift; sourceTree = "<group>"; };
+		6AE850D826349BF5006BF4FE /* CodeEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorView.swift; sourceTree = "<group>"; };
+		6AE850DC26349DC1006BF4FE /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
+		6AEE525826356E9300F54038 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
+		6AFBF0FF2636C5CB00A55FFF /* ConsoleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewModel.swift; sourceTree = "<group>"; };
+		6AFBF10D2637027000A55FFF /* DonateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateView.swift; sourceTree = "<group>"; };
+		6AFDC82D2635AB0E0050FA59 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
+		6AFDC8342635AEE20050FA59 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6A83943025A4CF9A0033FA88 /* Frameworks */ = {
+		6AE8502626347B77006BF4FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A43E12825A51FE70067B166 /* DonateViewController in Frameworks */,
-				6A83944D25A4D1B70033FA88 /* Sourceful in Frameworks */,
+				6A6562622634CBC20064DD6C /* Kingfisher in Frameworks */,
+				6AE8509F26348743006BF4FE /* Sourceful in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AE8502D26347B77006BF4FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A6562662634CBCA0064DD6C /* Kingfisher in Frameworks */,
+				6A6562352634B3270064DD6C /* Sourceful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A6562332634B3270064DD6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6A83942A25A4CF9A0033FA88 = {
 			isa = PBXGroup;
 			children = (
@@ -114,35 +149,21 @@
 				6A0FA18D262C1CE6002D3AA8 /* CONTRIBUTING.md */,
 				6A0FA18B262C1CE6002D3AA8 /* LICENSE */,
 				6A0FA18E262C1CE6002D3AA8 /* README.md */,
-				6A83943525A4CF9A0033FA88 /* OCaml */,
+				6AE8502126347B76006BF4FE /* Shared */,
+				6AE8502A26347B77006BF4FE /* iOS */,
+				6AE8503126347B77006BF4FE /* macOS */,
 				6A83943425A4CF9A0033FA88 /* Products */,
+				6A6562332634B3270064DD6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		6A83943425A4CF9A0033FA88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A83943325A4CF9A0033FA88 /* OCaml.app */,
+				6AE8502926347B77006BF4FE /* OCaml.app */,
+				6AE8503026347B77006BF4FE /* OCaml.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		6A83943525A4CF9A0033FA88 /* OCaml */ = {
-			isa = PBXGroup;
-			children = (
-				6A83945125A4D1CD0033FA88 /* Controllers */,
-				6A83944F25A4D1C50033FA88 /* Extensions */,
-				6A83947125A4DABD0033FA88 /* JavaScript */,
-				6A83945325A4D1DE0033FA88 /* Models */,
-				6A83945225A4D1D80033FA88 /* Views */,
-				6A83943625A4CF9A0033FA88 /* AppDelegate.swift */,
-				6A83943F25A4CF9D0033FA88 /* Assets.xcassets */,
-				6A83947325A4DD600033FA88 /* OCaml.entitlements */,
-				6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */,
-				6A83944425A4CF9D0033FA88 /* Info.plist */,
-				6A35DC1625ECE8BA0092B6CA /* Localizable.strings */,
-			);
-			path = OCaml;
 			sourceTree = "<group>";
 		};
 		6A83944F25A4D1C50033FA88 /* Extensions */ = {
@@ -150,42 +171,10 @@
 			children = (
 				6A292A4625ED1303008053D3 /* IntExtension.swift */,
 				6A83945F25A4D4190033FA88 /* StringExtension.swift */,
-				6A292A4925ED13D5008053D3 /* UIColorExtension.swift */,
+				6A292A4925ED13D5008053D3 /* ColorExtension.swift */,
+				6AFDC8342635AEE20050FA59 /* ViewExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6A83945125A4D1CD0033FA88 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				6A83945B25A4D3240033FA88 /* CodeViewController.swift */,
-				6A48F54725FA4FD800FF9BF5 /* CodeSplitViewController.swift */,
-				6A43E11E25A50E8F0067B166 /* ConsoleViewController.swift */,
-				6A43E12A25A51FFB0067B166 /* CustomDonateViewController.swift */,
-				6AEE7C1425A64FED00D6D266 /* LearnChapterTableViewController.swift */,
-				6A43E13225A524280067B166 /* LearnTableViewController.swift */,
-				6A35DC1A25ECEC0A0092B6CA /* LearnSplitViewController.swift */,
-				6AF779DB2620508300B6A820 /* OpenSourceTableViewController.swift */,
-				6A43E12225A51E5C0067B166 /* SettingsTableViewController.swift */,
-				6A83945825A4D29E0033FA88 /* TabBarController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		6A83945225A4D1D80033FA88 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				6A187EBE25ECFB9600645721 /* AppTableViewCell.swift */,
-				6A83946525A4D5090033FA88 /* CustomSyntaxTextView.swift */,
-				6A292A4C25ED18B9008053D3 /* EditorColorTableViewCell.swift */,
-				6AEE7C1F25A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift */,
-				6AEE7C1825A6533400D6D266 /* LearnChapterTitleTableViewCell.swift */,
-				6AEE7C1C25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift */,
-				6A43E12E25A520890067B166 /* LabelTableViewCell.swift */,
-				6AEE7C1125A646F700D6D266 /* LearnTableViewCell.swift */,
-				6AF779E2262057CC00B6A820 /* URLImageView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		6A83945325A4D1DE0033FA88 /* Models */ = {
@@ -210,28 +199,125 @@
 			path = JavaScript;
 			sourceTree = "<group>";
 		};
+		6AE8502126347B76006BF4FE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6A83944F25A4D1C50033FA88 /* Extensions */,
+				6A83947125A4DABD0033FA88 /* JavaScript */,
+				6A83945325A4D1DE0033FA88 /* Models */,
+				6AE85079263481E0006BF4FE /* Views */,
+				6AE8502226347B76006BF4FE /* OCamlApp.swift */,
+				6A35DC1625ECE8BA0092B6CA /* Localizable.strings */,
+				6AE8502426347B77006BF4FE /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6AE8502A26347B77006BF4FE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6AE8502B26347B77006BF4FE /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		6AE8503126347B77006BF4FE /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				6AE8503226347B77006BF4FE /* Info.plist */,
+				6AE8503326347B77006BF4FE /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		6AE85079263481E0006BF4FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6AE8508126348221006BF4FE /* Code */,
+				6AE850802634821B006BF4FE /* Learn */,
+				6AE8508226348239006BF4FE /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6AE850802634821B006BF4FE /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				6AE850D426348DE6006BF4FE /* ChapterCardView.swift */,
+				6AE850DC26349DC1006BF4FE /* ChapterView.swift */,
+				6AE8507A26348213006BF4FE /* LearnView.swift */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		6AE8508126348221006BF4FE /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				6AE850D826349BF5006BF4FE /* CodeEditorView.swift */,
+				6AE850832634824D006BF4FE /* CodeView.swift */,
+				6AFDC82D2635AB0E0050FA59 /* ConsoleView.swift */,
+				6AFBF0FF2636C5CB00A55FFF /* ConsoleViewModel.swift */,
+				6AEE525826356E9300F54038 /* SplitView.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		6AE8508226348239006BF4FE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6A6562482634BE870064DD6C /* AppView.swift */,
+				6A6562432634B5BA0064DD6C /* EditorColorView.swift */,
+				6A65625B2634CB280064DD6C /* OpenSourceRepositoryView.swift */,
+				6A6562562634CAEF0064DD6C /* OpenSourceView.swift */,
+				6AE8508926348257006BF4FE /* SettingsView.swift */,
+				6AFBF10D2637027000A55FFF /* DonateView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6A83943225A4CF9A0033FA88 /* OCaml */ = {
+		6AE8502826347B77006BF4FE /* OCaml (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A83944725A4CF9D0033FA88 /* Build configuration list for PBXNativeTarget "OCaml" */;
+			buildConfigurationList = 6AE8503A26347B77006BF4FE /* Build configuration list for PBXNativeTarget "OCaml (iOS)" */;
 			buildPhases = (
-				6A83942F25A4CF9A0033FA88 /* Sources */,
-				6A83943025A4CF9A0033FA88 /* Frameworks */,
-				6A83943125A4CF9A0033FA88 /* Resources */,
+				6AE8502526347B77006BF4FE /* Sources */,
+				6AE8502626347B77006BF4FE /* Frameworks */,
+				6AE8502726347B77006BF4FE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = OCaml;
+			name = "OCaml (iOS)";
 			packageProductDependencies = (
-				6A83944C25A4D1B70033FA88 /* Sourceful */,
-				6A43E12725A51FE70067B166 /* DonateViewController */,
+				6AE8509E26348743006BF4FE /* Sourceful */,
+				6A6562612634CBC20064DD6C /* Kingfisher */,
 			);
-			productName = OCaml;
-			productReference = 6A83943325A4CF9A0033FA88 /* OCaml.app */;
+			productName = "OCaml (iOS)";
+			productReference = 6AE8502926347B77006BF4FE /* OCaml.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6AE8502F26347B77006BF4FE /* OCaml (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AE8503D26347B77006BF4FE /* Build configuration list for PBXNativeTarget "OCaml (macOS)" */;
+			buildPhases = (
+				6AE8502C26347B77006BF4FE /* Sources */,
+				6AE8502D26347B77006BF4FE /* Frameworks */,
+				6AE8502E26347B77006BF4FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OCaml (macOS)";
+			packageProductDependencies = (
+				6A6562342634B3270064DD6C /* Sourceful */,
+				6A6562652634CBCA0064DD6C /* Kingfisher */,
+			);
+			productName = "OCaml (macOS)";
+			productReference = 6AE8503026347B77006BF4FE /* OCaml.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -240,11 +326,14 @@
 		6A83942B25A4CF9A0033FA88 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					6A83943225A4CF9A0033FA88 = {
-						CreatedOnToolsVersion = 12.3;
+					6AE8502826347B77006BF4FE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					6AE8502F26347B77006BF4FE = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -259,71 +348,106 @@
 			);
 			mainGroup = 6A83942A25A4CF9A0033FA88;
 			packageReferences = (
-				6A83944B25A4D1B70033FA88 /* XCRemoteSwiftPackageReference "Sourceful" */,
-				6A43E12625A51FE70067B166 /* XCRemoteSwiftPackageReference "DonateViewController" */,
+				6AE8509D26348743006BF4FE /* XCRemoteSwiftPackageReference "Sourceful" */,
+				6A6562602634CBC20064DD6C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 6A83943425A4CF9A0033FA88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A83943225A4CF9A0033FA88 /* OCaml */,
+				6AE8502826347B77006BF4FE /* OCaml (iOS) */,
+				6AE8502F26347B77006BF4FE /* OCaml (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6A83943125A4CF9A0033FA88 /* Resources */ = {
+		6AE8502726347B77006BF4FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AA55ACF261097AF0021436C /* bootstrap.min.css in Resources */,
-				6AA55AD0261097AF0021436C /* toplevel.js in Resources */,
-				6A0FA192262C1CE6002D3AA8 /* README.md in Resources */,
-				6A0FA191262C1CE6002D3AA8 /* CONTRIBUTING.md in Resources */,
-				6A83944325A4CF9D0033FA88 /* LaunchScreen.storyboard in Resources */,
-				6A0FA18F262C1CE6002D3AA8 /* LICENSE in Resources */,
-				6AA55ACE261097AF0021436C /* index.html in Resources */,
-				6A35DC1425ECE8BA0092B6CA /* Localizable.strings in Resources */,
-				6A83944025A4CF9D0033FA88 /* Assets.xcassets in Resources */,
-				6A0FA190262C1CE6002D3AA8 /* CODE_OF_CONDUCT.md in Resources */,
+				6AE8505C26347F11006BF4FE /* index.html in Resources */,
+				6AE8503826347B77006BF4FE /* Assets.xcassets in Resources */,
+				6AE8505B26347F11006BF4FE /* toplevel.js in Resources */,
+				6AE8505A26347F11006BF4FE /* bootstrap.min.css in Resources */,
+				6AE8504426347D44006BF4FE /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AE8502E26347B77006BF4FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AE8506126347F12006BF4FE /* index.html in Resources */,
+				6AE8503926347B77006BF4FE /* Assets.xcassets in Resources */,
+				6AE8506026347F12006BF4FE /* toplevel.js in Resources */,
+				6AE8505F26347F12006BF4FE /* bootstrap.min.css in Resources */,
+				6AE8504726347D45006BF4FE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6A83942F25A4CF9A0033FA88 /* Sources */ = {
+		6AE8502526347B77006BF4FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A43E13325A524280067B166 /* LearnTableViewController.swift in Sources */,
-				6AEE7C1D25A6577600D6D266 /* LearnChapterParagraphTableViewCell.swift in Sources */,
-				6AF779E3262057CC00B6A820 /* URLImageView.swift in Sources */,
-				6A35DC1B25ECEC0A0092B6CA /* LearnSplitViewController.swift in Sources */,
-				6A83946C25A4D9910033FA88 /* CustomTheme.swift in Sources */,
-				6A292A4D25ED18B9008053D3 /* EditorColorTableViewCell.swift in Sources */,
-				6A292A4725ED1303008053D3 /* IntExtension.swift in Sources */,
-				6A83946025A4D4190033FA88 /* StringExtension.swift in Sources */,
-				6AEE7C1525A64FED00D6D266 /* LearnChapterTableViewController.swift in Sources */,
-				6A43E12325A51E5C0067B166 /* SettingsTableViewController.swift in Sources */,
-				6A43E12B25A51FFB0067B166 /* CustomDonateViewController.swift in Sources */,
-				6AEE7C2025A658AF00D6D266 /* LearnChapterCodeTableViewCell.swift in Sources */,
-				6A83945C25A4D3240033FA88 /* CodeViewController.swift in Sources */,
-				6AEE7C1925A6533400D6D266 /* LearnChapterTitleTableViewCell.swift in Sources */,
-				6A43E13A25A526FA0067B166 /* OCamlCourse.swift in Sources */,
-				6AEE7C1225A646F700D6D266 /* LearnTableViewCell.swift in Sources */,
-				6A83946625A4D5090033FA88 /* CustomSyntaxTextView.swift in Sources */,
-				6A292A4A25ED13D5008053D3 /* UIColorExtension.swift in Sources */,
-				6A83943725A4CF9A0033FA88 /* AppDelegate.swift in Sources */,
-				6A83945925A4D29E0033FA88 /* TabBarController.swift in Sources */,
-				6A48F54825FA4FD800FF9BF5 /* CodeSplitViewController.swift in Sources */,
-				6A187EBF25ECFB9600645721 /* AppTableViewCell.swift in Sources */,
-				6A43E12F25A520890067B166 /* LabelTableViewCell.swift in Sources */,
-				6AF779DC2620508300B6A820 /* OpenSourceTableViewController.swift in Sources */,
-				6A43E11F25A50E8F0067B166 /* ConsoleViewController.swift in Sources */,
-				6A43E13F25A528CD0067B166 /* LearnModel.swift in Sources */,
-				6A0FA189262C1CB6002D3AA8 /* OCamlFile.swift in Sources */,
-				6A83946925A4D7320033FA88 /* OCamlLexer.swift in Sources */,
+				6AE8505026347ECC006BF4FE /* CustomTheme.swift in Sources */,
+				6A6562572634CAEF0064DD6C /* OpenSourceView.swift in Sources */,
+				6AE8504F26347ECC006BF4FE /* OCamlFile.swift in Sources */,
+				6AE8506626347F22006BF4FE /* StringExtension.swift in Sources */,
+				6AFDC82E2635AB0E0050FA59 /* ConsoleView.swift in Sources */,
+				6A6562492634BE870064DD6C /* AppView.swift in Sources */,
+				6AE8504D26347ECC006BF4FE /* OCamlCourse.swift in Sources */,
+				6AE850DD26349DC1006BF4FE /* ChapterView.swift in Sources */,
+				6AFDC8352635AEE20050FA59 /* ViewExtension.swift in Sources */,
+				6AE8503426347B77006BF4FE /* OCamlApp.swift in Sources */,
+				6AFBF1002636C5CB00A55FFF /* ConsoleViewModel.swift in Sources */,
+				6AE8507B26348213006BF4FE /* LearnView.swift in Sources */,
+				6A6562442634B5BA0064DD6C /* EditorColorView.swift in Sources */,
+				6AE850D526348DE6006BF4FE /* ChapterCardView.swift in Sources */,
+				6AFBF10E2637027000A55FFF /* DonateView.swift in Sources */,
+				6AE850842634824D006BF4FE /* CodeView.swift in Sources */,
+				6AE8506526347F22006BF4FE /* ColorExtension.swift in Sources */,
+				6AE8506426347F22006BF4FE /* IntExtension.swift in Sources */,
+				6AE8508A26348257006BF4FE /* SettingsView.swift in Sources */,
+				6A65625C2634CB280064DD6C /* OpenSourceRepositoryView.swift in Sources */,
+				6AEE525926356E9300F54038 /* SplitView.swift in Sources */,
+				6AE8504C26347ECC006BF4FE /* OCamlLexer.swift in Sources */,
+				6AE850D926349BF5006BF4FE /* CodeEditorView.swift in Sources */,
+				6AE8504E26347ECC006BF4FE /* LearnModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AE8502C26347B77006BF4FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AE8507226348030006BF4FE /* CustomTheme.swift in Sources */,
+				6A6562582634CAEF0064DD6C /* OpenSourceView.swift in Sources */,
+				6AFDC82F2635AB0E0050FA59 /* ConsoleView.swift in Sources */,
+				6A65624A2634BE880064DD6C /* AppView.swift in Sources */,
+				6AE8505626347ECD006BF4FE /* OCamlFile.swift in Sources */,
+				6AE8506B26347F23006BF4FE /* StringExtension.swift in Sources */,
+				6AFDC8362635AEE20050FA59 /* ViewExtension.swift in Sources */,
+				6A6562452634B5BA0064DD6C /* EditorColorView.swift in Sources */,
+				6A65623A2634B3430064DD6C /* CodeEditorView.swift in Sources */,
+				6AFBF1012636C5CB00A55FFF /* ConsoleViewModel.swift in Sources */,
+				6A6562402634B3490064DD6C /* ChapterView.swift in Sources */,
+				6AE850902634835B006BF4FE /* LearnView.swift in Sources */,
+				6AE8508D26348356006BF4FE /* CodeView.swift in Sources */,
+				6AFBF10F2637027000A55FFF /* DonateView.swift in Sources */,
+				6AE8505426347ECD006BF4FE /* OCamlCourse.swift in Sources */,
+				6AE8503526347B77006BF4FE /* OCamlApp.swift in Sources */,
+				6AE8506A26347F23006BF4FE /* ColorExtension.swift in Sources */,
+				6AE8506926347F23006BF4FE /* IntExtension.swift in Sources */,
+				6AE850932634835E006BF4FE /* SettingsView.swift in Sources */,
+				6AEE525A26356E9300F54038 /* SplitView.swift in Sources */,
+				6A65625D2634CB280064DD6C /* OpenSourceRepositoryView.swift in Sources */,
+				6A65623D2634B3460064DD6C /* ChapterCardView.swift in Sources */,
+				6AE8505326347ECD006BF4FE /* OCamlLexer.swift in Sources */,
+				6AE8505526347ECD006BF4FE /* LearnModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,14 +461,6 @@
 				6A35DC1825ECE8CC0092B6CA /* fr */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		6A83944125A4CF9D0033FA88 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A83944225A4CF9D0033FA88 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -468,51 +584,96 @@
 			};
 			name = Release;
 		};
-		6A83944825A4CF9D0033FA88 /* Debug */ = {
+		6AE8503B26347B77006BF4FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = OCaml/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = ZL9396WK65;
-				INFOPLIST_FILE = OCaml/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				PRODUCT_NAME = OCaml;
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6A83944925A4CF9D0033FA88 /* Release */ = {
+		6AE8503C26347B77006BF4FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = OCaml/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = ZL9396WK65;
-				INFOPLIST_FILE = OCaml/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				PRODUCT_NAME = OCaml;
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AE8503E26347B77006BF4FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZL9396WK65;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
+				PRODUCT_NAME = OCaml;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6AE8503F26347B77006BF4FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZL9396WK65;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
+				PRODUCT_NAME = OCaml;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -528,11 +689,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A83944725A4CF9D0033FA88 /* Build configuration list for PBXNativeTarget "OCaml" */ = {
+		6AE8503A26347B77006BF4FE /* Build configuration list for PBXNativeTarget "OCaml (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A83944825A4CF9D0033FA88 /* Debug */,
-				6A83944925A4CF9D0033FA88 /* Release */,
+				6AE8503B26347B77006BF4FE /* Debug */,
+				6AE8503C26347B77006BF4FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AE8503D26347B77006BF4FE /* Build configuration list for PBXNativeTarget "OCaml (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AE8503E26347B77006BF4FE /* Debug */,
+				6AE8503F26347B77006BF4FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -540,17 +710,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6A43E12625A51FE70067B166 /* XCRemoteSwiftPackageReference "DonateViewController" */ = {
+		6A6562602634CBC20064DD6C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/GroupeMINASTE/DonateViewController.git";
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.5;
+				minimumVersion = 6.3.0;
 			};
 		};
-		6A83944B25A4D1B70033FA88 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+		6AE8509D26348743006BF4FE /* XCRemoteSwiftPackageReference "Sourceful" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Sourceful";
+			repositoryURL = "https://github.com/twostraws/Sourceful.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.3.0;
@@ -559,14 +729,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6A43E12725A51FE70067B166 /* DonateViewController */ = {
+		6A6562342634B3270064DD6C /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6A43E12625A51FE70067B166 /* XCRemoteSwiftPackageReference "DonateViewController" */;
-			productName = DonateViewController;
+			package = 6AE8509D26348743006BF4FE /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
 		};
-		6A83944C25A4D1B70033FA88 /* Sourceful */ = {
+		6A6562612634CBC20064DD6C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6A83944B25A4D1B70033FA88 /* XCRemoteSwiftPackageReference "Sourceful" */;
+			package = 6A6562602634CBC20064DD6C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		6A6562652634CBCA0064DD6C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A6562602634CBC20064DD6C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		6AE8509E26348743006BF4FE /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6AE8509D26348743006BF4FE /* XCRemoteSwiftPackageReference "Sourceful" */;
 			productName = Sourceful;
 		};
 /* End XCSwiftPackageProductDependency section */
