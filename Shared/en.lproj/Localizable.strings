@@ -36,9 +36,11 @@
 "error_unknown" = "Unknown error";
 "file_error" = "Error while opening the file";
 "file_error_description" = "Something went wrong while opening the file. Maybe you don't have the right to read it?";
+"console_load" = "Loading OCaml console, please wait...";
 "console_failed" = "Failed to load console";
 "button_cancel" = "Cancel";
 "button_close" = "Close";
+"button_reset" = "Reset";
 "donate_title" = "Donate";
 "donate_header" = "Select an amount to donate:";
 "donate_footer" = "This donation will help our organization to develop its projects, mainly Extopy, the social network we are working on, which will require some storage for its servers.";

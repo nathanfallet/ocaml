@@ -20,19 +20,36 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
     @Environment(\.openURL) var openURL
+    @Environment(\.backgroundColor) var backgroundColor
+    @Environment(\.plainColor) var plainColor
+    @Environment(\.numberColor) var numberColor
+    @Environment(\.stringColor) var stringColor
+    @Environment(\.identifierColor) var identifierColor
+    @Environment(\.keywordColor) var keywordColor
+    @Environment(\.commentColor) var commentColor
     
     #if os(iOS)
     var body: some View {
         List {
             Section(header: Text("editor_settings")) {
-                EditorColorView(name: "backgroundColor", color: CustomTheme.shared.backgroundColor.toColor())
-                EditorColorView(name: "plainColor", color: CustomTheme.shared.plainColor.toColor())
-                EditorColorView(name: "numberColor", color: CustomTheme.shared.numberColor.toColor())
-                EditorColorView(name: "stringColor", color: CustomTheme.shared.stringColor.toColor())
-                EditorColorView(name: "identifierColor", color: CustomTheme.shared.identifierColor.toColor())
-                EditorColorView(name: "keywordColor", color: CustomTheme.shared.keywordColor.toColor())
-                EditorColorView(name: "commentColor", color: CustomTheme.shared.commentColor.toColor())
+                EditorColorView(name: "backgroundColor", color: backgroundColor)
+                EditorColorView(name: "plainColor", color: plainColor)
+                EditorColorView(name: "numberColor", color: numberColor)
+                EditorColorView(name: "stringColor", color: stringColor)
+                EditorColorView(name: "identifierColor", color: identifierColor)
+                EditorColorView(name: "keywordColor", color: keywordColor)
+                EditorColorView(name: "commentColor", color: commentColor)
+                Button("button_reset") {
+                    backgroundColor.wrappedValue = -1
+                    plainColor.wrappedValue = -1
+                    numberColor.wrappedValue = -1
+                    stringColor.wrappedValue = -1
+                    identifierColor.wrappedValue = -1
+                    keywordColor.wrappedValue = -1
+                    commentColor.wrappedValue = -1
+                }
             }
             
             Section(header: Text("about")) {
@@ -72,13 +89,22 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             Form {
-                EditorColorView(name: "backgroundColor", color: CustomTheme.shared.backgroundColor.toColor())
-                EditorColorView(name: "plainColor", color: CustomTheme.shared.plainColor.toColor())
-                EditorColorView(name: "numberColor", color: CustomTheme.shared.numberColor.toColor())
-                EditorColorView(name: "stringColor", color: CustomTheme.shared.stringColor.toColor())
-                EditorColorView(name: "identifierColor", color: CustomTheme.shared.identifierColor.toColor())
-                EditorColorView(name: "keywordColor", color: CustomTheme.shared.keywordColor.toColor())
-                EditorColorView(name: "commentColor", color: CustomTheme.shared.commentColor.toColor())
+                EditorColorView(name: "backgroundColor", color: backgroundColor)
+                EditorColorView(name: "plainColor", color: plainColor)
+                EditorColorView(name: "numberColor", color: numberColor)
+                EditorColorView(name: "stringColor", color: stringColor)
+                EditorColorView(name: "identifierColor", color: identifierColor)
+                EditorColorView(name: "keywordColor", color: keywordColor)
+                EditorColorView(name: "commentColor", color: commentColor)
+                Button("button_reset") {
+                    backgroundColor.wrappedValue = -1
+                    plainColor.wrappedValue = -1
+                    numberColor.wrappedValue = -1
+                    stringColor.wrappedValue = -1
+                    identifierColor.wrappedValue = -1
+                    keywordColor.wrappedValue = -1
+                    commentColor.wrappedValue = -1
+                }
             }
             .tabItem {
                 Label("editor_settings", systemImage: "pencil.circle")

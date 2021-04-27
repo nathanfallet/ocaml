@@ -21,25 +21,20 @@ import SwiftUI
 
 struct EditorColorView: View {
     @State var name: String
-    @State var color: Color
-    @State var presentPicker: Bool = false
+    @Binding var color: Int
     
     var body: some View {
-        ColorPicker(name.localized(), selection: $color)
-            .onChange(of: color) { newValue in
-                // Save new color
-                let datas = UserDefaults(suiteName: "group.me.nathanfallet.ocaml") ?? .standard
-                datas.setValue(newValue.toInt(), forKey: name)
-                datas.synchronize()
-                
-                // Reload theme
-                CustomTheme.shared.loadColors()
-            }
+        let internalColor = Binding<Color>(
+            get: { color.toNativeColorOrDefault(for: name).toColor() },
+            set: { color = $0.toInt() }
+        )
+        
+        return ColorPicker(name.localized(), selection: internalColor)
     }
 }
 
 struct EditorColorView_Previews: PreviewProvider {
     static var previews: some View {
-        EditorColorView(name: "backgroundColor", color: .green)
+        EditorColorView(name: "backgroundColor", color: .constant(-1))
     }
 }

@@ -30,31 +30,36 @@ struct ConsoleView: View {
             VStack(spacing: 16) {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
-                Text("loading")
+                Text("console_load")
             }
         } else {
-            ScrollView {
-                ScrollViewReader { value in
-                    VStack(alignment: .leading) {
-                        Text(viewModel.output ?? "console_failed".localized())
-                        HStack(alignment: .top) {
-                            Text("#")
-                            TextField("", text: $currentLine, onCommit: {
-                                viewModel.execute(currentLine)
-                                currentLine = ""
-                            })
-                                .autocapitalizationNoneIfAvailable()
-                                .disableAutocorrection(true)
+            VStack(spacing: 0) {
+                ScrollView {
+                    ScrollViewReader { value in
+                        VStack(alignment: .leading) {
+                            Text(viewModel.output ?? "console_failed".localized())
+                            .id(id)
                         }
+                        .font( .system(size: 14, design: .monospaced))
+                        .padding()
+                        .fixedSize(horizontal: false, vertical: true)
+                        .onChange(of: viewModel.output, perform: { _ in
+                            value.scrollTo(id, anchor: .bottom)
+                        })
                     }
-                    .id(id)
-                    .font( .system(size: 14, design: .monospaced))
-                    .padding()
-                    .fixedSize(horizontal: false, vertical: true)
-                    .onChange(of: viewModel.output, perform: { _ in
-                        value.scrollTo(id, anchor: .bottom)
-                    })
                 }
+                HStack(alignment: .top) {
+                    Text("#")
+                    TextField("", text: $currentLine, onCommit: {
+                        viewModel.execute(currentLine)
+                        currentLine = ""
+                    })
+                    .autocapitalizationNoneIfAvailable()
+                    .disableAutocorrection(true)
+                    .background(Color.clear)
+                }
+                .padding()
+                .background(NativeColor.systemBackground.toColor())
             }
         }
     }

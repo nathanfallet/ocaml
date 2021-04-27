@@ -29,7 +29,6 @@ struct CodeView: View {
                 .ignoresSafeArea(.container, edges: .bottom)
         }, rightView: {
             ConsoleView(viewModel: consoleViewModel)
-                .ignoresSafeArea(.container, edges: .bottom)
                 .navigationTitle("console")
         }, showRightView: $consoleViewModel.showConsole)
     }

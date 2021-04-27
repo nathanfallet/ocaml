@@ -106,8 +106,9 @@ struct LearnCode: LearnChapterElement {
     var content: String
     
     func height() -> CGFloat {
-        let theme = CustomTheme.shared
-        let size = (content as NSString).size(withAttributes: theme.globalAttributes())
+        let size = (content as NSString).size(withAttributes: [
+            NSAttributedString.Key.font: Sourceful.Font.monospacedSystemFont(ofSize: 14, weight: .regular)
+        ])
         return size.height + 16
     }
     

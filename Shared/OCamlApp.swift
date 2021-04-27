@@ -19,9 +19,24 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
+import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
+
 @main
 struct OCamlApp: App {
     @Environment(\.openURL) var openURL
+    
+    @AppStorage("backgroundColor") var backgroundColor = -1
+    @AppStorage("plainColor") var plainColor = -1
+    @AppStorage("numberColor") var numberColor = -1
+    @AppStorage("stringColor") var stringColor = -1
+    @AppStorage("identifierColor") var identifierColor = -1
+    @AppStorage("keywordColor") var keywordColor = -1
+    @AppStorage("commentColor") var commentColor = -1
+    
     @StateObject var consoleViewModel = ConsoleViewModel()
     @State var activeSheet: ActiveSheet?
     
@@ -33,6 +48,13 @@ struct OCamlApp: App {
                 consoleViewModel: consoleViewModel,
                 document: file.$document
             )
+                .environment(\.backgroundColor, $backgroundColor)
+                .environment(\.plainColor, $plainColor)
+                .environment(\.numberColor, $numberColor)
+                .environment(\.stringColor, $stringColor)
+                .environment(\.identifierColor, $identifierColor)
+                .environment(\.keywordColor, $keywordColor)
+                .environment(\.commentColor, $commentColor)
                 .onAppear {
                     consoleViewModel.loadConsoleIfNeeded()
                 }
@@ -75,6 +97,13 @@ struct OCamlApp: App {
                     case .settings:
                         NavigationView {
                             SettingsView()
+                                .environment(\.backgroundColor, $backgroundColor)
+                                .environment(\.plainColor, $plainColor)
+                                .environment(\.numberColor, $numberColor)
+                                .environment(\.stringColor, $stringColor)
+                                .environment(\.identifierColor, $identifierColor)
+                                .environment(\.keywordColor, $keywordColor)
+                                .environment(\.commentColor, $commentColor)
                                 .toolbar {
                                     ToolbarItemGroup(placement: .cancellationAction) {
                                         Button(action: {
@@ -100,25 +129,24 @@ struct OCamlApp: App {
                 consoleViewModel: consoleViewModel,
                 document: file.$document
             )
+                .environment(\.backgroundColor, $backgroundColor)
+                .environment(\.plainColor, $plainColor)
+                .environment(\.numberColor, $numberColor)
+                .environment(\.stringColor, $stringColor)
+                .environment(\.identifierColor, $identifierColor)
+                .environment(\.keywordColor, $keywordColor)
+                .environment(\.commentColor, $commentColor)
                 .onAppear {
                     consoleViewModel.loadConsoleIfNeeded()
                 }
                 .toolbar {
                     ToolbarItemGroup(placement: .primaryAction) {
                         Button(action: {
-                            if let url = URL(string: "ocamllearnandcode://learn") {
-                                openURL(url)
-                            }
-                        }) {
-                            Image(systemName: "book")
-                        }
-                        Button(action: {
                             NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
                         }) {
                             Image(systemName: "gearshape")
                         }
                         Button(action: {
-                            consoleViewModel.showConsole.toggle()
                             consoleViewModel.execute(file.document.source)
                         }) {
                             Image(systemName: "play")
@@ -127,15 +155,16 @@ struct OCamlApp: App {
                 }
         }
         
-        // Learn
-        WindowGroup(id: "learn") {
-            LearnView()
-                .handlesExternalEvents(preferring: Set(arrayLiteral: "learn"), allowing: Set(arrayLiteral: "learn"))
-        }.handlesExternalEvents(matching: Set(arrayLiteral: "learn"))
-        
         // Settings
         Settings {
             SettingsView()
+                .environment(\.backgroundColor, $backgroundColor)
+                .environment(\.plainColor, $plainColor)
+                .environment(\.numberColor, $numberColor)
+                .environment(\.stringColor, $stringColor)
+                .environment(\.identifierColor, $identifierColor)
+                .environment(\.keywordColor, $keywordColor)
+                .environment(\.commentColor, $commentColor)
         }
     }
     #endif

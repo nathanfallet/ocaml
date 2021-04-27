@@ -22,6 +22,14 @@ import SwiftUI
 
 public struct CodeEditorView: _ViewRepresentable {
     
+    @Environment(\.backgroundColor) var backgroundColor
+    @Environment(\.plainColor) var plainColor
+    @Environment(\.numberColor) var numberColor
+    @Environment(\.stringColor) var stringColor
+    @Environment(\.identifierColor) var identifierColor
+    @Environment(\.keywordColor) var keywordColor
+    @Environment(\.commentColor) var commentColor
+    
     @Binding var text: String
     var readOnly: Bool = false
     
@@ -54,7 +62,7 @@ public struct CodeEditorView: _ViewRepresentable {
     private func makeView(context: Context) -> SyntaxTextView {
         let wrappedView = SyntaxTextView()
         wrappedView.delegate = context.coordinator
-        wrappedView.theme = CustomTheme.shared
+        wrappedView.theme = context.coordinator
         #if !os(macOS)
         wrappedView.contentInset = .init(top: 10, left: 0, bottom: 10, right: 0)
         #endif
@@ -78,7 +86,7 @@ public struct CodeEditorView: _ViewRepresentable {
 
 extension CodeEditorView {
     
-    public class Coordinator: SyntaxTextViewDelegate {
+    public class Coordinator: SourceCodeTheme, SyntaxTextViewDelegate {
         let parent: CodeEditorView
         var wrappedView: SyntaxTextView!
         
@@ -98,6 +106,66 @@ extension CodeEditorView {
         
         public func textViewDidBeginEditing(_ syntaxTextView: SyntaxTextView) {
             
+        }
+        
+        // Colors
+        public var backgroundColor: Sourceful.Color {
+            parent.backgroundColor.wrappedValue.toNativeColorOrDefault(for: "backgroundColor")
+        }
+        public var plainColor: Sourceful.Color {
+            parent.plainColor.wrappedValue.toNativeColorOrDefault(for: "plainColor")
+        }
+        public var numberColor: Sourceful.Color {
+            parent.numberColor.wrappedValue.toNativeColorOrDefault(for: "numberColor")
+        }
+        public var stringColor: Sourceful.Color {
+            parent.stringColor.wrappedValue.toNativeColorOrDefault(for: "stringColor")
+        }
+        public var identifierColor: Sourceful.Color {
+            parent.identifierColor.wrappedValue.toNativeColorOrDefault(for: "identifierColor")
+        }
+        public var keywordColor: Sourceful.Color {
+            parent.keywordColor.wrappedValue.toNativeColorOrDefault(for: "keywordColor")
+        }
+        public var commentColor: Sourceful.Color {
+            parent.commentColor.wrappedValue.toNativeColorOrDefault(for: "commentColor")
+        }
+        
+        // Store font
+        public let font: Sourceful.Font = .monospacedSystemFont(ofSize: 14, weight: .regular)
+        
+        // Some styles
+        public let lineNumbersStyle: LineNumbersStyle? = .init(
+            font: .monospacedSystemFont(ofSize: 14, weight: .regular),
+            textColor: NativeColor.tertiaryLabel
+        )
+        
+        public let gutterStyle: GutterStyle = .init(
+            backgroundColor: .systemBackground,
+            minimumWidth: 30
+        )
+        
+        // Attribute getter
+        public func globalAttributes() -> [NSAttributedString.Key: Any] {
+            var attributes = [NSAttributedString.Key: Any]()
+            
+            attributes[.font] = font
+            attributes[.foregroundColor] = NativeColor.label
+            
+            return attributes
+        }
+        
+        // Return colors for types
+        public func color(for syntaxColorType: SourceCodeTokenType) -> Sourceful.Color {
+            switch syntaxColorType {
+                case .plain: return plainColor
+                case .number: return numberColor
+                case .string: return stringColor
+                case .identifier: return identifierColor
+                case .keyword: return keywordColor
+                case .comment: return commentColor
+                case .editorPlaceholder: return .systemGray
+            }
         }
     }
 }

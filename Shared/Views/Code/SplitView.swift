@@ -38,7 +38,7 @@ struct SplitView<LeftView: View, RightView: View>: View {
     var body: some View {
         GeometryReader { geometry in
             if isForceSplitted || geometry.size.height >= 900 {
-                HStack {
+                HStack(spacing: 0) {
                     leftView
                         .frame(
                             minWidth: 0, maxWidth: .infinity,
