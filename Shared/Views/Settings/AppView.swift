@@ -23,7 +23,7 @@ struct AppView: View {
     @State var name: String
     @State var description: String
     @State var image: String
-    
+
     var body: some View {
         HStack(spacing: 12) {
             Image(image)
@@ -45,7 +45,7 @@ struct SpacedAppView: View {
     @State var name: String
     @State var description: String
     @State var image: String
-    
+
     var body: some View {
         HStack {
             AppView(name: name, description: description, image: image)

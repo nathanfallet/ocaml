@@ -58,7 +58,6 @@ class CustomDonateViewController: DonateViewController, DonateViewControllerDele
 
 }*/
 
-
 import SwiftUI
 
 struct DonateView: View {

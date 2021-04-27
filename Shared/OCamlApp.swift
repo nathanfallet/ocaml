@@ -28,7 +28,7 @@ import AppKit
 @main
 struct OCamlApp: App {
     @Environment(\.openURL) var openURL
-    
+
     @AppStorage("backgroundColor") var backgroundColor = -1
     @AppStorage("plainColor") var plainColor = -1
     @AppStorage("numberColor") var numberColor = -1
@@ -36,10 +36,10 @@ struct OCamlApp: App {
     @AppStorage("identifierColor") var identifierColor = -1
     @AppStorage("keywordColor") var keywordColor = -1
     @AppStorage("commentColor") var commentColor = -1
-    
+
     @StateObject var consoleViewModel = ConsoleViewModel()
     @State var activeSheet: ActiveSheet?
-    
+
     #if os(iOS)
     var body: some Scene {
         // Main document group
@@ -120,7 +120,7 @@ struct OCamlApp: App {
         }
     }
     #endif
-    
+
     #if os(macOS)
     var body: some Scene {
         // Main document group
@@ -154,7 +154,7 @@ struct OCamlApp: App {
                     }
                 }
         }
-        
+
         // Settings
         Settings {
             SettingsView()
@@ -168,12 +168,12 @@ struct OCamlApp: App {
         }
     }
     #endif
-    
+
 }
 
 enum ActiveSheet: Identifiable {
     case learn
     case settings
-    
+
     var id: Int { hashValue }
 }

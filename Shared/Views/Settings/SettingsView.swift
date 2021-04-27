@@ -20,7 +20,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
+
     @Environment(\.openURL) var openURL
     @Environment(\.backgroundColor) var backgroundColor
     @Environment(\.plainColor) var plainColor
@@ -29,7 +29,7 @@ struct SettingsView: View {
     @Environment(\.identifierColor) var identifierColor
     @Environment(\.keywordColor) var keywordColor
     @Environment(\.commentColor) var commentColor
-    
+
     #if os(iOS)
     var body: some View {
         List {
@@ -51,7 +51,7 @@ struct SettingsView: View {
                     commentColor.wrappedValue = -1
                 }
             }
-            
+
             Section(header: Text("about")) {
                 Text("developer_text")
                     .onTapGesture {
@@ -64,7 +64,7 @@ struct SettingsView: View {
                 }
                 Text("donate_title")
             }
-            
+
             Section(header: Text("apps")) {
                 SpacedAppView(name: "Delta: Algorithms", description: "delta", image: "Delta")
                     .onTapGesture {
@@ -84,7 +84,7 @@ struct SettingsView: View {
         .listStyleInsetGroupedIfAvailable()
     }
     #endif
-    
+
     #if os(macOS)
     var body: some View {
         TabView {
@@ -109,7 +109,7 @@ struct SettingsView: View {
             .tabItem {
                 Label("editor_settings", systemImage: "pencil.circle")
             }
-            
+
             Form {
                 Text("developer_text")
                     .onTapGesture {
@@ -121,13 +121,12 @@ struct SettingsView: View {
             .tabItem {
                 Label("about", systemImage: "info.circle")
             }
-            
-            
+
             OpenSourceView()
             .tabItem {
                 Label("opensource", systemImage: "chevron.left.slash.chevron.right")
             }
-            
+
             Form {
                 AppView(name: "Delta: Algorithms", description: "delta", image: "Delta")
                     .onTapGesture {

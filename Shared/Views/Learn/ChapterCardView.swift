@@ -21,7 +21,7 @@ import SwiftUI
 
 struct ChapterCardView: View {
     @State var chapter: LearnChapter
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Image(systemName: "doc.text.fill")

@@ -28,7 +28,7 @@ public typealias _ViewRepresentable = UIViewRepresentable
 #endif
 
 extension View {
-    
+
     func listStyleInsetGroupedIfAvailable() -> some View {
         #if os(macOS)
         return Form { self }
@@ -36,7 +36,7 @@ extension View {
         return self.listStyle(InsetGroupedListStyle())
         #endif
     }
-    
+
     func autocapitalizationNoneIfAvailable() -> some View {
         #if os(iOS)
         return self.autocapitalization(UITextAutocapitalizationType.none)
@@ -44,7 +44,7 @@ extension View {
         return self
         #endif
     }
-    
+
 }
 
 #if os(macOS)

@@ -22,13 +22,13 @@ import SwiftUI
 struct EditorColorView: View {
     @State var name: String
     @Binding var color: Int
-    
+
     var body: some View {
         let internalColor = Binding<Color>(
             get: { color.toNativeColorOrDefault(for: name).toColor() },
             set: { color = $0.toInt() }
         )
-        
+
         return ColorPicker(name.localized(), selection: internalColor)
     }
 }

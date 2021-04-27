@@ -21,10 +21,10 @@ import SwiftUI
 
 struct SplitView<LeftView: View, RightView: View>: View {
     @Binding var showRightView: Bool
-    
+
     var leftView: LeftView
     var rightView: RightView
-    
+
     init(
         @ViewBuilder leftView: () -> LeftView,
         @ViewBuilder rightView: () -> RightView,
@@ -34,7 +34,7 @@ struct SplitView<LeftView: View, RightView: View>: View {
         self.rightView = rightView()
         self._showRightView = showRightView
     }
-    
+
     var body: some View {
         GeometryReader { geometry in
             if isForceSplitted || geometry.size.height >= 900 {
@@ -64,7 +64,7 @@ struct SplitView<LeftView: View, RightView: View>: View {
             }
         }
     }
-    
+
     var isForceSplitted: Bool {
         #if os(macOS)
         return true

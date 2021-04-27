@@ -30,10 +30,10 @@ import AppKit
  */
 
 struct LearnSequence {
-    
+
     var title: String
     var elements: [LearnSequenceElement]
-    
+
 }
 
 /*
@@ -41,14 +41,14 @@ struct LearnSequence {
  */
 
 protocol LearnSequenceElement {
-    
+
     var title: String { get }
     var type: String { get }
-    
+
 }
 
 extension LearnSequenceElement {
-    
+
     var isCompleted: Bool {
         get {
             UserDefaults.standard.bool(forKey: "\(title)_completed")
@@ -58,22 +58,22 @@ extension LearnSequenceElement {
             UserDefaults.standard.synchronize()
         }
     }
-    
+
 }
 
 struct LearnChapter: LearnSequenceElement {
-    
+
     var title: String
     var type: String { return "chapter" }
     var elements: [LearnChapterElement]
-    
+
 }
 
 struct LearnQuiz: LearnSequenceElement {
-    
+
     var title: String
     var type: String { return "quiz" }
-    
+
 }
 
 /*
@@ -81,35 +81,35 @@ struct LearnQuiz: LearnSequenceElement {
  */
 
 protocol LearnChapterElement {
-    
+
     var id: String { get }
-    
+
 }
 
 struct LearnTitle: LearnChapterElement {
-    
+
     var id: String { content }
     var content: String
-    
+
 }
 
 struct LearnParagraph: LearnChapterElement {
-    
+
     var id: String { content }
     var content: String
-    
+
 }
 
 struct LearnCode: LearnChapterElement {
-    
+
     var id: String { content }
     var content: String
-    
+
     func height() -> CGFloat {
         let size = (content as NSString).size(withAttributes: [
             NSAttributedString.Key.font: Sourceful.Font.monospacedSystemFont(ofSize: 14, weight: .regular)
         ])
         return size.height + 16
     }
-    
+
 }

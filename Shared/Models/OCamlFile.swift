@@ -21,21 +21,21 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct OCamlFile: FileDocument {
-    
+
     // File content
     var source = ""
-    
+
     // Supported identifiers
     static var readableContentTypes: [UTType] {
         guard let identifier = UTType("public.ocaml") else { return [] }
         return [identifier]
     }
-    
+
     // Init a new empty file
     init(source: String = "") {
         self.source = source
     }
-    
+
     // Init a file from configuration
     init(configuration: ReadConfiguration) throws {
         if let data = configuration.file.regularFileContents {
@@ -44,11 +44,11 @@ struct OCamlFile: FileDocument {
             throw CocoaError(.fileReadCorruptFile)
         }
     }
-    
+
     // Save file
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
         let data = Data(source.utf8)
         return FileWrapper(regularFileWithContents: data)
     }
-    
+
 }

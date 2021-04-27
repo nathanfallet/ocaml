@@ -22,7 +22,7 @@ import SwiftUI
 struct CodeView: View {
     @ObservedObject var consoleViewModel: ConsoleViewModel
     @Binding var document: OCamlFile
-    
+
     var body: some View {
         SplitView(leftView: {
             CodeEditorView(text: $document.source)

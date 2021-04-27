@@ -25,7 +25,7 @@ import AppKit
 #endif
 
 extension Int {
-    
+
     // Convert integer to NativeColor
     func toNativeColor() -> NativeColor {
         let r = (self & 0xFF0000) >> 16
@@ -33,7 +33,7 @@ extension Int {
         let b = (self & 0xFF)
         return NativeColor(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: 1)
     }
-    
+
     // Convert to color or get default
     func toNativeColorOrDefault(for key: String) -> NativeColor {
         if self == -1 {
@@ -58,5 +58,5 @@ extension Int {
         }
         return toNativeColor()
     }
-    
+
 }

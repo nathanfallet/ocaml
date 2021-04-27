@@ -32,7 +32,7 @@ struct OpenSourceView: View {
             ("ocsigen", "js_of_ocaml")
         ])
     ]
-    
+
     #if os(iOS)
     var body: some View {
         List {
@@ -56,7 +56,7 @@ struct OpenSourceView: View {
         .listStyleInsetGroupedIfAvailable()
     }
     #endif
-    
+
     #if os(macOS)
     var body: some View {
         Form {

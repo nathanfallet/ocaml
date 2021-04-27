@@ -24,7 +24,7 @@ struct ConsoleView: View {
     @ObservedObject var viewModel: ConsoleViewModel
     @State var currentLine: String = ""
     let id = UUID()
-    
+
     var body: some View {
         if viewModel.showLoading {
             VStack(spacing: 16) {
@@ -40,7 +40,6 @@ struct ConsoleView: View {
                             Text(viewModel.output ?? "console_failed".localized())
                             .id(id)
                         }
-                        .font( .system(size: 14, design: .monospaced))
                         .padding()
                         .fixedSize(horizontal: false, vertical: true)
                         .onChange(of: viewModel.output, perform: { _ in
@@ -61,6 +60,7 @@ struct ConsoleView: View {
                 .padding()
                 .background(NativeColor.systemBackground.toColor())
             }
+            .font( .system(size: 14, design: .monospaced))
         }
     }
 }

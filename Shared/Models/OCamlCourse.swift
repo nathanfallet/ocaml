@@ -20,7 +20,7 @@
 import Foundation
 
 class OCamlCourse {
-    
+
     // Course content
     static let content = [
         // Basics
@@ -34,9 +34,9 @@ class OCamlCourse {
                     print_endline "Hello, world!";;
                     """),
                 LearnParagraph(content: "chapter_discover_first"),
-                LearnParagraph(content: "chapter_discover_second"),
+                LearnParagraph(content: "chapter_discover_second")
             ]),
-            
+
             // Variables
             LearnChapter(title: "chapter_variables_title", elements: [
                 LearnTitle(content: "chapter_variables_def"),
@@ -74,16 +74,16 @@ class OCamlCourse {
                 LearnParagraph(content: "chapter_variables_references_def"),
                 LearnCode(content: """
                     let x = ref 3;;
-                    
+
                     x := 4;; (* 1 *)
-                    
+
                     x;; (* 2 *)
-                    
+
                     !x;; (* 3 *)
                     """),
-                LearnParagraph(content: "chapter_variables_references_details"),
+                LearnParagraph(content: "chapter_variables_references_details")
             ]),
-            
+
             // Operations on numbers
             LearnChapter(title: "chapter_operations_title", elements: [
                 LearnTitle(content: "chapter_operations_integers"),
@@ -118,9 +118,9 @@ class OCamlCourse {
                     print_int a;;
                     let b = 2.7 +. 3.2 -. 0.5 in
                     print_float b;;
-                    """),
+                    """)
             ]),
-            
+
             // Conditions
             LearnChapter(title: "chapter_conditions_title", elements: [
                 LearnTitle(content: "chapter_conditions_inline"),
@@ -150,9 +150,9 @@ class OCamlCourse {
                     let b = 5 in
                     let t = if a > b && a - b <> 1 then "ok" else "not ok" in
                     print_endline t;; (* ok *)
-                    """),
+                    """)
             ]),
-            
+
             // Loops
             LearnChapter(title: "chapter_loops_title", elements: [
                 LearnTitle(content: "chapter_loops_conditional"),
@@ -170,9 +170,9 @@ class OCamlCourse {
                     for k = 1 to 10 do
                         print_endline ("Hello world " ^ (string_of_int k));
                     done;;
-                    """),
+                    """)
             ]),
-            
+
             // Match
             LearnChapter(title: "chapter_match_title", elements: [
                 LearnTitle(content: "chapter_match_title"),
@@ -195,10 +195,10 @@ class OCamlCourse {
                     | n when n mod 2 = 0 -> "Even"
                     | _ -> "Odd"
                     in print_string p;;
-                    """),
-            ]),
+                    """)
+            ])
         ]),
-        
+
         // Functions
         LearnSequence(title: "sequence_functions", elements: [
             // Declare a function
@@ -213,9 +213,9 @@ class OCamlCourse {
                     """),
                 LearnParagraph(content: "chapter_functions_declaration_details"),
                 LearnParagraph(content: "chapter_functions_declaration_returns"),
-                LearnParagraph(content: "chapter_functions_declaration_calls"),
+                LearnParagraph(content: "chapter_functions_declaration_calls")
             ]),
-            
+
             // Function signatures
             LearnChapter(title: "chapter_function_signature_title", elements: [
                 LearnTitle(content: "chapter_function_signature_title"),
@@ -225,9 +225,9 @@ class OCamlCourse {
                         a * b;;
                     """),
                 LearnParagraph(content: "chapter_function_signature_details"),
-                LearnParagraph(content: "chapter_function_signature_auto"),
+                LearnParagraph(content: "chapter_function_signature_auto")
             ]),
-            
+
             // Recursive functions
             LearnChapter(title: "chapter_function_recursive_title", elements: [
                 LearnTitle(content: "chapter_function_recursive_title"),
@@ -236,10 +236,10 @@ class OCamlCourse {
                     let rec factorial n =
                         if n = 0 then 1 else n * (factorial (n-1));;
                     """),
-                LearnParagraph(content: "chapter_function_recursive_example"),
-            ]),
+                LearnParagraph(content: "chapter_function_recursive_example")
+            ])
         ]),
-        
+
         // Collections
         LearnSequence(title: "sequence_collections", elements: [
             // Arrays
@@ -281,9 +281,9 @@ class OCamlCourse {
                     done;;
                     (* array1 = [|2; 4; 6; 8|] *)
                     """),
-                LearnParagraph(content: "chapter_arrays_set_details"),
+                LearnParagraph(content: "chapter_arrays_set_details")
             ]),
-            
+
             // Lists
             LearnChapter(title: "chapter_lists_title", elements: [
                 LearnTitle(content: "chapter_lists_create"),
@@ -315,12 +315,12 @@ class OCamlCourse {
                             print_int head;
                             print_string " ";
                             iterate tail;;
-                    
+
                     iterate [1; 2; 3; 4];;
                     """),
-                LearnParagraph(content: "chapter_lists_interate_details"),
+                LearnParagraph(content: "chapter_lists_interate_details")
             ]),
-            
+
             // Strings
             LearnChapter(title: "chapter_strings_title", elements: [
                 LearnTitle(content: "chapter_strings_character"),
@@ -350,10 +350,10 @@ class OCamlCourse {
                     let name = "Nathan" in
                     let hello = "Hello " ^ name in
                     print_endline hello;;
-                    """),
-            ]),
+                    """)
+            ])
         ]),
-        
+
         // Exercices
         LearnSequence(title: "sequence_exercices", elements: [
             // Basics
@@ -366,9 +366,9 @@ class OCamlCourse {
                 LearnParagraph(content: "chapter_exercices_arrays_sum"),
                 LearnTitle(content: "chapter_exercices_lists"),
                 LearnParagraph(content: "chapter_exercices_lists_arrays"),
-                LearnParagraph(content: "chapter_exercices_lists_filter"),
-            ]),
-        ]),
+                LearnParagraph(content: "chapter_exercices_lists_filter")
+            ])
+        ])
     ]
-    
+
 }

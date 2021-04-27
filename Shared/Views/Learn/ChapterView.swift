@@ -21,7 +21,7 @@ import SwiftUI
 
 struct ChapterView: View {
     @State var chapter: LearnChapter
-    
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {

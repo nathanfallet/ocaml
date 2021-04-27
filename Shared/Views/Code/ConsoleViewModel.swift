@@ -23,27 +23,27 @@ import Combine
 import StoreKit
 
 class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDelegate {
-    
+
     // The environment to execute OCaml code
     private lazy var webView: WKWebView = {
         let webView = WKWebView()
-        
+
         webView.isHidden = true
         #if !os(macOS)
         webView.scrollView.isScrollEnabled = false
         #endif
         webView.navigationDelegate = self
         webView.uiDelegate = self
-        
+
         if let url = Bundle.main.url(forResource: "index", withExtension: "html") {
             webView.loadFileURL(url, allowingReadAccessTo: url)
         } else {
             webView.loadHTMLString("console_failed".localized(), baseURL: nil)
         }
-        
+
         return webView
     }()
-    
+
     // State for the console
     @Published var showConsole: Bool = false
     @Published var showLoading: Bool = true {
@@ -51,27 +51,27 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
             refreshOutput()
         }
     }
-    
+
     // Content of the console
     @Published var output: String?
-    
+
     // Load the console
     func loadConsoleIfNeeded() {
-        let _ = webView
+        _ = webView
     }
-    
+
     // Refresh the output
     func refreshOutput() {
         webView.evaluateJavaScript("document.getElementById('output').textContent") { data, _ in
             self.output = (data as? String)?.trimEndlines()
         }
     }
-    
+
     // Execute code
-    func execute(_ source: String, completionHandler: @escaping () -> () = {}) {
+    func execute(_ source: String, completionHandler: @escaping () -> Void = {}) {
         // Start loading
-        //showLoading = true
-        
+        // showLoading = true
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             // Create JS script to execute in console
             // Put current script into console and press enter to execute
@@ -80,12 +80,12 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
             t.value = `\(source.escapeCode())`;
             t.onkeydown({"keyCode": 13, "preventDefault": function (){}});
             """
-            
+
             // Put source in top level
             self.webView.evaluateJavaScript(js) { _, _ in
                 // Present output
                 DispatchQueue.main.async {
-                    //self.showLoading = false
+                    // self.showLoading = false
                     self.refreshOutput()
                     completionHandler()
                     self.checkForReview()
@@ -93,25 +93,25 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
             }
         }
     }
-    
+
     // Reload console
     func reloadConsole(_ sender: Any?) {
         // Reload console
         webView.reloadFromOrigin()
     }
-    
+
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         // Hide while it starts loading
         showLoading = true
         webView.isHidden = true
     }
-    
+
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // Show console and stop loading
         webView.isHidden = false
         showLoading = false
     }
-    
+
     public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
         /*
         // Show a UIAlert controller
@@ -126,7 +126,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
         //present(alert, animated: true, completion: nil)
         */
     }
-    
+
     // Check for review
     func checkForReview() {
         // Retrieve the number of save and increment it
@@ -134,7 +134,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
         let savesCount = datas.integer(forKey: "executeCount") + 1
         datas.set(savesCount, forKey: "executeCount")
         datas.synchronize()
-        
+
         // Check number of saves to ask for a review
         if savesCount == 100 || savesCount == 500 || savesCount % 1000 == 0 {
             #if os(iOS)
@@ -149,5 +149,5 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
             #endif
         }
     }
-    
+
 }

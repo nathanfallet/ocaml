@@ -24,7 +24,7 @@ struct OpenSourceRepositoryView: View {
     @Environment(\.openURL) var openURL
     @State var user: String
     @State var repo: String
-    
+
     var body: some View {
         HStack(spacing: 12) {
             if let url = URL(string: "https://github.com/\(user).png") {
