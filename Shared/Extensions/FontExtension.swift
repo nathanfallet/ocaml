@@ -17,29 +17,10 @@
 *
 */
 
-import SwiftUI
 #if canImport(UIKit)
 import UIKit
+typealias NativeFont = UIFont
 #elseif canImport(AppKit)
 import AppKit
+typealias NativeFont = NSFont
 #endif
-
-extension Int {
-    
-    // Convert integer to NativeColor
-    func toNativeColor() -> NativeColor {
-        let r = (self & 0xFF0000) >> 16
-        let g = (self & 0xFF00) >> 8
-        let b = (self & 0xFF)
-        return NativeColor(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: 1)
-    }
-    
-    // Convert integer to Color
-    func toColor() -> Color {
-        let r = (self & 0xFF0000) >> 16
-        let g = (self & 0xFF00) >> 8
-        let b = (self & 0xFF)
-        return Color(red: Double(r) / 255, green: Double(g) / 255, blue: Double(b) / 255, opacity: 1)
-    }
-    
-}

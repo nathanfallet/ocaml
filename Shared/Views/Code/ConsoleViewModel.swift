@@ -29,7 +29,9 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
         let webView = WKWebView()
         
         webView.isHidden = true
+        #if !os(macOS)
         webView.scrollView.isScrollEnabled = false
+        #endif
         webView.navigationDelegate = self
         webView.uiDelegate = self
         
@@ -60,7 +62,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
     
     // Refresh the output
     func refreshOutput() {
-        webView.evaluateJavaScript("document.getElementById('output').textContent") { data, error in
+        webView.evaluateJavaScript("document.getElementById('output').textContent") { data, _ in
             self.output = (data as? String)?.trimEndlines()
         }
     }
@@ -111,6 +113,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+        /*
         // Show a UIAlert controller
         let alert = UIAlertController(title: prompt, message: nil, preferredStyle: .alert)
         alert.addTextField { _ in }
@@ -121,6 +124,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
             completionHandler(nil)
         }))
         //present(alert, animated: true, completion: nil)
+        */
     }
     
     // Check for review
@@ -133,11 +137,16 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
         
         // Check number of saves to ask for a review
         if savesCount == 100 || savesCount == 500 || savesCount % 1000 == 0 {
+            #if os(iOS)
             // Get main app scene
             if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
                 // Request review
                 SKStoreReviewController.requestReview(in: scene)
             }
+            #else
+            // Request review
+            SKStoreReviewController.requestReview()
+            #endif
         }
     }
     

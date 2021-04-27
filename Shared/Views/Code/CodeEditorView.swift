@@ -42,7 +42,7 @@ public struct CodeEditorView: _ViewRepresentable {
     #if os(macOS)
     public func makeNSView(context: Context) -> SyntaxTextView {
         let wrappedView = makeView(context: context)
-        wrappedView.contentTextView.insertionPointColor = Sourceful.color.white
+        wrappedView.contentTextView.insertionPointColor = Sourceful.Color.white
         return wrappedView
     }
     
@@ -55,16 +55,20 @@ public struct CodeEditorView: _ViewRepresentable {
         let wrappedView = SyntaxTextView()
         wrappedView.delegate = context.coordinator
         wrappedView.theme = CustomTheme.shared
+        #if !os(macOS)
         wrappedView.contentInset = .init(top: 10, left: 0, bottom: 10, right: 0)
+        #endif
         
         context.coordinator.wrappedView = wrappedView
         context.coordinator.wrappedView.text = text
         
         if readOnly {
             wrappedView.contentTextView.isEditable = false
+            #if !os(macOS)
             wrappedView.contentTextView.isScrollEnabled = true
             wrappedView.clipsToBounds = true
             wrappedView.layer.cornerRadius = 8
+            #endif
         }
         
         return wrappedView

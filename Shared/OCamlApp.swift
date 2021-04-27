@@ -24,6 +24,7 @@ struct OCamlApp: App {
     @StateObject var consoleViewModel = ConsoleViewModel()
     @State var activeSheet: ActiveSheet?
     
+    #if os(iOS)
     var body: some Scene {
         // Main document group
         DocumentGroup(newDocument: OCamlFile()) { file in
@@ -87,14 +88,49 @@ struct OCamlApp: App {
                     }
                 }
         }
+    }
+    #endif
+    
+    #if os(macOS)
+    var body: some Scene {
+        // Main document group
+        DocumentGroup(newDocument: OCamlFile()) { file in
+            CodeView(
+                consoleViewModel: consoleViewModel,
+                document: file.$document
+            )
+                .onAppear {
+                    consoleViewModel.loadConsoleIfNeeded()
+                }
+                .toolbar {
+                    ToolbarItemGroup(placement: .primaryAction) {
+                        Button(action: {
+                            activeSheet = .learn
+                        }) {
+                            Image(systemName: "book")
+                        }
+                        Button(action: {
+                            activeSheet = .settings
+                        }) {
+                            Image(systemName: "gearshape")
+                        }
+                        Button(action: {
+                            consoleViewModel.showConsole.toggle()
+                            consoleViewModel.execute(file.document.source)
+                        }) {
+                            Image(systemName: "play")
+                        }
+                    }
+                }
+        }
         
-        // Settings (macOS only)
-        #if os(macOS)
+        // Settings
         Settings {
             SettingsView()
         }
-        #endif
     }
+    #endif
+    
 }
 
 enum ActiveSheet: Identifiable {

@@ -18,8 +18,12 @@
 */
 
 import Foundation
-import UIKit
 import Sourceful
+#if canImport(UIKit)
+import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 /*
  Sequence

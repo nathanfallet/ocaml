@@ -21,14 +21,9 @@ import SwiftUI
 
 #if canImport(UIKit)
 import UIKit
-#elseif canImport(AppKit)
-import AppKit
-#endif
-
-// Type alias
-#if canImport(UIKit)
 typealias NativeColor = UIColor
 #elseif canImport(AppKit)
+import AppKit
 typealias NativeColor = NSColor
 #endif
 
@@ -74,5 +69,12 @@ extension NativeColor {
     func toColor() -> Color {
         Color(self)
     }
+    
+    #if os(macOS)
+    // Define some unavailable colors for macOS
+    static var systemBackground: NativeColor { windowBackgroundColor }
+    static var label: NativeColor { labelColor }
+    static var tertiaryLabel: NativeColor { tertiaryLabelColor }
+    #endif
     
 }

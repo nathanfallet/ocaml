@@ -20,126 +20,6 @@
 import SwiftUI
 import WebKit
 
-/*public struct ConsoleView: _ViewRepresentable {
-    
-    @ObservedObject var viewModel: ConsoleViewModel
-    
-    public func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    #if os(iOS)
-    public func makeUIView(context: Context) -> WKWebView {
-        makeView(context: context)
-    }
-    
-    public func updateUIView(_ view: WKWebView, context: Context) {
-        
-    }
-    #endif
-    
-    #if os(macOS)
-    public func makeNSView(context: Context) -> WKWebView {
-        makeView(context: context)
-    }
-    
-    public func updateNSView(_ view: WKWebView, context: Context) {
-        
-    }
-    #endif
-    
-    private func makeView(context: Context) -> WKWebView {
-        if let knownView = viewModel.webView {
-            knownView.navigationDelegate = context.coordinator
-            knownView.uiDelegate = context.coordinator
-            return knownView
-        }
-        
-        let wrappedView = WKWebView()
-        
-        wrappedView.isHidden = true
-        wrappedView.scrollView.isScrollEnabled = false
-        wrappedView.navigationDelegate = context.coordinator
-        wrappedView.uiDelegate = context.coordinator
-        
-        if let url = Bundle.main.url(forResource: "index", withExtension: "html") {
-            wrappedView.loadFileURL(url, allowingReadAccessTo: url)
-        } else {
-            wrappedView.loadHTMLString("console_failed".localized(), baseURL: nil)
-        }
-        
-        viewModel.webView = wrappedView
-        return wrappedView
-    }
-
-}
-
-extension ConsoleView {
-    
-    public class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
-        let parent: ConsoleView
-        var wrappedView: WKWebView!
-        
-        init(_ parent: ConsoleView) {
-            self.parent = parent
-        }
-        
-        func execute(_ source: String, completionHandler: @escaping () -> ()) {
-            // Start loading
-            parent.viewModel.showLoading = true
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                // Create JS script to execute in console
-                // Put current script into console and press enter to execute
-                let js = """
-                var t = document.getElementById("userinput");
-                t.value = `\(source.escapeCode())`;
-                t.onkeydown({"keyCode": 13, "preventDefault": function (){}});
-                """
-                
-                // Put source in top level
-                self.wrappedView.evaluateJavaScript(js) { _, _ in
-                    // Present output
-                    DispatchQueue.main.async {
-                        self.parent.viewModel.showLoading = false
-                        completionHandler()
-                    }
-                }
-            }
-        }
-        
-        @objc func reloadConsole(_ sender: Any?) {
-            // Reload console
-            wrappedView.reloadFromOrigin()
-        }
-        
-        public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-            // Hide while it starts loading
-            parent.viewModel.showLoading = true
-            webView.isHidden = true
-        }
-        
-        public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            // Show console and stop loading
-            webView.isHidden = false
-            parent.viewModel.showLoading = false
-        }
-        
-        public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-            // Show a UIAlert controller
-            let alert = UIAlertController(title: prompt, message: nil, preferredStyle: .alert)
-            alert.addTextField { _ in }
-            alert.addAction(UIAlertAction(title: "button_ok".localized(), style: .default, handler: { _ in
-                completionHandler(alert.textFields?.first?.text)
-            }))
-            alert.addAction(UIAlertAction(title: "button_cancel".localized(), style: .cancel, handler: { _ in
-                completionHandler(nil)
-            }))
-            //present(alert, animated: true, completion: nil)
-        }
-    }
-}*/
-
 struct ConsoleView: View {
     @ObservedObject var viewModel: ConsoleViewModel
     @State var currentLine: String = ""
@@ -163,7 +43,7 @@ struct ConsoleView: View {
                                 viewModel.execute(currentLine)
                                 currentLine = ""
                             })
-                                .autocapitalization(UITextAutocapitalizationType.none)
+                                .autocapitalizationNoneIfAvailable()
                                 .disableAutocorrection(true)
                         }
                     }

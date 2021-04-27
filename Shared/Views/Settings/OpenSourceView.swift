@@ -34,7 +34,7 @@ struct OpenSourceView: View {
             }
         }
         .navigationTitle("opensource")
-        .listStyle(InsetGroupedListStyle())
+        .listStyleInsetGroupedIfAvailable()
     }
 }
 

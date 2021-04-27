@@ -40,7 +40,7 @@ class CustomTheme: SourceCodeTheme {
     var commentColor: NativeColor = .clear
     
     // Store font
-    let font: UIFont = .monospacedSystemFont(ofSize: 14, weight: .regular)
+    let font: NativeFont = .monospacedSystemFont(ofSize: 14, weight: .regular)
     
     // Private initializer
     private init() {
@@ -53,19 +53,19 @@ class CustomTheme: SourceCodeTheme {
         let datas = UserDefaults(suiteName: "group.me.nathanfallet.ocaml") ?? .standard
         
         // Then we get colors (or defaults if not customized)
-        backgroundColor = (datas.value(forKey: "backgroundColor") as? Int)?.toUIColor() ?? .systemBackground
-        plainColor = (datas.value(forKey: "plainColor") as? Int)?.toUIColor() ?? .label
-        numberColor = (datas.value(forKey: "numberColor") as? Int)?.toUIColor() ?? .systemBlue
-        stringColor = (datas.value(forKey: "stringColor") as? Int)?.toUIColor() ?? .systemOrange
-        identifierColor = (datas.value(forKey: "identifierColor") as? Int)?.toUIColor() ?? .systemIndigo
-        keywordColor = (datas.value(forKey: "keywordColor") as? Int)?.toUIColor() ?? .systemPurple
-        commentColor = (datas.value(forKey: "commentColor") as? Int)?.toUIColor() ?? .systemGray
+        backgroundColor = (datas.value(forKey: "backgroundColor") as? Int)?.toNativeColor() ?? .systemBackground
+        plainColor = (datas.value(forKey: "plainColor") as? Int)?.toNativeColor() ?? .label
+        numberColor = (datas.value(forKey: "numberColor") as? Int)?.toNativeColor() ?? .systemBlue
+        stringColor = (datas.value(forKey: "stringColor") as? Int)?.toNativeColor() ?? .systemOrange
+        identifierColor = (datas.value(forKey: "identifierColor") as? Int)?.toNativeColor() ?? .systemIndigo
+        keywordColor = (datas.value(forKey: "keywordColor") as? Int)?.toNativeColor() ?? .systemPurple
+        commentColor = (datas.value(forKey: "commentColor") as? Int)?.toNativeColor() ?? .systemGray
     }
     
     // Some styles
     let lineNumbersStyle: LineNumbersStyle? = .init(
         font: .monospacedSystemFont(ofSize: 14, weight: .regular),
-        textColor: UIColor.tertiaryLabel
+        textColor: NativeColor.tertiaryLabel
     )
     
     let gutterStyle: GutterStyle = .init(
@@ -78,13 +78,13 @@ class CustomTheme: SourceCodeTheme {
         var attributes = [NSAttributedString.Key: Any]()
         
         attributes[.font] = font
-        attributes[.foregroundColor] = UIColor.label
+        attributes[.foregroundColor] = NativeColor.label
         
         return attributes
     }
     
     // Return colors for types
-    func color(for syntaxColorType: SourceCodeTokenType) -> UIColor {
+    func color(for syntaxColorType: SourceCodeTokenType) -> NativeColor {
         switch syntaxColorType {
             case .plain: return plainColor
             case .number: return numberColor
