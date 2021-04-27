@@ -20,23 +20,10 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-class OCamlFile: FileDocument {
+struct OCamlFile: FileDocument {
     
-    // File properties
-    var url: URL?
+    // File content
     var source = ""
-    
-    // File status
-    var edited = false
-    
-    // File name
-    var name: String? {
-        if let url = url {
-            return url.lastPathComponent
-        } else {
-            return nil
-        }
-    }
     
     // Supported identifiers
     static var readableContentTypes: [UTType] {
@@ -50,7 +37,7 @@ class OCamlFile: FileDocument {
     }
     
     // Init a file from configuration
-    required init(configuration: ReadConfiguration) throws {
+    init(configuration: ReadConfiguration) throws {
         if let data = configuration.file.regularFileContents {
             source = String(decoding: data, as: UTF8.self)
         } else {
@@ -62,57 +49,6 @@ class OCamlFile: FileDocument {
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
         let data = Data(source.utf8)
         return FileWrapper(regularFileWithContents: data)
-    }
-    
-    // Load file content
-    func load(from url: URL) -> Bool {
-        // Start accessing a security-scoped resource.
-        let _ = url.startAccessingSecurityScopedResource()
-        defer { url.stopAccessingSecurityScopedResource() }
-        
-        // Try to load file content
-        if let source = try? String(contentsOf: url) {
-            // Save URL and source
-            self.url = url
-            self.source = source
-            
-            // Ok
-            return true
-        }
-        
-        // Failed
-        return false
-    }
-    
-    // Change file content
-    func update(source: String) {
-        // Update status
-        if self.source != source {
-            // Mark as edited
-            self.source = source
-            self.edited = true
-        }
-    }
-    
-    // Save the file to disk
-    @discardableResult
-    func save() -> Bool {
-        // Check if a file is linked
-        if let url = url {
-            // Start accessing a security-scoped resource.
-            let _ = url.startAccessingSecurityScopedResource()
-            defer { url.stopAccessingSecurityScopedResource() }
-            
-            // Save file content
-            try? source.write(to: url, atomically: true, encoding: .utf8)
-            self.edited = false
-            
-            // Saved
-            return true
-        }
-        
-        // No file found, ask for a location
-        return false
     }
     
 }

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "ocaml-20@2x.png",
+      "filename" : "ocaml-40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
@@ -55,7 +55,7 @@
       "size" : "20x20"
     },
     {
-      "filename" : "ocaml-20@2x-1.png",
+      "filename" : "ocaml-40.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
@@ -67,7 +67,7 @@
       "size" : "29x29"
     },
     {
-      "filename" : "ocaml-29@2x-1.png",
+      "filename" : "ocaml-29@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
@@ -79,7 +79,7 @@
       "size" : "40x40"
     },
     {
-      "filename" : "ocaml-40@2x-1.png",
+      "filename" : "ocaml-40@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
@@ -109,51 +109,61 @@
       "size" : "1024x1024"
     },
     {
+      "filename" : "ocaml-16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
+      "filename" : "ocaml-32.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
+      "filename" : "ocaml-32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
+      "filename" : "ocaml-64.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
+      "filename" : "ocaml-128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
+      "filename" : "ocaml-256.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
+      "filename" : "ocaml-256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
+      "filename" : "ocaml-512.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
+      "filename" : "ocaml-512.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
+      "filename" : "ocaml-1024.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
