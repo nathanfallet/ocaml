@@ -21,6 +21,7 @@ import SwiftUI
 
 @main
 struct OCamlApp: App {
+    @Environment(\.openURL) var openURL
     @StateObject var consoleViewModel = ConsoleViewModel()
     @State var activeSheet: ActiveSheet?
     
@@ -105,12 +106,14 @@ struct OCamlApp: App {
                 .toolbar {
                     ToolbarItemGroup(placement: .primaryAction) {
                         Button(action: {
-                            activeSheet = .learn
+                            if let url = URL(string: "ocamllearnandcode://learn") {
+                                openURL(url)
+                            }
                         }) {
                             Image(systemName: "book")
                         }
                         Button(action: {
-                            activeSheet = .settings
+                            NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
                         }) {
                             Image(systemName: "gearshape")
                         }
@@ -123,6 +126,12 @@ struct OCamlApp: App {
                     }
                 }
         }
+        
+        // Learn
+        WindowGroup(id: "learn") {
+            LearnView()
+                .handlesExternalEvents(preferring: Set(arrayLiteral: "learn"), allowing: Set(arrayLiteral: "learn"))
+        }.handlesExternalEvents(matching: Set(arrayLiteral: "learn"))
         
         // Settings
         Settings {

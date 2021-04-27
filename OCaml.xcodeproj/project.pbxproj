@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A3C6E1526382FAD00E40602 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8508926348257006BF4FE /* SettingsView.swift */; };
 		6A6562352634B3270064DD6C /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6562342634B3270064DD6C /* Sourceful */; };
 		6A65623A2634B3430064DD6C /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D826349BF5006BF4FE /* CodeEditorView.swift */; };
 		6A65623D2634B3460064DD6C /* ChapterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D426348DE6006BF4FE /* ChapterCardView.swift */; };
@@ -56,7 +57,6 @@
 		6AE8508A26348257006BF4FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8508926348257006BF4FE /* SettingsView.swift */; };
 		6AE8508D26348356006BF4FE /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850832634824D006BF4FE /* CodeView.swift */; };
 		6AE850902634835B006BF4FE /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8507A26348213006BF4FE /* LearnView.swift */; };
-		6AE850932634835E006BF4FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8508926348257006BF4FE /* SettingsView.swift */; };
 		6AE8509F26348743006BF4FE /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6AE8509E26348743006BF4FE /* Sourceful */; };
 		6AE850D526348DE6006BF4FE /* ChapterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D426348DE6006BF4FE /* ChapterCardView.swift */; };
 		6AE850D926349BF5006BF4FE /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D826349BF5006BF4FE /* CodeEditorView.swift */; };
@@ -102,7 +102,7 @@
 		6AE8502B26347B77006BF4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE8503026347B77006BF4FE /* OCaml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCaml.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE8503226347B77006BF4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AE8503326347B77006BF4FE /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		6AE8503326347B77006BF4FE /* OCaml.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCaml.entitlements; sourceTree = "<group>"; };
 		6AE8507A26348213006BF4FE /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		6AE850832634824D006BF4FE /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		6AE8508926348257006BF4FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -213,6 +213,7 @@
 				6AE8502226347B76006BF4FE /* OCamlApp.swift */,
 				6A35DC1625ECE8BA0092B6CA /* Localizable.strings */,
 				6AE8502426347B77006BF4FE /* Assets.xcassets */,
+				6AE8503326347B77006BF4FE /* OCaml.entitlements */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -229,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				6AE8503226347B77006BF4FE /* Info.plist */,
-				6AE8503326347B77006BF4FE /* macOS.entitlements */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -444,11 +444,11 @@
 				6AE850902634835B006BF4FE /* LearnView.swift in Sources */,
 				6AE8508D26348356006BF4FE /* CodeView.swift in Sources */,
 				6AFBF10F2637027000A55FFF /* DonateView.swift in Sources */,
+				6A3C6E1526382FAD00E40602 /* SettingsView.swift in Sources */,
 				6AE8505426347ECD006BF4FE /* OCamlCourse.swift in Sources */,
 				6AE8503526347B77006BF4FE /* OCamlApp.swift in Sources */,
 				6AE8506A26347F23006BF4FE /* ColorExtension.swift in Sources */,
 				6AE8506926347F23006BF4FE /* IntExtension.swift in Sources */,
-				6AE850932634835E006BF4FE /* SettingsView.swift in Sources */,
 				6AEE525A26356E9300F54038 /* SplitView.swift in Sources */,
 				6A65625D2634CB280064DD6C /* OpenSourceRepositoryView.swift in Sources */,
 				6A65623D2634B3460064DD6C /* ChapterCardView.swift in Sources */,
@@ -595,8 +595,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Shared/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -619,8 +620,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Shared/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -644,10 +646,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Shared/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -670,10 +672,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Shared/OCaml.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

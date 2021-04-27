@@ -12,6 +12,15 @@
       "filename" : "icon-1024.png",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "icon-1024.png",
+      "idiom" : "mac",
+      "scale" : "2x"
     }
   ],
   "info" : {

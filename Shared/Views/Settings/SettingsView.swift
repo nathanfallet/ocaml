@@ -22,6 +22,7 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.openURL) var openURL
     
+    #if os(iOS)
     var body: some View {
         List {
             Section(header: Text("editor_settings")) {
@@ -48,6 +49,60 @@ struct SettingsView: View {
             }
             
             Section(header: Text("apps")) {
+                SpacedAppView(name: "Delta: Algorithms", description: "delta", image: "Delta")
+                    .onTapGesture {
+                        if let url = URL(string: "https://apps.apple.com/app/delta-algorithms/id1436506800") {
+                            openURL(url)
+                        }
+                    }
+                SpacedAppView(name: "BaseConverter: All in one", description: "baseconverter", image: "BaseConverter")
+                    .onTapGesture {
+                        if let url = URL(string: "https://apps.apple.com/app/baseconverter-all-in-one/id1446344899") {
+                            openURL(url)
+                        }
+                    }
+            }
+        }
+        .navigationTitle("settings")
+        .listStyleInsetGroupedIfAvailable()
+    }
+    #endif
+    
+    #if os(macOS)
+    var body: some View {
+        TabView {
+            Form {
+                EditorColorView(name: "backgroundColor", color: CustomTheme.shared.backgroundColor.toColor())
+                EditorColorView(name: "plainColor", color: CustomTheme.shared.plainColor.toColor())
+                EditorColorView(name: "numberColor", color: CustomTheme.shared.numberColor.toColor())
+                EditorColorView(name: "stringColor", color: CustomTheme.shared.stringColor.toColor())
+                EditorColorView(name: "identifierColor", color: CustomTheme.shared.identifierColor.toColor())
+                EditorColorView(name: "keywordColor", color: CustomTheme.shared.keywordColor.toColor())
+                EditorColorView(name: "commentColor", color: CustomTheme.shared.commentColor.toColor())
+            }
+            .tabItem {
+                Label("editor_settings", systemImage: "pencil.circle")
+            }
+            
+            Form {
+                Text("developer_text")
+                    .onTapGesture {
+                        if let url = URL(string: "https://www.nathanfallet.me/") {
+                            openURL(url)
+                        }
+                    }
+            }
+            .tabItem {
+                Label("about", systemImage: "info.circle")
+            }
+            
+            
+            OpenSourceView()
+            .tabItem {
+                Label("opensource", systemImage: "chevron.left.slash.chevron.right")
+            }
+            
+            Form {
                 AppView(name: "Delta: Algorithms", description: "delta", image: "Delta")
                     .onTapGesture {
                         if let url = URL(string: "https://apps.apple.com/app/delta-algorithms/id1436506800") {
@@ -61,10 +116,14 @@ struct SettingsView: View {
                         }
                     }
             }
+            .tabItem {
+                Label("apps", systemImage: "app.badge")
+            }
         }
-        .navigationTitle("settings")
-        .listStyleInsetGroupedIfAvailable()
+        .padding()
+        .frame(minWidth: 512)
     }
+    #endif
 }
 
 struct SettingsView_Previews: PreviewProvider {

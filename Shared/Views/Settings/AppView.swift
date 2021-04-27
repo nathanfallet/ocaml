@@ -37,6 +37,18 @@ struct AppView: View {
                     .font(.footnote)
                     .foregroundColor(.secondary)
             }
+        }
+    }
+}
+
+struct SpacedAppView: View {
+    @State var name: String
+    @State var description: String
+    @State var image: String
+    
+    var body: some View {
+        HStack {
+            AppView(name: name, description: description, image: image)
             Spacer()
         }
     }
