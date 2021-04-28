@@ -61,18 +61,12 @@ struct OpenSourceView: View {
     var body: some View {
         Form {
             ForEach(data, id: \.0) { section in
-                if section.0.isEmpty {
-                    Section() {
-                        ForEach(section.1, id: \.1) { repo in
-                            OpenSourceRepositoryView(user: repo.0, repo: repo.1)
-                        }
-                    }
-                } else {
-                    Section(header: Text(section.0.localized())) {
-                        ForEach(section.1, id: \.1) { repo in
-                            OpenSourceRepositoryView(user: repo.0, repo: repo.1)
-                        }
-                    }
+                if !section.0.isEmpty {
+                    Text(section.0.localized())
+                        .padding(.top)
+                }
+                ForEach(section.1, id: \.1) { repo in
+                    OpenSourceRepositoryView(user: repo.0, repo: repo.1)
                 }
             }
         }

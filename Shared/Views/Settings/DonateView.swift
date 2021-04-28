@@ -61,9 +61,72 @@ class CustomDonateViewController: DonateViewController, DonateViewControllerDele
 import SwiftUI
 
 struct DonateView: View {
+    @StateObject var viewModel = DonateViewModel()
+    
+    let identifiers = [
+        "me.nathanfallet.OCaml.donation1",
+        "me.nathanfallet.OCaml.donation2",
+        "me.nathanfallet.OCaml.donation3"
+    ]
+    
+    #if os(iOS)
     var body: some View {
-        Text("Hello, World!")
+        if viewModel.donations.isEmpty {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
+                .navigationTitle("donate_title")
+                .onAppear {
+                    viewModel.fetchDonations(identifiers: identifiers)
+                }
+        } else {
+            List {
+                ForEach(viewModel.donations, id: \.productIdentifier) { donation in
+                    HStack {
+                        Text(donation.localizedTitle)
+                        Spacer()
+                        Text(donation.localizedPrice ?? "")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                    }
+                    .padding()
+                    .onTapGesture {
+                        viewModel.donationSelected(id: donation.productIdentifier)
+                    }
+                }
+            }
+            .listStyleInsetGroupedIfAvailable()
+            .navigationTitle("donate_title")
+        }
     }
+    #endif
+    
+    #if os(macOS)
+    var body: some View {
+        if viewModel.donations.isEmpty {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
+                .onAppear {
+                    viewModel.fetchDonations(identifiers: identifiers)
+                }
+        } else {
+            Form {
+                ForEach(viewModel.donations, id: \.productIdentifier) { donation in
+                    HStack {
+                        Text(donation.localizedTitle)
+                        Text(donation.localizedPrice ?? "")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                        Spacer()
+                        Button("donate_title") {
+                            viewModel.donationSelected(id: donation.productIdentifier)
+                        }
+                    }
+                    .padding()
+                }
+            }
+        }
+    }
+    #endif
 }
 
 struct DonateView_Previews: PreviewProvider {

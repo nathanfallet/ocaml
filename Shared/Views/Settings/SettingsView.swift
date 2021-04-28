@@ -62,7 +62,9 @@ struct SettingsView: View {
                 NavigationLink(destination: OpenSourceView()) {
                     Text("opensource")
                 }
-                Text("donate_title")
+                NavigationLink(destination: DonateView()) {
+                    Text("donate_title")
+                }
             }
 
             Section(header: Text("apps")) {
@@ -125,6 +127,11 @@ struct SettingsView: View {
             OpenSourceView()
             .tabItem {
                 Label("opensource", systemImage: "chevron.left.slash.chevron.right")
+            }
+            
+            DonateView()
+            .tabItem {
+                Label("donate_title", systemImage: "giftcard")
             }
 
             Form {
