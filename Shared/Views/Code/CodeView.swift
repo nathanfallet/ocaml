@@ -24,13 +24,16 @@ struct CodeView: View {
     @Binding var document: OCamlFile
 
     var body: some View {
-        SplitView(leftView: {
-            CodeEditorView(text: $document.source)
-                .ignoresSafeArea(.container, edges: .bottom)
-        }, rightView: {
-            ConsoleView(viewModel: consoleViewModel)
-                .navigationTitle("console")
-        }, showRightView: $consoleViewModel.showConsole)
+        SplitView(
+            leftView: {
+                CodeEditorView(text: $document.source)
+                    .ignoresSafeArea(.container, edges: .bottom)
+            }, rightView: {
+                ConsoleView(viewModel: consoleViewModel)
+            },
+            rightTitle: "console".localized(),
+            showRightView: $consoleViewModel.showConsole
+        )
     }
 }
 

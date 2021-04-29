@@ -24,20 +24,23 @@ struct SplitView<LeftView: View, RightView: View>: View {
 
     var leftView: LeftView
     var rightView: RightView
+    var rightTitle: String
 
     init(
         @ViewBuilder leftView: () -> LeftView,
         @ViewBuilder rightView: () -> RightView,
+        rightTitle: String,
         showRightView: Binding<Bool>
     ) {
         self.leftView = leftView()
         self.rightView = rightView()
+        self.rightTitle = rightTitle
         self._showRightView = showRightView
     }
 
     var body: some View {
         GeometryReader { geometry in
-            if isForceSplitted || geometry.size.height >= 900 {
+            if isForceSplitted || geometry.size.width >= 736 {
                 HStack(spacing: 0) {
                     leftView
                         .frame(
@@ -57,7 +60,8 @@ struct SplitView<LeftView: View, RightView: View>: View {
                 Group {
                     leftView
                     NavigationLink(
-                        destination: rightView,
+                        destination: rightView
+                            .navigationTitle(rightTitle),
                         isActive: $showRightView
                     ) {}
                 }
@@ -76,11 +80,15 @@ struct SplitView<LeftView: View, RightView: View>: View {
 
 struct SplitView_Previews: PreviewProvider {
     static var previews: some View {
-        SplitView(leftView: {
-            Text("Left")
-        }, rightView: {
-            Text("Right")
-        }, showRightView: .constant(false))
+        SplitView(
+            leftView: {
+                Text("Left")
+            }, rightView: {
+                Text("Right")
+            },
+            rightTitle: "Title",
+            showRightView: .constant(false)
+        )
         .previewDevice("iPad (8th generation)")
     }
 }
