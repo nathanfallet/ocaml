@@ -61,6 +61,27 @@ struct ConsoleView: View {
                 .background(NativeColor.systemBackground.toColor())
             }
             .font( .system(size: 14, design: .monospaced))
+            .alert(isPresented: Binding<Bool>(
+                get: {
+                    viewModel.prompt != nil
+                },
+                set: {
+                    if !$0 {
+                        viewModel.prompt = nil
+                    }
+                }
+            )) {
+                Alert(
+                    title: Text(viewModel.prompt ?? ""),
+                    message: nil,
+                    primaryButton: .default(Text("button_ok"), action: {
+                        viewModel.promptCompletionHandler?(nil)
+                    }),
+                    secondaryButton: .destructive(Text("button_cancel"), action: {
+                        viewModel.promptCompletionHandler?(nil)
+                    })
+                )
+            }
         }
     }
 }

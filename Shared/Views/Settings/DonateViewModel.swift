@@ -29,27 +29,28 @@ import Foundation
 import StoreKit
 
 class DonateViewModel: NSObject, ObservableObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    
-    /// Delegate
-    //public weak var delegate: DonateViewControllerDelegate?
-    
+
     /// Donations
-    @Published private(set) var donations = [SKProduct]()
-    
+    @Published var donations = [SKProduct]()
+
+    /// Status of success alert
+    @Published var didDonationSucceed = false
+    @Published var didDonationFailed = false
+
     /// Payment queue
     private let paymentQueue = SKPaymentQueue()
-    
+
     /// Strong reference to request
     private var request: SKProductsRequest?
-    
+
     /// Initializer
     public override init() {
         super.init()
-        
+
         // Add the observer
         paymentQueue.add(self)
     }
-    
+
     /// Update donation datas
     public func fetchDonations(identifiers: [String]) {
         // Create a request
@@ -57,19 +58,19 @@ class DonateViewModel: NSObject, ObservableObject, SKProductsRequestDelegate, SK
         request?.delegate = self
         request?.start()
     }
-    
+
     /// Handle when a row is selected
     public func donationSelected(id: String) {
         // Get the product
         guard let product = donations.first(where: { $0.productIdentifier == id }) else { return }
-        
+
         // Create a payment
         let payment = SKPayment(product: product)
-        
+
         // Add it to queue
         paymentQueue.add(payment)
     }
-    
+
     /// Handle response from product request
     public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         DispatchQueue.main.async {
@@ -77,27 +78,27 @@ class DonateViewModel: NSObject, ObservableObject, SKProductsRequestDelegate, SK
             self.donations = response.products
         }
     }
-    
+
     /// Handle fail from product request
     public func request(_ request: SKRequest, didFailWithError error: Error) {
         print("Request did fail: \(error)")
     }
-    
+
     /// Handle when transactions are updated
     public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         // Iterate transactions
         for transaction in transactions {
             // Get the corresponding donation
-            if let donation = donations.first(where: { $0.productIdentifier == transaction.payment.productIdentifier }) {
+            if let _ = donations.first(where: { $0.productIdentifier == transaction.payment.productIdentifier }) {
                 // Check the transaction state
                 if transaction.transactionState == .purchased {
                     // Donation succeed
-                    //delegate?.donateViewController(self, didDonationSucceed: donation)
+                    self.didDonationSucceed = true
                 } else if transaction.transactionState == .failed {
                     // Donation failed
-                    //delegate?.donateViewController(self, didDonationFailed: donation)
+                    self.didDonationFailed = true
                 }
-                
+
                 // End the transaction if needed
                 if transaction.transactionState != .purchasing {
                     // Finish transaction if not purchasing state
@@ -106,5 +107,5 @@ class DonateViewModel: NSObject, ObservableObject, SKProductsRequestDelegate, SK
             }
         }
     }
-    
+
 }

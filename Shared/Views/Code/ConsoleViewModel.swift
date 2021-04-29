@@ -55,6 +55,10 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
     // Content of the console
     @Published var output: String?
 
+    // Any prompt
+    @Published var prompt: String?
+    var promptCompletionHandler: ((String?) -> Void)?
+
     // Load the console
     func loadConsoleIfNeeded() {
         _ = webView
@@ -113,18 +117,9 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
     }
 
     public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-        /*
-        // Show a UIAlert controller
-        let alert = UIAlertController(title: prompt, message: nil, preferredStyle: .alert)
-        alert.addTextField { _ in }
-        alert.addAction(UIAlertAction(title: "button_ok".localized(), style: .default, handler: { _ in
-            completionHandler(alert.textFields?.first?.text)
-        }))
-        alert.addAction(UIAlertAction(title: "button_cancel".localized(), style: .cancel, handler: { _ in
-            completionHandler(nil)
-        }))
-        //present(alert, animated: true, completion: nil)
-        */
+        // Update prompt
+        self.prompt = prompt
+        self.promptCompletionHandler = completionHandler
     }
 
     // Check for review

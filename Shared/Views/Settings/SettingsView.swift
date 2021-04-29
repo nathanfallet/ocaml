@@ -128,7 +128,7 @@ struct SettingsView: View {
             .tabItem {
                 Label("opensource", systemImage: "chevron.left.slash.chevron.right")
             }
-            
+
             DonateView()
             .tabItem {
                 Label("donate_title", systemImage: "giftcard")
