@@ -38,7 +38,24 @@ struct ConsoleView: View {
                     ScrollViewReader { value in
                         VStack(alignment: .leading) {
                             HStack {
-                                Text(viewModel.output ?? "console_failed".localized())
+                                if let out = viewModel.output?.splitInSpans() {
+                                    VStack(alignment: .leading, spacing: 0) {
+                                        ForEach(out, id: \.0) { line in
+                                            switch line.1 {
+                                            case "sharp":
+                                                Text("# \(line.2)")
+                                            case "caml":
+                                                Text(line.2).foregroundColor(.blue)
+                                            case "stderr":
+                                                Text(line.2).foregroundColor(.red)
+                                            default:
+                                                Text(line.2)
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    Text("console_failed")
+                                }
                                 Spacer()
                             }
                             if viewModel.showExecuting {

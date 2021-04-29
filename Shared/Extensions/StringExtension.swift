@@ -43,10 +43,43 @@ extension String {
 
     func trimEndlines() -> String {
         var new = self
+        while new.first == "\n" {
+            new.removeFirst()
+        }
         while new.last == "\n" {
             new.removeLast()
         }
         return new
+    }
+
+    // Regex
+
+    func groups(for regexPattern: String) -> [[String]] {
+        do {
+            let text = self
+            let regex = try NSRegularExpression(pattern: regexPattern, options: [.dotMatchesLineSeparators])
+            let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+            return matches.map { match in
+                return (0..<match.numberOfRanges).map {
+                    let rangeBounds = match.range(at: $0)
+                    guard let range = Range(rangeBounds, in: text) else {
+                        return ""
+                    }
+                    return String(text[range])
+                }
+            }
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
+
+    func splitInSpans() -> [(Int, String, String)] {
+        var spans = [(Int, String, String)]()
+        for group in groups(for: #"<span class=\"([a-z]+)\">([^<>]+)</span>"#) {
+            spans.append((spans.count, group[1], group[2].trimEndlines()))
+        }
+        return spans
     }
 
 }

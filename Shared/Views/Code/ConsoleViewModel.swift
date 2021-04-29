@@ -67,7 +67,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
 
     // Refresh the output
     func refreshOutput() {
-        webView.evaluateJavaScript("document.getElementById('output').textContent") { data, _ in
+        webView.evaluateJavaScript("document.getElementById('output').innerHTML") { data, _ in
             self.output = (data as? String)?.trimEndlines()
         }
     }
