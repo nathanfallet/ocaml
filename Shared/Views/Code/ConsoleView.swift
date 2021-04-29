@@ -37,7 +37,10 @@ struct ConsoleView: View {
                 ScrollView {
                     ScrollViewReader { value in
                         VStack(alignment: .leading) {
-                            Text(viewModel.output ?? "console_failed".localized())
+                            HStack {
+                                Text(viewModel.output ?? "console_failed".localized())
+                                Spacer()
+                            }
                             if viewModel.showExecuting {
                                 HStack {
                                     Spacer()
