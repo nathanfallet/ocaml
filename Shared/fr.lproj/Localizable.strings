@@ -43,17 +43,11 @@
 "donate_header" = "Sélectionnez le montant à donner :";
 "donate_title" = "Faire un don";
 "button_cancel" = "Annuler";
-"error_unknown" = "Erreur inconnue";
-"error" = "Erreur lors de la compilation du code";
 "console_failed" = "Erreur lors du chargement de la console";
 "button_ok" = "OK";
 "developer_text" = "Développé par Nathan Fallet";
-"developer" = "Développeur";
 "console" = "Console";
 "about" = "A propos";
-"open" = "Ouvrir";
-"save" = "Enregistrer";
-"execute" = "Executer";
 "settings" = "Paramètres";
 "code" = "Coder";
 /*
@@ -130,10 +124,6 @@
 "chapter_variables_intro" = "Une variable est un endroit en mémoire dans lequel on enregistre une valeur. On déclare une variable en OCaml de cette façon :";
 "chapter_variables_def" = "Définition de variables locales et globales";
 "chapter_variables_title" = "Variables";
-/*
- Mac Menu Bar
- */
-"menuBarItem.preferences" = "Préférences…";
 "opensource_repo_Kingfisher" = "Une bibliothèque Swift légère pour télécharger et cacher des images.";
 "opensource_repo_js_of_ocaml" = "Compilateur OCaml vers Javascript.";
 "opensource_repo_Sourceful" = "Un éditeur avec coloration syntaxique pour iOS et macOS avec UITextView et NSTextView.";
@@ -141,7 +131,6 @@
 "opensource_repo_OCaml-iOS" = "L'app elle-même";
 "opensource_others" = "Autres";
 "opensource_swiftpackages" = "Swift packages";
-"button_close" = "Fermer";
 "opensource" = "Open source";
 "chapter_match_intro_details" = "Dans cet exemple, on filtre la valeur de i avec différents cas : si i correspond à 1, on retourne 1st, … et le dernier cas, représenté par un '_' correspond à tout le reste (c'est un cas par défaut). Notez que toutes les valeurs possibles doivent être associées avec un cas du filtrage : il doit être exhaustif.";
 "sequence_collections" = "Collections";
@@ -168,7 +157,5 @@
 "chapter_lists_create_intro" = "Une liste est un ensemble d'éléments. Elle est représentée par une tête, le premier élément de la liste, et une queue, une autre liste qui contient les autres éléments. Une liste peut être déclarée comme un tableau, avec des '[' et ']', ou en joignant une tête et une queue avec des '::'.";
 "chapter_lists_create" = "Créer une liste";
 "chapter_lists_title" = "Listes";
-"file_error_description" = "Quelque chose s'est mal passé en ouvrant le fichier. Peut être que vous n'avez pas le droit de le lire ?";
-"file_error" = "Erreur lors de l'ouverture du fichier";
 "button_reset" = "Réinitialiser";
 "console_load" = "Chargement de la console OCaml, veuillez patienter…";
