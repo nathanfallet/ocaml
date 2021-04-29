@@ -28,7 +28,7 @@
 "developer_text" = "Developed by Nathan Fallet";
 "opensource" = "Open source";
 "button_ok" = "OK";
-"console_load" = "Loading OCaml console, please wait...";
+"console_load" = "Loading OCaml console, please wait…";
 "console_failed" = "Failed to load console";
 "button_cancel" = "Cancel";
 "button_reset" = "Reset";
