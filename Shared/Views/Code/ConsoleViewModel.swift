@@ -51,6 +51,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
             refreshOutput()
         }
     }
+    @Published var showExecuting: Bool = false
 
     // Content of the console
     @Published var output: String?
@@ -74,7 +75,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
     // Execute code
     func execute(_ source: String, completionHandler: @escaping () -> Void = {}) {
         // Start loading
-        // showLoading = true
+        showExecuting = true
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             // Create JS script to execute in console
@@ -89,7 +90,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
             self.webView.evaluateJavaScript(js) { _, _ in
                 // Present output
                 DispatchQueue.main.async {
-                    // self.showLoading = false
+                    self.showExecuting = false
                     self.refreshOutput()
                     completionHandler()
                     self.checkForReview()

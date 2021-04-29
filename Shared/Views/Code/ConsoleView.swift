@@ -38,12 +38,22 @@ struct ConsoleView: View {
                     ScrollViewReader { value in
                         VStack(alignment: .leading) {
                             Text(viewModel.output ?? "console_failed".localized())
-                            .id(id)
+                            if viewModel.showExecuting {
+                                HStack {
+                                    Spacer()
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle())
+                                    Spacer()
+                                }
+                            }
                         }
+                        .id(id)
                         .padding()
                         .fixedSize(horizontal: false, vertical: true)
                         .onChange(of: viewModel.output, perform: { _ in
-                            value.scrollTo(id, anchor: .bottom)
+                            withAnimation {
+                                value.scrollTo(id, anchor: .bottom)
+                            }
                         })
                     }
                 }
