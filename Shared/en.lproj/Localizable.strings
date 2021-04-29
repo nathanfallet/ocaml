@@ -24,22 +24,13 @@
 "code" = "Code";
 "settings" = "Settings";
 "about" = "About";
-"open" = "Open";
-"save" = "Save";
-"execute" = "Execute";
 "console" = "Console";
-"developer" = "Developer";
 "developer_text" = "Developed by Nathan Fallet";
 "opensource" = "Open source";
 "button_ok" = "OK";
-"error" = "Error while compiling code";
-"error_unknown" = "Unknown error";
-"file_error" = "Error while opening the file";
-"file_error_description" = "Something went wrong while opening the file. Maybe you don't have the right to read it?";
 "console_load" = "Loading OCaml console, please wait...";
 "console_failed" = "Failed to load console";
 "button_cancel" = "Cancel";
-"button_close" = "Close";
 "button_reset" = "Reset";
 "donate_title" = "Donate";
 "donate_header" = "Select an amount to donate:";
@@ -168,7 +159,3 @@
 "chapter_exercices_lists" = "Lists";
 "chapter_exercices_lists_arrays" = "Write a function 'print_int_list' and a function 'sum' with the same goal but for lists.";
 "chapter_exercices_lists_filter" = "Write a function 'filter' of type '('a -> bool) -> 'a list -> 'a list', which takes a function (which takes an element of the list and returns true if the element should be kept) and a list.";
-/*
- Mac Menu Bar
- */
-"menuBarItem.preferences" = "Preferences…";
