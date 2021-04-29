@@ -170,3 +170,5 @@
 "chapter_lists_title" = "Listes";
 "file_error_description" = "Quelque chose s'est mal passé en ouvrant le fichier. Peut être que vous n'avez pas le droit de le lire ?";
 "file_error" = "Erreur lors de l'ouverture du fichier";
+"button_reset" = "Réinitialiser";
+"console_load" = "Chargement de la console OCaml, veuillez patienter…";
