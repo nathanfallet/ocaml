@@ -119,7 +119,7 @@
 "chapter_variables_def_local2" = "Dans la première expression, on défini une variable, x, disponible dans tout ce qui suit le mot clé 'in', jusqu'à ce qu'on atteigne des ';;'. Dont 'x + 7' est évalué à '7'. Cependant, dans la seconde expression, x n'est pas défini, par il a été déclaré localement dans l'autre expression. Donc on aura une erreur.";
 "chapter_variables_def_local_comment2" = "Ici on a une erreur";
 "chapter_variables_def_local_comment1" = "On défini une variable locale x";
-"chapter_variables_def_local" = "Une variable peut aussi est définie localement :";
+"chapter_variables_def_local" = "Une variable peut aussi être définie localement :";
 "chapter_variables_def_global" = "Le mot clé 'let' indique que l'on défini une variable. Ensuite vient le nom de la variable, x, qui est définie à une valeur, 3. La variable est définie globalement (elle est accessible de partout) et est immuable (sa valeur ne peut pas être changée)";
 "chapter_variables_intro" = "Une variable est un endroit en mémoire dans lequel on enregistre une valeur. On déclare une variable en OCaml de cette façon :";
 "chapter_variables_def" = "Définition de variables locales et globales";
