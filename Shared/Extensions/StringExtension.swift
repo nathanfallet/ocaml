@@ -38,7 +38,8 @@ extension String {
     // Code escape
 
     func escapeCode() -> String {
-        replacingOccurrences(of: "`", with: "\\`")
+        return replacingOccurrences(of: "\\", with: "\\\\")
+            .replacingOccurrences(of: "`", with: "\\`")
     }
 
     func trimEndlines() -> String {
@@ -50,6 +51,12 @@ extension String {
             new.removeLast()
         }
         return new
+    }
+    
+    func replaceHTMLChars() -> String {
+        return replacingOccurrences(of: "&lt;", with: "<")
+            .replacingOccurrences(of: "&gt;", with: ">")
+            .replacingOccurrences(of: "&amp;", with: "&")
     }
 
     // Regex
@@ -77,7 +84,10 @@ extension String {
     func splitInSpans() -> [(Int, String, String)] {
         var spans = [(Int, String, String)]()
         for group in groups(for: #"<span class=\"([a-z]+)\">([^<>]+)</span>"#) {
-            spans.append((spans.count, group[1], group[2].trimEndlines()))
+            let content = group[2].trimEndlines().replaceHTMLChars()
+            if !content.isEmpty {
+                spans.append((spans.count, group[1], content))
+            }
         }
         return spans
     }
