@@ -1,4 +1,4 @@
-git_url("https://github.com/GroupeMINASTE/Match")
+git_url("git@github.com:GroupeMINASTE/Match.git")
 
 storage_mode("git")
 
