@@ -14,6 +14,11 @@ jobs:
       uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: latest-stable    
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_KEY }}
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: Setup ruby
       uses: ruby/setup-ruby@v1
       with:
@@ -23,8 +28,6 @@ jobs:
       run: |
         export LC_ALL=en_US.UTF-8
         export LANG=en_US.UTF-8
-        machine github.com
-        login $CI_USER_TOKEN
         bundle exec fastlane auto_testflight
       env:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
