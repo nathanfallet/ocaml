@@ -1,0 +1,111 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+    
+  desc "Push the app to TestFlight Manually"
+  lane :manual_testflight do
+    
+    # Fetch the necessary certificates and 
+    # provisioning profiles into default keychain.
+    match(
+      readonly: true
+    )
+    
+    # Increment the build number using the
+    # latest Testflight build number.
+    increment_build_number(
+      build_number: latest_testflight_build_number() + 1,
+      xcodeproj: "./OCaml.xcodeproj"
+    )
+
+    # Build the application using the
+    # specified scheme.
+    build_app(
+      scheme: "OCaml (iOS)",
+      configuration: "Release",
+      export_options: {
+        provisioningProfiles: {
+           "me.nathanfallet.OCaml" => "match AppStore me.nathanfallet.OCaml"
+        }
+      }
+    )
+
+    # Upload the application to Testflight
+    changelog_from_git_commits
+    upload_to_testflight(
+      skip_waiting_for_build_processing: true
+    )
+  end
+
+
+  desc "Push the app to TestFlight with Travis CI"
+  lane :travis_testflight do
+    
+    # Fetch the keychain env variables
+    # securely stored in the travis.yml.
+    keychain_name = ENV["MATCH_KEYCHAIN_NAME"]
+    keychain_password = ENV["MATCH_KEYCHAIN_PASSWORD"]
+
+    # Create a temporary keychain to 
+    # store the certificates.
+    create_keychain(
+      name: keychain_name,
+      password: keychain_password,
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true
+    )
+
+    # Fetch the necessary certificates and 
+    # provisioning profiles.
+    match(
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
+      readonly: true
+    )
+    
+    # Increment the build number using the
+    # latest Testflight build number.
+    increment_build_number(
+      build_number: latest_testflight_build_number() + 1,
+      xcodeproj: "./OCaml.xcodeproj"
+    )
+
+    # Build the application using the
+    # specified scheme.
+    build_app(
+      scheme: "OCaml (iOS)",
+      configuration: "Release",
+      export_options: {
+        provisioningProfiles: {
+           "me.nathanfallet.OCaml" => "match AppStore me.nathanfallet.OCaml"
+        }
+      }
+    )
+
+    # Upload the application to Testflight
+    changelog_from_git_commits
+    upload_to_testflight(
+      skip_waiting_for_build_processing: true
+    )
+
+    # Remove the temporary keychain leaving
+    # no trace.
+    delete_keychain(
+      name: keychain_name
+    )
+  end
+
+end
