@@ -25,7 +25,7 @@ platform :ios do
     # Increment the build number using the
     # latest Testflight build number.
     increment_build_number(
-      build_number: latest_testflight_build_number() + 1,
+      build_number: number_of_commits,
       xcodeproj: "./OCaml.xcodeproj"
     )
 
@@ -79,9 +79,7 @@ platform :ios do
     # Increment the build number using the
     # latest Testflight build number.
     increment_build_number(
-      build_number: latest_testflight_build_number(
-        apple_id: "fastlane@groupe-minaste.org"
-      ) + 1,
+      build_number: number_of_commits,
       xcodeproj: "./OCaml.xcodeproj"
     )
 
