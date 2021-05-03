@@ -15,7 +15,7 @@ To suggest a feature, also open an Issue, and describe the feature of you dream.
 You can:
 
 * Open an issue in which you expose the content of you chapter. Someone will add it to the codebase for you.
-* Edit the codebase by yourself. (See the `Models/` folder in the File organization section for details)
+* Edit the codebase by yourself. (See the `docs/` folder in the File organization section for details)
 
 ## Help to translate
 
@@ -27,25 +27,13 @@ To contribute to the source code, fork this repository, make your changes, and o
 
 If your are making your first contribution, please read what follows to understand the structure of the project first.
 
-### File organization (in `OCaml/`)
+### File organization (in `Shared/`)
 
-Files are separated in 5 folders:
-
-#### `Controllers/` folder
-
-Those files are application's view controllers. The root view controller is `TabBarController`, which contains 3 tabs, handled by:
-
-* `LearnSplitViewController`, the parent of `LearnTableViewController`, the list of available content in learn section, and `LearnChapterViewController`, which displays a chapter.
-* `CodeSplitViewController`, the parent of `CodeViewController`, the code editor itself, and `ConsoleViewController`, the interactive top level where code is executed.
-* `SettingsTableViewController`, a table view with settings to customize the app.
+Files are separated in 4 folders:
 
 #### `Extensions/` folder
 
 Those files are existing Swift classes' extensions, and provide useful feature across all the codebase.
-
-* `IntExtension.swift` provides a way to convert Int to UIColor.
-* `UIColorExtension.swift` does the same but for UIColor to Int.
-* `StringExtension.swift` provides a way to localize String and format them.
 
 Note about String localization: When adding a new String, its identifier should be added to `en.lproj/Localizable.strings`, and then it is used in the codebase like this:
 
@@ -64,13 +52,6 @@ This folder contains the toplevel itself, built with `js_of_ocaml`. Changes in t
 
 Here are some models for the app to work.
 
-* `CustomTheme` and `OCamlLexer` are dedicated to the code editor, providing code highlight.
-* `OCamlFile` represents a file opened in the editor. 
-* `LearnModel` provides the structures for the course content.
-* `OCamlCourse.swift` is the registry for the content of the Learn section.
-
-Consequence: If you want to add a chapter to the learn section, edit the `OCamlCourse.swift` file. (Don't forget to add your strings to the `en.lproj/Localizable.strings` file)
-
 #### `Views/` folder
 
-In this folder are located views like table view cells or other custom UIViews.
+In this folder are located all the views of the app.

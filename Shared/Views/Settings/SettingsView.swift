@@ -59,6 +59,18 @@ struct SettingsView: View {
                             openURL(url)
                         }
                     }
+                Text("App Store")
+                    .onTapGesture {
+                        if let url = URL(string: "https://apps.apple.com/app/ocaml-learn-code/id1547506826") {
+                            openURL(url)
+                        }
+                    }
+                Text("TestFlight")
+                    .onTapGesture {
+                        if let url = URL(string: "https://testflight.apple.com/join/xDGBk6wD") {
+                            openURL(url)
+                        }
+                    }
                 NavigationLink(destination: OpenSourceView()) {
                     Text("opensource")
                 }
