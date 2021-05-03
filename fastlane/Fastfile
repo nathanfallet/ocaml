@@ -99,7 +99,8 @@ platform :ios do
     changelog_from_git_commits
     upload_to_testflight(
       apple_id: "1547506826",
-      skip_waiting_for_build_processing: true
+      skip_waiting_for_build_processing: true,
+      skip_submission: true
     )
 
     # Remove the temporary keychain leaving
