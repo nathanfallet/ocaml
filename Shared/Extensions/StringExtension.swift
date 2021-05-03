@@ -52,7 +52,7 @@ extension String {
         }
         return new
     }
-    
+
     func replaceHTMLChars() -> String {
         return replacingOccurrences(of: "&lt;", with: "<")
             .replacingOccurrences(of: "&gt;", with: ">")
