@@ -94,7 +94,7 @@
                 }, wait);
                 if (immediate && !timeout) func.apply(context, args);
             };
-        };
+        }
 
 
         function isElementInViewport(elem) {
