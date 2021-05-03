@@ -40,10 +40,8 @@
 		6AE8505426347ECD006BF4FE /* OCamlCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13925A526FA0067B166 /* OCamlCourse.swift */; };
 		6AE8505526347ECD006BF4FE /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13525A5266A0067B166 /* LearnModel.swift */; };
 		6AE8505626347ECD006BF4FE /* OCamlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */; };
-		6AE8505A26347F11006BF4FE /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACC261097AF0021436C /* bootstrap.min.css */; };
 		6AE8505B26347F11006BF4FE /* toplevel.js in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACD261097AF0021436C /* toplevel.js */; };
 		6AE8505C26347F11006BF4FE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACB261097AF0021436C /* index.html */; };
-		6AE8505F26347F12006BF4FE /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACC261097AF0021436C /* bootstrap.min.css */; };
 		6AE8506026347F12006BF4FE /* toplevel.js in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACD261097AF0021436C /* toplevel.js */; };
 		6AE8506126347F12006BF4FE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACB261097AF0021436C /* index.html */; };
 		6AE8506426347F22006BF4FE /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4625ED1303008053D3 /* IntExtension.swift */; };
@@ -100,7 +98,6 @@
 		6A83945F25A4D4190033FA88 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6A83946825A4D7320033FA88 /* OCamlLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlLexer.swift; sourceTree = "<group>"; };
 		6AA55ACB261097AF0021436C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		6AA55ACC261097AF0021436C /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
 		6AA55ACD261097AF0021436C /* toplevel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = toplevel.js; sourceTree = "<group>"; };
 		6AE8502226347B76006BF4FE /* OCamlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlApp.swift; sourceTree = "<group>"; };
 		6AE8502426347B77006BF4FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,7 +208,6 @@
 		6A83947125A4DABD0033FA88 /* JavaScript */ = {
 			isa = PBXGroup;
 			children = (
-				6AA55ACC261097AF0021436C /* bootstrap.min.css */,
 				6AA55ACB261097AF0021436C /* index.html */,
 				6AA55ACD261097AF0021436C /* toplevel.js */,
 			);
@@ -389,7 +385,6 @@
 				6AE8505C26347F11006BF4FE /* index.html in Resources */,
 				6AE8503826347B77006BF4FE /* Assets.xcassets in Resources */,
 				6AE8505B26347F11006BF4FE /* toplevel.js in Resources */,
-				6AE8505A26347F11006BF4FE /* bootstrap.min.css in Resources */,
 				6AE8504426347D44006BF4FE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +396,6 @@
 				6AE8506126347F12006BF4FE /* index.html in Resources */,
 				6AE8503926347B77006BF4FE /* Assets.xcassets in Resources */,
 				6AE8506026347F12006BF4FE /* toplevel.js in Resources */,
-				6AE8505F26347F12006BF4FE /* bootstrap.min.css in Resources */,
 				6AE8504726347D45006BF4FE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

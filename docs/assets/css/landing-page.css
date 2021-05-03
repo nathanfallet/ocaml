@@ -120,6 +120,8 @@ a:active {
     -o-transition: all 300ms linear;
     -ms-transition: all 300ms linear;
     transition: all 300ms linear;
+    border: 0;
+    font-size: 16px;
 }
 
 .btn-hover,
@@ -163,6 +165,8 @@ i {
 .btn.disabled {
     background-color: transparent;
     border-color: #888888;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
 }
 
 .btn.btn-fill {
@@ -502,13 +506,6 @@ i {
     background-color: transparent;
 }
 
-.btn:disabled,
-.btn[disabled],
-.btn.disabled {
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-}
-
 .btn-round {
     border-width: 1px;
     border-radius: 30px !important;
@@ -603,11 +600,6 @@ i {
 
 .section-white {
     background-color: #FFFFFF;
-}
-
-.navbar {
-    border: 0;
-    font-size: 16px;
 }
 
 .navbar .navbar-brand {
@@ -1093,20 +1085,6 @@ i {
     opacity: 1;
 }
 
-.landing-page .carousel.fade .item {
-    -moz-transition: opacity ease-in-out .7s;
-    -o-transition: opacity ease-in-out .7s;
-    -webkit-transition: opacity ease-in-out .7s;
-    transition: opacity ease-in-out .7s;
-    left: 0 !important;
-    opacity: 0;
-    top: 0;
-    position: absolute;
-    width: 100%;
-    display: block !important;
-    z-index: 1;
-}
-
 .landing-page .carousel.fade .item:first-child {
     top: auto;
     position: relative;
@@ -1234,7 +1212,7 @@ i {
     /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover, #1e5799 0%, rgba(54, 151, 142, 0.8) 0%, #0C526C 100%, #3d7eaa 100%, #182848 100%, #6e48aa 100%, #6e48aa 100%);
     /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #1e5799), color-stop(0%, rgba(54, 151, 142, 0.8)), color-stop(100%, #0C526C), color-stop(100%, #3d7eaa), color-stop(100%, #182848), color-stop(100%, #6e48aa), color-stop(100%, #6e48aa));
+    background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0%, #1e5799), color-stop(0%, rgba(54, 151, 142, 0.8)), color-stop(100%, #0C526C), color-stop(100%, #3d7eaa), color-stop(100%, #182848), color-stop(100%, #6e48aa), color-stop(100%, #6e48aa));
     /* Chrome,Safari4+ */
     background: -webkit-radial-gradient(center, ellipse cover, #1e5799 0%, rgba(54, 151, 142, 0.8) 0%, #0C526C 100%, #3d7eaa 100%, #182848 100%, #6e48aa 100%, #6e48aa 100%);
     /* Chrome10+,Safari5.1+ */
@@ -1291,7 +1269,7 @@ i {
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMSUiIHN0b3AtY29sb3I9IiM4ZTAwMDkiIHN0b3Atb3BhY2l0eT0iMC44NyIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNTYxMTExIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     background: -moz-radial-gradient(center, ellipse cover, rgba(224, 23, 36, 0.7) 1%, rgba(86, 17, 17, 1) 100%);
     /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, rgba(224, 23, 36, 0.7)), color-stop(100%, rgba(86, 17, 17, 1)));
+    background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(1%, rgba(224, 23, 36, 0.7)), color-stop(100%, rgba(86, 17, 17, 1)));
     /* Chrome,Safari4+ */
     background: -webkit-radial-gradient(center, ellipse cover, rgba(224, 23, 36, 0.7) 1%, rgba(86, 17, 17, 1) 100%);
     /* Chrome10+,Safari5.1+ */
@@ -1411,7 +1389,7 @@ i {
 .landing-page .logos ul {
     display: block;
     width: 100%;
-    margin: 0px auto;
+    margin: 0 auto;
     padding-top: 48px;
 }
 
@@ -1624,10 +1602,6 @@ i {
     text-shadow: none;
 }
 
-.landing-page .carousel.fade {
-    opacity: 1;
-}
-
 .landing-page .carousel.fade .item {
     -moz-transition: opacity ease-in-out .7s;
     -o-transition: opacity ease-in-out .7s;
@@ -1640,20 +1614,6 @@ i {
     width: 100%;
     display: block !important;
     z-index: 1;
-}
-
-.landing-page .carousel.fade .item:first-child {
-    top: auto;
-    position: relative;
-}
-
-.landing-page .carousel.fade .item.active {
-    opacity: 1;
-    -moz-transition: opacity ease-in-out .7s;
-    -o-transition: opacity ease-in-out .7s;
-    -webkit-transition: opacity ease-in-out .7s;
-    transition: opacity ease-in-out .7s;
-    z-index: 2;
 }
 
 .fixed-plugin {
@@ -1685,6 +1645,14 @@ i {
     right: 10px;
     margin-left: auto;
     left: auto;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    width: 10px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
 }
 
 .fixed-plugin .fa-circle-thin {
@@ -1769,10 +1737,6 @@ i {
     background-color: #E01724;
 }
 
-.fa {
-    width: auto;
-}
-
 .fixed-plugin h5 {
     font-size: 1em;
 }
@@ -1841,7 +1805,6 @@ i {
     background-color: transparent;
 }
 
-.fixed-plugin .dropdown-menu>.active>a:not(.switch-trigger),
 .fixed-plugin .dropdown-menu>.active>a:not(.switch-trigger) {
     border-color: #00bbff;
     background-color: #FFFFFF;
@@ -1870,18 +1833,6 @@ i {
     color: #333333;
 }
 
-.fixed-plugin .dropdown-menu:before,
-.fixed-plugin .dropdown-menu:after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 20px;
-    width: 10px;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-}
-
 .fixed-plugin .dropdown-menu:before {
     border-bottom: 10px solid rgba(0, 0, 0, 0);
     border-left: 10px solid rgba(0, 0, 0, 0.2);
@@ -1899,7 +1850,7 @@ i {
 @media (max-width:768px) {
     .fixed-plugin {
         top: 80px;
-        right: 0px;
+        right: 0;
     }
     .main .container {
         margin-bottom: 50px;
@@ -2041,8 +1992,6 @@ i {
     }
     .landing-page .section-presentation {
         margin: 0;
-    }
-    .landing-page .section-presentation {
         height: auto;
     }
     .landing-page .carousel-indicators {

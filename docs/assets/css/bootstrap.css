@@ -11,10 +11,17 @@ html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
     margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
 }
 
 article,
@@ -53,6 +60,8 @@ template {
 
 a {
     background-color: transparent;
+    color: #428bca;
+    text-decoration: none;
 }
 
 a:active,
@@ -105,6 +114,7 @@ sub {
 
 img {
     border: 0;
+    vertical-align: middle;
 }
 
 svg:not(:root) {
@@ -113,6 +123,7 @@ svg:not(:root) {
 
 figure {
     margin: 1em 40px;
+    margin: 0;
 }
 
 hr {
@@ -120,18 +131,33 @@ hr {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
 }
 
 pre {
     overflow: auto;
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
     font-size: 1em;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 button,
@@ -182,6 +208,9 @@ input[type="radio"] {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -205,11 +234,22 @@ fieldset {
     padding: .35em .625em .75em;
     margin: 0 2px;
     border: 1px solid #c0c0c0;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
 legend {
     padding: 0;
     border: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 textarea {
@@ -223,6 +263,7 @@ optgroup {
 table {
     border-spacing: 0;
     border-collapse: collapse;
+    background-color: transparent;
 }
 
 td,
@@ -1140,19 +1181,6 @@ th {
     box-sizing: border-box;
 }
 
-html {
-    font-size: 10px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-color: #fff;
-}
-
 input,
 button,
 select,
@@ -1160,11 +1188,6 @@ textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-}
-
-a {
-    color: #428bca;
-    text-decoration: none;
 }
 
 a:hover,
@@ -1177,14 +1200,6 @@ a:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
-}
-
-figure {
-    margin: 0;
-}
-
-img {
-    vertical-align: middle;
 }
 
 .img-responsive,
@@ -1217,13 +1232,6 @@ img {
 
 .img-circle {
     border-radius: 50%;
-}
-
-hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eee;
 }
 
 .sr-only {
@@ -1660,13 +1668,6 @@ address {
     line-height: 1.42857143;
 }
 
-code,
-kbd,
-pre,
-samp {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
 code {
     padding: 2px 4px;
     font-size: 90%;
@@ -1691,20 +1692,6 @@ kbd kbd {
     font-weight: bold;
     -webkit-box-shadow: none;
     box-shadow: none;
-}
-
-pre {
-    display: block;
-    padding: 9.5px;
-    margin: 0 0 10px;
-    font-size: 13px;
-    line-height: 1.42857143;
-    color: #333;
-    word-break: break-all;
-    word-wrap: break-word;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 pre code {
@@ -2541,10 +2528,6 @@ pre code {
     }
 }
 
-table {
-    background-color: transparent;
-}
-
 caption {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -2810,43 +2793,11 @@ table th[class*="col-"] {
     }
 }
 
-fieldset {
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-
-legend {
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: inherit;
-    color: #333;
-    border: 0;
-    border-bottom: 1px solid #e5e5e5;
-}
-
 label {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: bold;
-}
-
-input[type="search"] {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-    margin: 4px 0 0;
-    margin-top: 1px \9;
-    line-height: normal;
 }
 
 input[type="file"] {
@@ -2930,10 +2881,6 @@ textarea.form-control {
     height: auto;
 }
 
-input[type="search"] {
-    -webkit-appearance: none;
-}
-
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
@@ -2960,33 +2907,24 @@ input[type="month"].input-lg {
 
 _:-ms-fullscreen,
 :root input[type="date"],
-_:-ms-fullscreen,
 :root input[type="time"],
-_:-ms-fullscreen,
 :root input[type="datetime-local"],
-_:-ms-fullscreen,
 :root input[type="month"] {
     line-height: 1.42857143;
 }
 
 _:-ms-fullscreen.input-sm,
 :root input[type="date"].input-sm,
-_:-ms-fullscreen.input-sm,
 :root input[type="time"].input-sm,
-_:-ms-fullscreen.input-sm,
 :root input[type="datetime-local"].input-sm,
-_:-ms-fullscreen.input-sm,
 :root input[type="month"].input-sm {
     line-height: 1.5;
 }
 
 _:-ms-fullscreen.input-lg,
 :root input[type="date"].input-lg,
-_:-ms-fullscreen.input-lg,
 :root input[type="time"].input-lg,
-_:-ms-fullscreen.input-lg,
 :root input[type="datetime-local"].input-lg,
-_:-ms-fullscreen.input-lg,
 :root input[type="month"].input-lg {
     line-height: 1.33;
 }
@@ -4494,6 +4432,8 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 .nav-tabs.nav-justified>li>a {
     margin-bottom: 5px;
     text-align: center;
+    margin-right: 0;
+    border-radius: 4px;
 }
 
 .nav-tabs.nav-justified>.dropdown .dropdown-menu {
@@ -4509,11 +4449,6 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
     .nav-tabs.nav-justified>li>a {
         margin-bottom: 0;
     }
-}
-
-.nav-tabs.nav-justified>li>a {
-    margin-right: 0;
-    border-radius: 4px;
 }
 
 .nav-tabs.nav-justified>.active>a,
