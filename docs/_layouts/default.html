@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    {%- feed_meta -%}
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+    {%- endif -%}
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/landing-page.css">
+</head>
+
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+
+    <body class="landing-page landing-page1">
+        <nav class="navbar navbar-transparent navbar-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a href="/">
+                        <div class="logo-container">
+                            <div class="logo">
+                                <img src="/assets/images/logo.png" alt="Logo">
+                            </div>
+                            <div class="brand">
+                                <h1>
+                                    {{ site.title | escape }}
+                                </h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="example" >
+                    <ul class="nav navbar-nav navbar-right">
+                        {%- for path in page_paths -%}
+                            {%- assign my_page = site.pages | where: "path", path | first -%}
+                            {%- if my_page.title -%}
+                            <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+                            {%- endif -%}
+                        {%- endfor -%}
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+        <div class="wrapper">
+            
+            {{ content }}
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="copyright">
+                        Developed by <a href="https://www.nathanfallet.me">Nathan Fallet</a><br />
+                        &copy; 2021 <a href="https://www.groupe-minaste.org">Groupe MINASTE</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="/assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+        <script src="/assets/js/bootstrap.js" type="text/javascript"></script>
+        <script src="/assets/js/awesome-landing-page.js" type="text/javascript"></script>
+
+    </body>
+
+</html>

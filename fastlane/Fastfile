@@ -96,15 +96,11 @@ platform :ios do
     )
 
     # Upload the application to Testflight
-    begin
-      upload_to_testflight(
-        apple_id: "1547506826",
-        skip_waiting_for_build_processing: true,
-        skip_submission: true
-      )
-    rescue => ex
-      UI.error(ex)
-    end
+    upload_to_testflight(
+      apple_id: "1547506826",
+      skip_waiting_for_build_processing: true,
+      skip_submission: true
+    )
 
     # Remove the temporary keychain leaving
     # no trace.
