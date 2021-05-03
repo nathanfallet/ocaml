@@ -6,6 +6,15 @@ layout: default
   <div class="container">
       <div class="description">
 
+        <ul class="langs">
+          {% assign pages=site.pages | where: "ref", page.ref | sort: 'lang' %}
+          {% for page in pages %}
+            <li>
+              <a href="{{ page.url }}" class="{{ page.lang }}"></a>
+            </li>
+          {% endfor %}
+        </ul>
+
         {{ content }}
 
       </div>
