@@ -50,7 +50,8 @@ extension View {
 #if os(macOS)
 extension NSTextField {
     open override var focusRingType: NSFocusRingType {
-        .none
+        get { .none }
+        set { super.focusRingType = newValue }
     }
 }
 #endif
