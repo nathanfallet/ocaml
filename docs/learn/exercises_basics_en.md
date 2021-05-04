@@ -4,7 +4,7 @@ lang: en
 ref: learn_exercises_basics
 ---
 
-# Exercises
+# Basic exercises
 
 ## Basic exercises
 

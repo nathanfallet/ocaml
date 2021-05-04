@@ -61,7 +61,7 @@ struct OCamlApp: App {
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         Button(action: {
-                            if let url = URL(string: "https://ocaml-learn-code.com") {
+                            if let url = URL(string: "https://ocaml-learn-code.com/learn") {
                                 openURL(url)
                             }
                         }) {
@@ -127,7 +127,7 @@ struct OCamlApp: App {
                 .toolbar {
                     ToolbarItemGroup(placement: .primaryAction) {
                         Button(action: {
-                            if let url = URL(string: "https://ocaml-learn-code.com") {
+                            if let url = URL(string: "https://ocaml-learn-code.com/learn") {
                                 openURL(url)
                             }
                         }) {

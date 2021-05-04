@@ -1,3 +1,5 @@
+included:
+  - Shared
 disabled_rules:
   - nslocalizedstring_key
   - identifier_name

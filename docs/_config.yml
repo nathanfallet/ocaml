@@ -29,8 +29,9 @@ github_username: GroupeMINASTE
 
 # Build settings
 theme: minima
-# plugins:
-#   - jekyll-feed
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.

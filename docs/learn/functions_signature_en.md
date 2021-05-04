@@ -8,7 +8,7 @@ ref: learn_functions_signature
 
 ## Function signatures
 
-Let's take back our 'multiply' function to see what's a signature:
+Let's take back our `multiply` function to see what's a signature:
 
 ```ocaml
 let multiply a b =

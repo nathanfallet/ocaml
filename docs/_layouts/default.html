@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     {%- seo -%}
-    {%- feed_meta -%}
-    {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "MobileApplication",
+            "name": "OCaml: Learn & Code",
+            "operatingSystem": "IOS",
+            "applicationCategory": "EducationalApplication",
+            "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "EUR"
+            }
+        }
+    </script>
+
+    {%- if page.ref -%}
+        {% assign pages=site.pages | where: "ref", page.ref | sort: 'lang' %}
+        {% for page in pages %}
+            <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url }}" />
+        {% endfor %}
     {%- endif -%}
+
+    <meta property="og:image" content="/assets/images/logo.png">
+    <meta name="twitter:image" content="/assets/images/logo.png">
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/logo.png">
 
     <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/css/landing-page.css">
@@ -47,14 +71,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="example" >
                     <ul class="nav navbar-nav navbar-right">
-                        <!--
-                        {%- for path in page_paths -%}
-                            {%- assign my_page = site.pages | where: "path", path | first -%}
-                            {%- if my_page.title -%}
-                            <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-                            {%- endif -%}
-                        {%- endfor -%}
-                        -->
+                        <li><a href="/learn/index_{{ page.lang | default: site.lang | default: "en" }}.html">Learn</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

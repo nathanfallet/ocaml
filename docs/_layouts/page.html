@@ -7,12 +7,14 @@ layout: default
       <div class="description">
 
         <ul class="langs">
-          {% assign pages=site.pages | where: "ref", page.ref | sort: 'lang' %}
-          {% for page in pages %}
-            <li>
-              <a href="{{ page.url }}" class="{{ page.lang }}"></a>
-            </li>
-          {% endfor %}
+          {%- if page.ref -%}
+            {% assign pages=site.pages | where: "ref", page.ref | sort: 'lang' %}
+            {% for page in pages %}
+              <li>
+                <a href="{{ page.url }}" class="{{ page.lang }}"></a>
+              </li>
+            {% endfor %}
+          {%- endif -%}
         </ul>
 
         {{ content }}
