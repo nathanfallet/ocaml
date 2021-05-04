@@ -117,7 +117,13 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
         showLoading = false
     }
 
-    public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+    public func webView(
+        _ webView: WKWebView,
+        runJavaScriptTextInputPanelWithPrompt prompt: String,
+        defaultText: String?,
+        initiatedByFrame frame: WKFrameInfo,
+        completionHandler: @escaping (String?) -> Void
+    ) {
         // Update prompt
         self.prompt = prompt
         self.promptCompletionHandler = completionHandler

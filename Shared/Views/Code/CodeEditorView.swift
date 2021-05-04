@@ -20,7 +20,7 @@
 import Sourceful
 import SwiftUI
 
-public struct CodeEditorView: _ViewRepresentable {
+public struct CodeEditorView: NativeViewRepresentable {
 
     @Environment(\.backgroundColor) var backgroundColor
     @Environment(\.plainColor) var plainColor
@@ -158,13 +158,13 @@ extension CodeEditorView {
         // Return colors for types
         public func color(for syntaxColorType: SourceCodeTokenType) -> Sourceful.Color {
             switch syntaxColorType {
-                case .plain: return plainColor
-                case .number: return numberColor
-                case .string: return stringColor
-                case .identifier: return identifierColor
-                case .keyword: return keywordColor
-                case .comment: return commentColor
-                case .editorPlaceholder: return .systemGray
+            case .plain: return plainColor
+            case .number: return numberColor
+            case .string: return stringColor
+            case .identifier: return identifierColor
+            case .keyword: return keywordColor
+            case .comment: return commentColor
+            case .editorPlaceholder: return .systemGray
             }
         }
     }

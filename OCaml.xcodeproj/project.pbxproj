@@ -12,8 +12,6 @@
 		6A3C6E1C26383F7E00E40602 /* EnvironmentValuesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C6E1A26383F7D00E40602 /* EnvironmentValuesExtension.swift */; };
 		6A6562352634B3270064DD6C /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6562342634B3270064DD6C /* Sourceful */; };
 		6A65623A2634B3430064DD6C /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D826349BF5006BF4FE /* CodeEditorView.swift */; };
-		6A65623D2634B3460064DD6C /* ChapterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D426348DE6006BF4FE /* ChapterCardView.swift */; };
-		6A6562402634B3490064DD6C /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850DC26349DC1006BF4FE /* ChapterView.swift */; };
 		6A6562442634B5BA0064DD6C /* EditorColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562432634B5BA0064DD6C /* EditorColorView.swift */; };
 		6A6562452634B5BA0064DD6C /* EditorColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562432634B5BA0064DD6C /* EditorColorView.swift */; };
 		6A6562492634BE870064DD6C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562482634BE870064DD6C /* AppView.swift */; };
@@ -33,12 +31,8 @@
 		6AE8504426347D44006BF4FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A35DC1625ECE8BA0092B6CA /* Localizable.strings */; };
 		6AE8504726347D45006BF4FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A35DC1625ECE8BA0092B6CA /* Localizable.strings */; };
 		6AE8504C26347ECC006BF4FE /* OCamlLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946825A4D7320033FA88 /* OCamlLexer.swift */; };
-		6AE8504D26347ECC006BF4FE /* OCamlCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13925A526FA0067B166 /* OCamlCourse.swift */; };
-		6AE8504E26347ECC006BF4FE /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13525A5266A0067B166 /* LearnModel.swift */; };
 		6AE8504F26347ECC006BF4FE /* OCamlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */; };
 		6AE8505326347ECD006BF4FE /* OCamlLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83946825A4D7320033FA88 /* OCamlLexer.swift */; };
-		6AE8505426347ECD006BF4FE /* OCamlCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13925A526FA0067B166 /* OCamlCourse.swift */; };
-		6AE8505526347ECD006BF4FE /* LearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43E13525A5266A0067B166 /* LearnModel.swift */; };
 		6AE8505626347ECD006BF4FE /* OCamlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */; };
 		6AE8505B26347F11006BF4FE /* toplevel.js in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACD261097AF0021436C /* toplevel.js */; };
 		6AE8505C26347F11006BF4FE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6AA55ACB261097AF0021436C /* index.html */; };
@@ -50,15 +44,11 @@
 		6AE8506926347F23006BF4FE /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4625ED1303008053D3 /* IntExtension.swift */; };
 		6AE8506A26347F23006BF4FE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A292A4925ED13D5008053D3 /* ColorExtension.swift */; };
 		6AE8506B26347F23006BF4FE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A83945F25A4D4190033FA88 /* StringExtension.swift */; };
-		6AE8507B26348213006BF4FE /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8507A26348213006BF4FE /* LearnView.swift */; };
 		6AE850842634824D006BF4FE /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850832634824D006BF4FE /* CodeView.swift */; };
 		6AE8508A26348257006BF4FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8508926348257006BF4FE /* SettingsView.swift */; };
 		6AE8508D26348356006BF4FE /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850832634824D006BF4FE /* CodeView.swift */; };
-		6AE850902634835B006BF4FE /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8507A26348213006BF4FE /* LearnView.swift */; };
 		6AE8509F26348743006BF4FE /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6AE8509E26348743006BF4FE /* Sourceful */; };
-		6AE850D526348DE6006BF4FE /* ChapterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D426348DE6006BF4FE /* ChapterCardView.swift */; };
 		6AE850D926349BF5006BF4FE /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D826349BF5006BF4FE /* CodeEditorView.swift */; };
-		6AE850DD26349DC1006BF4FE /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850DC26349DC1006BF4FE /* ChapterView.swift */; };
 		6AEE525926356E9300F54038 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE525826356E9300F54038 /* SplitView.swift */; };
 		6AEE525A26356E9300F54038 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE525826356E9300F54038 /* SplitView.swift */; };
 		6AF8DB222639570A00C3D62F /* DonateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF8DB212639570A00C3D62F /* DonateViewModel.swift */; };
@@ -88,8 +78,6 @@
 		6A35DC1525ECE8BA0092B6CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A35DC1825ECE8CC0092B6CA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A3C6E1A26383F7D00E40602 /* EnvironmentValuesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValuesExtension.swift; sourceTree = "<group>"; };
-		6A43E13525A5266A0067B166 /* LearnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnModel.swift; sourceTree = "<group>"; };
-		6A43E13925A526FA0067B166 /* OCamlCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlCourse.swift; sourceTree = "<group>"; };
 		6A6562432634B5BA0064DD6C /* EditorColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorColorView.swift; sourceTree = "<group>"; };
 		6A6562482634BE870064DD6C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		6A6562562634CAEF0064DD6C /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
@@ -106,12 +94,9 @@
 		6AE8503026347B77006BF4FE /* OCaml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCaml.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE8503226347B77006BF4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE8503326347B77006BF4FE /* OCaml.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCaml.entitlements; sourceTree = "<group>"; };
-		6AE8507A26348213006BF4FE /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		6AE850832634824D006BF4FE /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		6AE8508926348257006BF4FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		6AE850D426348DE6006BF4FE /* ChapterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterCardView.swift; sourceTree = "<group>"; };
 		6AE850D826349BF5006BF4FE /* CodeEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorView.swift; sourceTree = "<group>"; };
-		6AE850DC26349DC1006BF4FE /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		6AEE525826356E9300F54038 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		6AF8DB212639570A00C3D62F /* DonateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewModel.swift; sourceTree = "<group>"; };
 		6AF8DB3B26395B1100C3D62F /* SKProductExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKProductExtension.swift; sourceTree = "<group>"; };
@@ -197,8 +182,6 @@
 		6A83945325A4D1DE0033FA88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6A43E13525A5266A0067B166 /* LearnModel.swift */,
-				6A43E13925A526FA0067B166 /* OCamlCourse.swift */,
 				6A0FA188262C1CB6002D3AA8 /* OCamlFile.swift */,
 				6A83946825A4D7320033FA88 /* OCamlLexer.swift */,
 			);
@@ -249,20 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				6AE8508126348221006BF4FE /* Code */,
-				6AE850802634821B006BF4FE /* Learn */,
 				6AE8508226348239006BF4FE /* Settings */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		6AE850802634821B006BF4FE /* Learn */ = {
-			isa = PBXGroup;
-			children = (
-				6AE850D426348DE6006BF4FE /* ChapterCardView.swift */,
-				6AE850DC26349DC1006BF4FE /* ChapterView.swift */,
-				6AE8507A26348213006BF4FE /* LearnView.swift */,
-			);
-			path = Learn;
 			sourceTree = "<group>";
 		};
 		6AE8508126348221006BF4FE /* Code */ = {
@@ -298,6 +270,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AE8503A26347B77006BF4FE /* Build configuration list for PBXNativeTarget "OCaml (iOS)" */;
 			buildPhases = (
+				6A3ACE73264059AB00D5C9C7 /* Swift Lint */,
 				6AE8502526347B77006BF4FE /* Sources */,
 				6AE8502626347B77006BF4FE /* Frameworks */,
 				6AE8502726347B77006BF4FE /* Resources */,
@@ -319,6 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AE8503D26347B77006BF4FE /* Build configuration list for PBXNativeTarget "OCaml (macOS)" */;
 			buildPhases = (
+				6A3ACE7826405A4600D5C9C7 /* Swift Lint */,
 				6AE8502C26347B77006BF4FE /* Sources */,
 				6AE8502D26347B77006BF4FE /* Frameworks */,
 				6AE8502E26347B77006BF4FE /* Resources */,
@@ -402,6 +376,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A3ACE73264059AB00D5C9C7 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		6A3ACE7826405A4600D5C9C7 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6AE8502526347B77006BF4FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -414,14 +427,10 @@
 				6AE8506626347F22006BF4FE /* StringExtension.swift in Sources */,
 				6AFDC82E2635AB0E0050FA59 /* ConsoleView.swift in Sources */,
 				6A6562492634BE870064DD6C /* AppView.swift in Sources */,
-				6AE8504D26347ECC006BF4FE /* OCamlCourse.swift in Sources */,
-				6AE850DD26349DC1006BF4FE /* ChapterView.swift in Sources */,
 				6AFDC8352635AEE20050FA59 /* ViewExtension.swift in Sources */,
 				6AE8503426347B77006BF4FE /* OCamlApp.swift in Sources */,
 				6AFBF1002636C5CB00A55FFF /* ConsoleViewModel.swift in Sources */,
-				6AE8507B26348213006BF4FE /* LearnView.swift in Sources */,
 				6A6562442634B5BA0064DD6C /* EditorColorView.swift in Sources */,
-				6AE850D526348DE6006BF4FE /* ChapterCardView.swift in Sources */,
 				6AFBF10E2637027000A55FFF /* DonateView.swift in Sources */,
 				6AF8DB222639570A00C3D62F /* DonateViewModel.swift in Sources */,
 				6AE850842634824D006BF4FE /* CodeView.swift in Sources */,
@@ -433,7 +442,6 @@
 				6AEE525926356E9300F54038 /* SplitView.swift in Sources */,
 				6AE8504C26347ECC006BF4FE /* OCamlLexer.swift in Sources */,
 				6AE850D926349BF5006BF4FE /* CodeEditorView.swift in Sources */,
-				6AE8504E26347ECC006BF4FE /* LearnModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,22 +460,17 @@
 				6A6562452634B5BA0064DD6C /* EditorColorView.swift in Sources */,
 				6A65623A2634B3430064DD6C /* CodeEditorView.swift in Sources */,
 				6AFBF1012636C5CB00A55FFF /* ConsoleViewModel.swift in Sources */,
-				6A6562402634B3490064DD6C /* ChapterView.swift in Sources */,
-				6AE850902634835B006BF4FE /* LearnView.swift in Sources */,
 				6AE8508D26348356006BF4FE /* CodeView.swift in Sources */,
 				6AFBF10F2637027000A55FFF /* DonateView.swift in Sources */,
 				6A3C6E1526382FAD00E40602 /* SettingsView.swift in Sources */,
 				6AF8DB232639570A00C3D62F /* DonateViewModel.swift in Sources */,
-				6AE8505426347ECD006BF4FE /* OCamlCourse.swift in Sources */,
 				6AE8503526347B77006BF4FE /* OCamlApp.swift in Sources */,
 				6A3C6E1C26383F7E00E40602 /* EnvironmentValuesExtension.swift in Sources */,
 				6AE8506A26347F23006BF4FE /* ColorExtension.swift in Sources */,
 				6AE8506926347F23006BF4FE /* IntExtension.swift in Sources */,
 				6AEE525A26356E9300F54038 /* SplitView.swift in Sources */,
 				6A65625D2634CB280064DD6C /* OpenSourceRepositoryView.swift in Sources */,
-				6A65623D2634B3460064DD6C /* ChapterCardView.swift in Sources */,
 				6AE8505326347ECD006BF4FE /* OCamlLexer.swift in Sources */,
-				6AE8505526347ECD006BF4FE /* LearnModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

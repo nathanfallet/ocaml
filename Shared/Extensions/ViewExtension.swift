@@ -20,11 +20,11 @@
 import SwiftUI
 
 #if os(macOS)
-public typealias _ViewRepresentable = NSViewRepresentable
+public typealias NativeViewRepresentable = NSViewRepresentable
 #endif
 
 #if os(iOS)
-public typealias _ViewRepresentable = UIViewRepresentable
+public typealias NativeViewRepresentable = UIViewRepresentable
 #endif
 
 extension View {
@@ -50,8 +50,7 @@ extension View {
 #if os(macOS)
 extension NSTextField {
     open override var focusRingType: NSFocusRingType {
-        get { .none }
-        set { }
+        .none
     }
 }
 #endif

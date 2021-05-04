@@ -38,7 +38,7 @@ struct OCamlApp: App {
     @AppStorage("commentColor") var commentColor = -1
 
     @StateObject var consoleViewModel = ConsoleViewModel()
-    @State var activeSheet: ActiveSheet?
+    @State var showSettings = false
 
     #if os(iOS)
     var body: some Scene {
@@ -61,12 +61,14 @@ struct OCamlApp: App {
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         Button(action: {
-                            activeSheet = .learn
+                            if let url = URL(string: "https://ocaml-learn-code.com") {
+                                openURL(url)
+                            }
                         }) {
                             Image(systemName: "book")
                         }
                         Button(action: {
-                            activeSheet = .settings
+                            showSettings = true
                         }) {
                             Image(systemName: "gearshape")
                         }
@@ -78,23 +80,7 @@ struct OCamlApp: App {
                         }
                     }
                 }
-                .fullScreenCover(item: $activeSheet) { item in
-                    switch item {
-                    case .learn:
-                        NavigationView {
-                            LearnView()
-                                .toolbar {
-                                    ToolbarItemGroup(placement: .cancellationAction) {
-                                        Button(action: {
-                                            activeSheet = nil
-                                        }) {
-                                            Image(systemName: "xmark.circle")
-                                        }
-                                    }
-                                }
-                        }
-                        .navigationViewStyle(StackNavigationViewStyle())
-                    case .settings:
+                .fullScreenCover(isPresented: $showSettings) {
                         NavigationView {
                             SettingsView()
                                 .environment(\.backgroundColor, $backgroundColor)
@@ -107,7 +93,7 @@ struct OCamlApp: App {
                                 .toolbar {
                                     ToolbarItemGroup(placement: .cancellationAction) {
                                         Button(action: {
-                                            activeSheet = nil
+                                            showSettings = false
                                         }) {
                                             Image(systemName: "xmark.circle")
                                         }
@@ -115,7 +101,6 @@ struct OCamlApp: App {
                                 }
                         }
                         .navigationViewStyle(StackNavigationViewStyle())
-                    }
                 }
         }
     }
@@ -141,6 +126,13 @@ struct OCamlApp: App {
                 }
                 .toolbar {
                     ToolbarItemGroup(placement: .primaryAction) {
+                        Button(action: {
+                            if let url = URL(string: "https://ocaml-learn-code.com") {
+                                openURL(url)
+                            }
+                        }) {
+                            Image(systemName: "book")
+                        }
                         Button(action: {
                             NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
                         }) {

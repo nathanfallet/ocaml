@@ -1,2 +1,5 @@
 disabled_rules:
   - nslocalizedstring_key
+  - identifier_name
+  - large_tuple
+line_length: 200

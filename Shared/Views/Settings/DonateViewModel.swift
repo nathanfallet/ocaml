@@ -89,7 +89,7 @@ class DonateViewModel: NSObject, ObservableObject, SKProductsRequestDelegate, SK
         // Iterate transactions
         for transaction in transactions {
             // Get the corresponding donation
-            if let _ = donations.first(where: { $0.productIdentifier == transaction.payment.productIdentifier }) {
+            if donations.first(where: { $0.productIdentifier == transaction.payment.productIdentifier }) != nil {
                 // Check the transaction state
                 if transaction.transactionState == .purchased {
                     // Donation succeed
