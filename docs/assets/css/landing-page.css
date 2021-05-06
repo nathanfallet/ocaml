@@ -92,6 +92,10 @@ p {
     line-height: 1.5;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /*     General overwrite     */
 
@@ -1110,12 +1114,12 @@ i {
 }
 
 .logo-container .brand h1 {
-    font-size: 24px;
+    font-size: 20px;
     color: #FFFFFF;
-    line-height: 40px;
+    line-height: 20px;
     margin-left: 10px;
-    margin-top: 5px;
-    width: 300px;
+    margin-top: 8px;
+    width: 150px;
     height: 50px;
 }
 

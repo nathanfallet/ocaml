@@ -3,10 +3,6 @@ layout: default
 ---
 
 <div class="home landing-page">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
   <div class="parallax filter-gradient blue" data-color="blue" id="download">
     <div class= "container">
         <div class="row">
@@ -25,6 +21,9 @@ layout: default
                     <a href="https://apps.apple.com/app/ocaml-learn-code/id1547506826">
                         <img src="/assets/images/appstore-{{ page.lang | default: site.lang | default: "en" }}.svg" width="180" height="60" alt="App Store badge" />
                     </a>
+                    <a href="https://github.com/GroupeMINASTE/OCaml-iOS">
+                      <img src="/assets/images/github-badge.svg" width="180" height="60" alt="GitHub badge" />
+                  </a>
                 </div>
             </div>
         </div>
