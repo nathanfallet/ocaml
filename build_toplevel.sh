@@ -9,10 +9,12 @@ eval $(opam env)
 
 # Then, install Js_of_ocaml and its dependencies
 opam install -y Js_of_ocaml-toplevel
+opam install -y lwt graphics bigarray react reactiveData str ocp-indent higlo tyxml lwt_log
 
 # Build the toplevel
 git clone https://github.com/ocsigen/js_of_ocaml
 cd js_of_ocaml/toplevel/examples/lwt_toplevel/
+dune external-lib-deps --missing @@default
 dune build
 
 # Go back to root folder
