@@ -9,7 +9,7 @@ eval $(opam env)
 
 # Then, install Js_of_ocaml and its dependencies
 opam install -y Js_of_ocaml-toplevel
-opam install -y lwt graphics bigarray react reactiveData str ocp-indent higlo tyxml lwt_log
+opam install -y lwt graphics react reactiveData ocp-indent higlo tyxml lwt_log
 
 # Build the toplevel
 git clone https://github.com/ocsigen/js_of_ocaml
