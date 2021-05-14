@@ -3,12 +3,12 @@ brew install ocaml
 brew install opam
 
 # Init OPAM
-opam init
+opam init -y
 opam update
 eval $(opam env)
 
 # Then, install Js_of_ocaml and its dependencies
-opam install Js_of_ocaml-toplevel
+opam install -y Js_of_ocaml-toplevel
 
 # Build the toplevel
 git clone https://github.com/ocsigen/js_of_ocaml
