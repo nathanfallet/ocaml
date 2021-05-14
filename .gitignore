@@ -1,3 +1,10 @@
+# macOS files
 .DS_Store
 swiftpm
+
+# Ruby files
 Gemfile.lock
+
+# OCaml toplevel files
+toplevel.js
+js_of_ocaml/

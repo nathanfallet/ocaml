@@ -26,6 +26,8 @@ jobs:
         with:
           ruby-version: 2.7.2
           bundler-cache: true
+      - name: Build OCaml toplevel
+        run: sh build_toplevel.sh
       - name: Build & Distribute to Testflight
         run: |
           export LC_ALL=en_US.UTF-8
