@@ -27,7 +27,8 @@ import AppKit
 
 @main
 struct OCamlApp: App {
-    @Environment(\.openURL) var openURL
+
+    // MARK: - App properties
 
     @AppStorage("backgroundColor") var backgroundColor = -1
     @AppStorage("plainColor") var plainColor = -1
@@ -37,17 +38,15 @@ struct OCamlApp: App {
     @AppStorage("keywordColor") var keywordColor = -1
     @AppStorage("commentColor") var commentColor = -1
 
-    @StateObject var consoleViewModel = ConsoleViewModel()
     @State var showSettings = false
+
+    // MARK: - Scenes
 
     #if os(iOS)
     var body: some Scene {
         // Main document group
         DocumentGroup(newDocument: OCamlFile()) { file in
-            CodeView(
-                consoleViewModel: consoleViewModel,
-                document: file.$document
-            )
+            MainWindow(document: file.$document, showSettings: $showSettings)
                 .environment(\.backgroundColor, $backgroundColor)
                 .environment(\.plainColor, $plainColor)
                 .environment(\.numberColor, $numberColor)
@@ -55,52 +54,30 @@ struct OCamlApp: App {
                 .environment(\.identifierColor, $identifierColor)
                 .environment(\.keywordColor, $keywordColor)
                 .environment(\.commentColor, $commentColor)
-                .onAppear {
-                    consoleViewModel.loadConsoleIfNeeded()
-                }
-                .toolbar {
-                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            if let url = URL(string: "https://ocaml-learn-code.com/learn") {
-                                openURL(url)
-                            }
-                        }) {
-                            Image(systemName: "book")
-                        }
-                        Button(action: {
-                            showSettings = true
-                        }) {
-                            Image(systemName: "gearshape")
-                        }
-                        Button(action: {
-                            consoleViewModel.showConsole.toggle()
-                            consoleViewModel.execute(file.document.source)
-                        }) {
-                            Image(systemName: "play")
-                        }
-                    }
-                }
                 .fullScreenCover(isPresented: $showSettings) {
-                        NavigationView {
-                            SettingsView()
-                                .environment(\.backgroundColor, $backgroundColor)
-                                .environment(\.plainColor, $plainColor)
-                                .environment(\.numberColor, $numberColor)
-                                .environment(\.stringColor, $stringColor)
-                                .environment(\.identifierColor, $identifierColor)
-                                .environment(\.keywordColor, $keywordColor)
-                                .environment(\.commentColor, $commentColor)
-                                .toolbar {
-                                    ToolbarItemGroup(placement: .cancellationAction) {
-                                        Button(action: {
+                    NavigationView {
+                        SettingsView()
+                            .environment(\.backgroundColor, $backgroundColor)
+                            .environment(\.plainColor, $plainColor)
+                            .environment(\.numberColor, $numberColor)
+                            .environment(\.stringColor, $stringColor)
+                            .environment(\.identifierColor, $identifierColor)
+                            .environment(\.keywordColor, $keywordColor)
+                            .environment(\.commentColor, $commentColor)
+                            .toolbar {
+                                ToolbarItemGroup(placement: .cancellationAction) {
+                                    Button(
+                                        action: {
                                             showSettings = false
-                                        }) {
+                                        },
+                                        label: {
                                             Image(systemName: "xmark.circle")
                                         }
-                                    }
+                                    )
                                 }
-                        }
-                        .navigationViewStyle(StackNavigationViewStyle())
+                            }
+                    }
+                    .navigationViewStyle(StackNavigationViewStyle())
                 }
         }
     }
@@ -110,10 +87,7 @@ struct OCamlApp: App {
     var body: some Scene {
         // Main document group
         DocumentGroup(newDocument: OCamlFile()) { file in
-            CodeView(
-                consoleViewModel: consoleViewModel,
-                document: file.$document
-            )
+            MainWindow(document: file.$document, showSettings: $showSettings)
                 .environment(\.backgroundColor, $backgroundColor)
                 .environment(\.plainColor, $plainColor)
                 .environment(\.numberColor, $numberColor)
@@ -121,30 +95,6 @@ struct OCamlApp: App {
                 .environment(\.identifierColor, $identifierColor)
                 .environment(\.keywordColor, $keywordColor)
                 .environment(\.commentColor, $commentColor)
-                .onAppear {
-                    consoleViewModel.loadConsoleIfNeeded()
-                }
-                .toolbar {
-                    ToolbarItemGroup(placement: .primaryAction) {
-                        Button(action: {
-                            if let url = URL(string: "https://ocaml-learn-code.com/learn") {
-                                openURL(url)
-                            }
-                        }) {
-                            Image(systemName: "book")
-                        }
-                        Button(action: {
-                            NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
-                        }) {
-                            Image(systemName: "gearshape")
-                        }
-                        Button(action: {
-                            consoleViewModel.execute(file.document.source)
-                        }) {
-                            Image(systemName: "play")
-                        }
-                    }
-                }
         }
 
         // Settings
@@ -161,11 +111,4 @@ struct OCamlApp: App {
     }
     #endif
 
-}
-
-enum ActiveSheet: Identifiable {
-    case learn
-    case settings
-
-    var id: Int { hashValue }
 }

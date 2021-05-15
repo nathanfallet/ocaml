@@ -26,7 +26,8 @@ struct OpenSourceView: View {
         ]),
         ("opensource_swiftpackages", [
             ("twostraws", "Sourceful"),
-            ("onevcat", "Kingfisher")
+            ("onevcat", "Kingfisher"),
+            ("GroupeMINASTE", "DigiAnalytics")
         ]),
         ("opensource_others", [
             ("ocsigen", "js_of_ocaml")

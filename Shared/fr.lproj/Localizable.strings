@@ -44,6 +44,7 @@
  App strings
  */
 "learn" = "Apprendre";
+"opensource_repo_DigiAnalytics" = "Analytique web en temps réel avec confidentialité et simplicité.";
 "opensource_repo_Kingfisher" = "Une bibliothèque Swift légère pour télécharger et cacher des images.";
 "opensource_repo_js_of_ocaml" = "Compilateur OCaml vers Javascript.";
 "opensource_repo_Sourceful" = "Un éditeur avec coloration syntaxique pour iOS et macOS avec UITextView et NSTextView.";
