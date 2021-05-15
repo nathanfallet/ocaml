@@ -91,7 +91,7 @@ struct MainWindow: View {
         #if os(macOS)
         return .primaryAction
         #else
-        return .navigationBarLeading
+        return .navigationBarTrailing
         #endif
     }
 
