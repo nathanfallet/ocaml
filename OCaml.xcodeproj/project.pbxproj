@@ -179,13 +179,13 @@
 			isa = PBXGroup;
 			children = (
 				6A292A4925ED13D5008053D3 /* ColorExtension.swift */,
+				6AC0FA742650036C007AD540 /* DigiAnalyticsExtension.swift */,
 				6A3C6E1A26383F7D00E40602 /* EnvironmentValuesExtension.swift */,
 				6A67C4BB2637FB470012BBF2 /* FontExtension.swift */,
 				6A292A4625ED1303008053D3 /* IntExtension.swift */,
 				6AF8DB3B26395B1100C3D62F /* SKProductExtension.swift */,
 				6A83945F25A4D4190033FA88 /* StringExtension.swift */,
 				6AFDC8342635AEE20050FA59 /* ViewExtension.swift */,
-				6AC0FA742650036C007AD540 /* DigiAnalyticsExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
