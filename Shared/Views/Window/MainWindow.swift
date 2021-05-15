@@ -32,12 +32,12 @@ struct MainWindow: View {
     func initAnalytics() {
         // Send firstOpen if needed
         if firstOpen {
-            DigiAnalytics.shared.send(path: "firstOpen")
+            DigiAnalytics.shared.send(path: "first_open")
             firstOpen = false
         }
 
         // Send file open
-        DigiAnalytics.shared.send(path: "fileOpen")
+        DigiAnalytics.shared.send(path: "file")
     }
 
     var body: some View {
@@ -54,6 +54,7 @@ struct MainWindow: View {
                 Button(
                     action: {
                         if let url = URL(string: "https://ocaml-learn-code.com/learn") {
+                            DigiAnalytics.shared.send(path: "learn")
                             openURL(url)
                         }
                     },

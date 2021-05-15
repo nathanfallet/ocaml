@@ -18,6 +18,7 @@
 */
 
 import SwiftUI
+import DigiAnalytics
 
 struct DonateView: View {
     @StateObject var viewModel = DonateViewModel()
@@ -65,6 +66,9 @@ struct DonateView: View {
                     dismissButton: .default(Text("button_ok"))
                 )
             }
+            .onAppear {
+                DigiAnalytics.shared.send(path: "donate")
+            }
         }
     }
     #endif
@@ -92,6 +96,9 @@ struct DonateView: View {
                     }
                     .padding()
                 }
+            }
+            .onAppear {
+                DigiAnalytics.shared.send(path: "donate")
             }
         }
     }

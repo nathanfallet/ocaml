@@ -18,6 +18,7 @@
 */
 
 import SwiftUI
+import DigiAnalytics
 
 struct SettingsView: View {
 
@@ -94,6 +95,9 @@ struct SettingsView: View {
         }
         .navigationTitle("settings")
         .listStyleInsetGroupedIfAvailable()
+        .onAppear {
+            DigiAnalytics.shared.send(path: "settings")
+        }
     }
     #endif
 
@@ -164,6 +168,9 @@ struct SettingsView: View {
         }
         .padding()
         .frame(minWidth: 512)
+        .onAppear {
+            DigiAnalytics.shared.send(path: "settings")
+        }
     }
     #endif
 }

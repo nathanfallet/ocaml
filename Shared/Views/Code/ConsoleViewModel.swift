@@ -21,6 +21,7 @@ import Foundation
 import WebKit
 import Combine
 import StoreKit
+import DigiAnalytics
 
 class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDelegate {
 
@@ -93,7 +94,9 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
                     self.showExecuting = false
                     self.refreshOutput()
                     completionHandler()
+
                     self.checkForReview()
+                    DigiAnalytics.shared.send(path: "execute")
                 }
             }
         }
