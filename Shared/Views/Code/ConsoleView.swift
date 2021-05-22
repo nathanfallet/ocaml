@@ -38,18 +38,18 @@ struct ConsoleView: View {
                     ScrollViewReader { value in
                         VStack(alignment: .leading) {
                             HStack {
-                                if let out = viewModel.output?.splitInSpans() {
+                                if let out = viewModel.output {
                                     VStack(alignment: .leading, spacing: 0) {
-                                        ForEach(out, id: \.0) { line in
-                                            switch line.1 {
+                                        ForEach(out, id: \.id) { line in
+                                            switch line.span {
                                             case "sharp":
-                                                Text("# \(line.2)")
+                                                Text("# \(line.content)")
                                             case "caml":
-                                                Text(line.2).foregroundColor(.blue)
+                                                Text(line.content).foregroundColor(.blue)
                                             case "stderr":
-                                                Text(line.2).foregroundColor(.red)
+                                                Text(line.content).foregroundColor(.red)
                                             default:
-                                                Text(line.2)
+                                                Text(line.content)
                                             }
                                         }
                                     }

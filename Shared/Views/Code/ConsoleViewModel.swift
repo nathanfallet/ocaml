@@ -23,26 +23,22 @@ import Combine
 import StoreKit
 import DigiAnalytics
 
-class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDelegate {
+class ConsoleViewModel: NSObject, ObservableObject, OCamlConsoleDelegate {
 
     // The environment to execute OCaml code
-    private lazy var webView: WKWebView = {
-        let webView = WKWebView()
-
-        webView.isHidden = true
-        #if !os(macOS)
-        webView.scrollView.isScrollEnabled = false
+    private lazy var console: OCamlConsole = {
+        #if os(macOS)
+        // Check if OCaml is installated on the system
+        // For now we default on web console because system one is not ready
+        let console = OCamlWebConsole()
+        #else
+        // On iOS, only web console is supported
+        let console = OCamlWebConsole()
         #endif
-        webView.navigationDelegate = self
-        webView.uiDelegate = self
 
-        if let url = Bundle.main.url(forResource: "index", withExtension: "html") {
-            webView.loadFileURL(url, allowingReadAccessTo: url)
-        } else {
-            webView.loadHTMLString("console_failed".localized(), baseURL: nil)
-        }
-
-        return webView
+        // Set delegate and return the console
+        console.delegate = self
+        return console
     }()
 
     // State for the console
@@ -55,7 +51,7 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
     @Published var showExecuting: Bool = false
 
     // Content of the console
-    @Published var output: String?
+    @Published var output: [ConsoleEntry]?
 
     // Any prompt
     @Published var prompt: String?
@@ -63,77 +59,58 @@ class ConsoleViewModel: NSObject, ObservableObject, WKNavigationDelegate, WKUIDe
 
     // Load the console
     func loadConsoleIfNeeded() {
-        _ = webView
+        console.loadConsoleIfNeeded()
     }
 
     // Refresh the output
     func refreshOutput() {
-        webView.evaluateJavaScript("document.getElementById('output').innerHTML") { data, _ in
-            self.output = (data as? String)?.trimEndlines()
-        }
+        output = console.output
     }
 
     // Execute code
-    func execute(_ source: String, completionHandler: @escaping () -> Void = {}) {
+    func execute(_ source: String) {
         // Start loading
         showExecuting = true
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            // Create JS script to execute in console
-            // Put current script into console and press enter to execute
-            let js = """
-            var t = document.getElementById("userinput");
-            t.value = `\(source.escapeCode())`;
-            t.onkeydown({"keyCode": 13, "preventDefault": function (){}});
-            """
-
-            // Put source in top level
-            self.webView.evaluateJavaScript(js) { _, _ in
-                // Present output
-                DispatchQueue.main.async {
-                    self.showExecuting = false
-                    self.refreshOutput()
-                    completionHandler()
-
-                    self.checkForReview()
-                    DigiAnalytics.shared.send(path: "execute")
-                }
-            }
+            // Send to the console
+            self.console.execute(source/*.removeComments()*/)
         }
     }
 
     // Reload console
     func reloadConsole(_ sender: Any?) {
         // Reload console
-        webView.reloadFromOrigin()
+        console.reloadConsole()
     }
 
-    public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        // Hide while it starts loading
-        showLoading = true
-        webView.isHidden = true
+    func didStartLoading() {
+        self.showLoading = true
     }
 
-    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // Show console and stop loading
-        webView.isHidden = false
-        showLoading = false
+    func didFinishLoading() {
+        self.showLoading = false
     }
 
-    public func webView(
-        _ webView: WKWebView,
-        runJavaScriptTextInputPanelWithPrompt prompt: String,
-        defaultText: String?,
-        initiatedByFrame frame: WKFrameInfo,
-        completionHandler: @escaping (String?) -> Void
-    ) {
-        // Update prompt
-        self.prompt = prompt
-        self.promptCompletionHandler = completionHandler
+    func didExecute() {
+        DispatchQueue.main.async {
+            self.refreshOutput()
+            self.showExecuting = false
+            self.executed()
+        }
     }
 
-    // Check for review
-    func checkForReview() {
+    func didRefreshOutput() {
+        DispatchQueue.main.async {
+            self.refreshOutput()
+        }
+    }
+
+    // Run after execution
+    func executed() {
+        // Analytics
+        DigiAnalytics.shared.send(path: "execute")
+
         // Retrieve the number of save and increment it
         let datas = UserDefaults.standard
         let savesCount = datas.integer(forKey: "executeCount") + 1

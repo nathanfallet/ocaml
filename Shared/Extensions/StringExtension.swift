@@ -37,6 +37,28 @@ extension String {
 
     // Code escape
 
+    func removeComments() -> String {
+        // Need to optimize this (takes too much time for long files)
+        // and also check for strings (don't remove content in strings)
+        var new = ""
+        var comment = false
+        var i = 0
+        while i < count {
+            if self[i] == "(" && i+1 < count && self[i+1] == "*" {
+                comment = true
+            }
+            if self[i] == "*" && i+1 < count && self[i+1] == ")" {
+                comment = false
+                i += 2
+            }
+            if !comment {
+                new += self[i]
+            }
+            i += 1
+        }
+        return new
+    }
+
     func escapeCode() -> String {
         return replacingOccurrences(of: "\\", with: "\\\\")
             .replacingOccurrences(of: "`", with: "\\`")
@@ -81,15 +103,36 @@ extension String {
         }
     }
 
-    func splitInSpans() -> [(Int, String, String)] {
-        var spans = [(Int, String, String)]()
+    func splitInSpans() -> [ConsoleEntry] {
+        var spans = [ConsoleEntry]()
         for group in groups(for: #"<span class=\"([a-z]+)\">([^<>]+)</span>"#) {
             let content = group[2].trimEndlines().replaceHTMLChars()
             if !content.isEmpty {
-                spans.append((spans.count, group[1], content))
+                spans.append(ConsoleEntry(id: spans.count, span: group[1], content: content))
             }
         }
         return spans
+    }
+
+    // Subscript
+
+    subscript (i: Int) -> String {
+        return self[i ..< i + 1]
+    }
+
+    func substring(fromIndex: Int) -> String {
+        return self[min(fromIndex, count) ..< count]
+    }
+
+    func substring(toIndex: Int) -> String {
+        return self[0 ..< max(0, toIndex)]
+    }
+
+    subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(count, r.lowerBound)), upper: min(count, max(0, r.upperBound))))
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self[start ..< end])
     }
 
 }
