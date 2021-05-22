@@ -63,6 +63,7 @@ class OCamlWebConsole: NSObject, OCamlConsole, WKNavigationDelegate, WKUIDelegat
     func refreshOutput() {
         webView.evaluateJavaScript("document.getElementById('output').innerHTML") { data, _ in
             self.output = (data as? String)?.trimEndlines().splitInSpans()
+            self.delegate?.didFinishLoading()
             self.delegate?.didExecute()
         }
     }
@@ -100,7 +101,6 @@ class OCamlWebConsole: NSObject, OCamlConsole, WKNavigationDelegate, WKUIDelegat
         // Show console and stop loading
         webView.isHidden = false
         refreshOutput()
-        delegate?.didFinishLoading()
     }
 
     public func webView(

@@ -60,7 +60,6 @@ class OCamlSystemConsole: OCamlConsole {
             DispatchQueue.global(qos: .background).async {
                 self.process?.launch()
             }
-            delegate?.didFinishLoading()
         }
     }
 
@@ -127,6 +126,9 @@ class OCamlSystemConsole: OCamlConsole {
             )
             output?.append(entry)
         }
+
+        // Set console as loaded
+        delegate?.didFinishLoading()
     }
 
 }
