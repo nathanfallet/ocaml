@@ -1,6 +1,7 @@
 # macOS files
 .DS_Store
-swiftpm
+project.xcworkspace
+xcuserdata
 
 # Ruby files
 Gemfile.lock
