@@ -6,6 +6,10 @@ ref: learn_index
 
 # Apprendre OCaml
 
+## Installation
+
+- [Installer OCaml](install_fr.md)
+
 ## Les bases
 
 - [Découvrir OCaml](basics_discover_fr.md)

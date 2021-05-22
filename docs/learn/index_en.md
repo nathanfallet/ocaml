@@ -8,6 +8,10 @@ redirect_from:
 
 # Learn OCaml
 
+## Installation
+
+- [Install OCaml](install_en.md)
+
 ## The basics
 
 - [Discover OCaml](basics_discover_en.md)
