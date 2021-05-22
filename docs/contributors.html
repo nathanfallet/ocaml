@@ -1,0 +1,29 @@
+---
+layout: page
+---
+
+<h1>Contributors</h1>
+
+<p>
+    OCaml: Learn and code is an open source project.
+    It is managed by <a href="https://nathanfallet.me/">Nathan Fallet</a> at <a href="https://groupe-minaste.org/">Groupe MINASTE</a>,
+    helped by contributors on <a href="https://github.com/GroupeMINASTE/OCaml-iOS">GitHub</a>.
+</p>
+<p>Here is the list of all contributors to the app and the website:</p>
+
+<div class="row" style="margin-top:20px;">
+    {% for contributor in site.github.contributors %}
+    <div class="col-md-4">
+        <div class="media">
+            <div class="media-left">
+                <img src="{{ contributor.avatar_url }}" class="media-object" style="width:60px;border-radius:30px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><a href="https://github.com/{{ contributor.login }}">{{ contributor.login }}</a></h4>
+              <p>{{ contributor.contributions }} contributions</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
