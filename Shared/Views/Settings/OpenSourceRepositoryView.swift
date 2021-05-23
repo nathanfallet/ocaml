@@ -52,6 +52,6 @@ struct OpenSourceRepositoryView: View {
 
 struct OpenSourceRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
-        OpenSourceRepositoryView(user: "GroupeMINASTE", repo: "OCaml-iOS")
+        OpenSourceRepositoryView(user: "GroupeMINASTE", repo: "OCaml")
     }
 }

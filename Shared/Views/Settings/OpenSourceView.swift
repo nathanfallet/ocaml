@@ -22,7 +22,7 @@ import SwiftUI
 struct OpenSourceView: View {
     let data: [(String, [(String, String)])] = [
         ("", [
-            ("GroupeMINASTE", "OCaml-iOS")
+            ("GroupeMINASTE", "OCaml")
         ]),
         ("opensource_swiftpackages", [
             ("twostraws", "Sourceful"),
