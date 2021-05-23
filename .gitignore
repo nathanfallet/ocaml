@@ -12,6 +12,8 @@ js_of_ocaml/
 
 # Android project files
 *.iml
+*.apk
+*.aab
 .gradle
 local.properties
 .idea
