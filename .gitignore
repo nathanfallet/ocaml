@@ -21,3 +21,4 @@ build
 captures
 .externalNativeBuild
 .project
+.classpath
