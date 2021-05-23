@@ -9,3 +9,15 @@ Gemfile.lock
 # OCaml toplevel files
 toplevel.js
 js_of_ocaml/
+
+# Android project files
+*.iml
+.gradle
+local.properties
+.idea
+.vscode
+.settings
+build
+captures
+.externalNativeBuild
+.project
