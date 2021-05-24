@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import me.nathanfallet.ocaml.models.OCamlFile
 
-class CodeViewModel : ViewModel() {
+class CodeViewModel: ViewModel() {
 
     private val mutableFile = MutableLiveData<OCamlFile>()
     val file: LiveData<OCamlFile> get() = mutableFile

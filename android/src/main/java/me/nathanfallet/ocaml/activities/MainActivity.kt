@@ -10,10 +10,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import me.nathanfallet.ocaml.R
 import me.nathanfallet.ocaml.fragments.CodeFragment
 import me.nathanfallet.ocaml.models.OCamlFile
+import me.nathanfallet.ocaml.models.OCamlWebConsole
 import me.nathanfallet.ocaml.viewmodels.CodeViewModel
+import me.nathanfallet.ocaml.viewmodels.ConsoleViewModel
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +25,9 @@ class MainActivity : AppCompatActivity() {
     // Fragments
     private var codeFragment = CodeFragment()
 
-    // View model
+    // View models
     private val codeViewModel: CodeViewModel by viewModels()
+    private val consoleViewModel: ConsoleViewModel by viewModels { ConsoleViewModelProvider() }
 
     // Register
     private val openResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -58,7 +63,9 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.play -> {
-
+                codeViewModel.file.value?.source?.let {
+                    consoleViewModel.execute(it)
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -85,6 +92,9 @@ class MainActivity : AppCompatActivity() {
                 codeViewModel.file(OCamlFile())
             }
         }
+
+        // Load console if needed
+        consoleViewModel.loadConsoleIfNeeded()
     }
 
     // Open a file
@@ -158,5 +168,13 @@ class MainActivity : AppCompatActivity() {
         cursor.close()
         return name
     }
+
+    inner class ConsoleViewModelProvider: ViewModelProvider.NewInstanceFactory() {
+        @Suppress("UNCHECKED_CAST")
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return ConsoleViewModel(this@MainActivity) as T
+        }
+    }
+
 
 }
