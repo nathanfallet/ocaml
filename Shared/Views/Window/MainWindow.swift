@@ -76,6 +76,14 @@ struct MainWindow: View {
                 )
                 Button(
                     action: {
+                        consoleViewModel.reloadConsole()
+                    },
+                    label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                )
+                Button(
+                    action: {
                         consoleViewModel.showConsole.toggle()
                         consoleViewModel.execute(document.source)
                     },

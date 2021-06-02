@@ -79,7 +79,7 @@ class ConsoleViewModel: NSObject, ObservableObject, OCamlConsoleDelegate {
     }
 
     // Reload console
-    func reloadConsole(_ sender: Any?) {
+    func reloadConsole() {
         // Reload console
         console.reloadConsole()
     }
