@@ -16,10 +16,6 @@ class CodeFragment : Fragment(), TextWatcher {
     private val codeViewModel: CodeViewModel by activityViewModels()
     private var editor: CodeEditorLayout? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

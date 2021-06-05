@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.OpenableColumns
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.FrameLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -14,8 +15,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import me.nathanfallet.ocaml.R
 import me.nathanfallet.ocaml.fragments.CodeFragment
+import me.nathanfallet.ocaml.fragments.ConsoleFragment
 import me.nathanfallet.ocaml.models.OCamlFile
-import me.nathanfallet.ocaml.models.OCamlWebConsole
 import me.nathanfallet.ocaml.viewmodels.CodeViewModel
 import me.nathanfallet.ocaml.viewmodels.ConsoleViewModel
 
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
     // Fragments
     private var codeFragment = CodeFragment()
+    private var consoleFragment = ConsoleFragment()
+    private var showConsole = false
 
     // View models
     private val codeViewModel: CodeViewModel by viewModels()
@@ -49,6 +52,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Close console if shown
+        if (showConsole) {
+            showConsole = false
+            supportFragmentManager.popBackStack()
+        }
         return when (item.itemId) {
             R.id.open -> {
                 openFile()
@@ -63,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.play -> {
+                showConsole()
                 codeViewModel.file.value?.source?.let {
                     consoleViewModel.execute(it)
                 }
@@ -78,6 +87,12 @@ class MainActivity : AppCompatActivity() {
 
         // Set fragments
         supportFragmentManager.beginTransaction().add(R.id.codeFragment, codeFragment).commit()
+
+        // Check if console is visible to set it
+        // Note: Don't know what happens when a tablet rotates and console should be either shown or hidden
+        if (findViewById<FrameLayout>(R.id.consoleFragment) != null) {
+            supportFragmentManager.beginTransaction().add(R.id.consoleFragment, consoleFragment).commit()
+        }
 
         // Handle file opening
         when(intent.action) {
@@ -160,13 +175,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Get file name
-    fun queryFileName(uri: Uri): String? {
+    private fun queryFileName(uri: Uri): String? {
         val cursor = contentResolver.query(uri, null, null, null, null) ?: return null
         val nameIndex: Int = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
         cursor.moveToFirst()
         val name: String = cursor.getString(nameIndex)
         cursor.close()
         return name
+    }
+
+    // Show console
+    private fun showConsole() {
+        // If console is not visible (on phones or little screens)
+        if (findViewById<FrameLayout>(R.id.consoleFragment) == null && !showConsole) {
+            showConsole = true
+            supportFragmentManager.beginTransaction().replace(R.id.codeFragment, consoleFragment).addToBackStack(null).commit();
+        }
+    }
+
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            if (showConsole) {
+                showConsole = false
+            }
+            supportFragmentManager.popBackStack()
+        } else {
+            super.onBackPressed()
+        }
     }
 
     inner class ConsoleViewModelProvider: ViewModelProvider.NewInstanceFactory() {
