@@ -1,12 +1,32 @@
 package me.nathanfallet.ocaml.extensions
 
+import android.util.JsonReader
+import android.util.JsonToken
 import me.nathanfallet.ocaml.models.ConsoleEntry
+import java.io.IOException
+import java.io.StringReader
 
 // Code escape
 
 fun String.escapeCode(): String {
     return replace("\\", "\\\\")
         .replace("`", "\\`")
+}
+
+fun String.decodeJSON(): String {
+    var str = this
+    val json = JsonReader(StringReader(this))
+    json.isLenient = true
+    try {
+        if (json.peek() == JsonToken.STRING) {
+            str = json.nextString()
+        }
+    } catch (e: IOException) {
+        e.printStackTrace()
+    } finally {
+        json.close()
+    }
+    return str
 }
 
 fun String.trimEndlines(): String {
@@ -29,16 +49,10 @@ fun String.replaceHTMLChars(): String {
 
 fun String.splitInSpans(): ArrayList<ConsoleEntry> {
     val spans = ArrayList<ConsoleEntry>()
-    val str = this
-        .removePrefix("\"")
-        .removeSuffix("\"")
-        .replace("\\\"", "\"")
-        .replace("\\\n", "\n")
-        .replace("\\u003C", "<")
     val results = Regex(
         """<span class="([a-z]+)">([^<>]+)</span>""",
         setOf(RegexOption.DOT_MATCHES_ALL, RegexOption.MULTILINE)
-    ).findAll(str)
+    ).findAll(decodeJSON().replace("\n", ""))
 
     for (el in results) {
         val content = el.groupValues[2].trimEndlines().replaceHTMLChars()

@@ -1,6 +1,7 @@
 package me.nathanfallet.ocaml.fragments
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
@@ -48,6 +49,7 @@ class ConsoleFragment : Fragment() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConsoleViewHolder {
             // Create a new view
             val textView = TextView(parent.context)
+            textView.typeface = Typeface.MONOSPACE
             return ConsoleViewHolder(textView)
         }
 
