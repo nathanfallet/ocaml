@@ -22,3 +22,4 @@ dune build
 # Go back to root folder
 cd ../../../../
 cp js_of_ocaml/_build/default/toplevel/examples/lwt_toplevel/toplevel.js Shared/JavaScript/
+cp js_of_ocaml/_build/default/toplevel/examples/lwt_toplevel/toplevel.js android/src/main/assets/

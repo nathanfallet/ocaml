@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OCaml</string>
+    <string name="open">Open</string>
+    <string name="save">Save</string>
+    <string name="play">Play</string>
+    <string name="extension_not_supported_title">Extension not supported</string>
+    <string name="extension_not_supported_message">Only .ml and .mli OCaml files are supported</string>
+    <string name="button_ok">OK</string>
+</resources>

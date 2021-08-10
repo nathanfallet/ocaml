@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>OCaml toplevel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, viewport-fit=cover">
+    <script type="text/javascript">
+        window.onhashchange = function() {
+            window.location.reload()
+        }
+        var hash = window.location.hash.replace(/^#/, "");
+        var fields = hash.split(/&/);
+        var prefix = "";
+        var version = "";
+        for (var f in fields) {
+            var data = fields[f].split(/=/);
+            if (data[0] == "version") {
+                version = data[1].replace(/%20|%2B/g, "+");
+                break;
+            }
+        }
+
+        function load_script(url) {
+            var fileref = document.createElement('script');
+            fileref.setAttribute("type", "text/javascript");
+            fileref.setAttribute("src", prefix + (version == "" ? "" : (version + "/")) + url);
+            document.getElementsByTagName("head")[0].appendChild(fileref);
+        }
+        load_script("exported-unit.cmis.js");
+        load_script("toplevel.js");
+    </script>
+</head>
+
+<body>
+    <div id="toplevel-container">
+        <pre id="output"></pre>
+        <div>
+            <div id="sharp" class="sharp"></div>
+            <textarea id="userinput" autocapitalize="off" spellcheck="false">Loading ...</textarea>
+        </div>
+    </div>
+    <div id="toplevel-side">
+        <h3>Js_of_ocaml</h3>
+        <h4>A compiler from OCaml bytecode to Javascript.</h4>
+        <p>It makes OCaml programs that run on Web browsers. It is easy to install as it works with an existing installation of OCaml, with no need to recompile any library. It comes with bindings for a large part of the browser APIs.</p>
+        <p>This web-based OCaml toplevel is compiled using Js_of_ocaml.</p>
+        <h4>Command</h4>
+        <table class="table table-striped table-condensed">
+            <tbody class>
+                <tr>
+                    <td>Enter/Return</td>
+                    <td>Submit code</td>
+                </tr>
+                <tr>
+                    <td>Ctrl + Enter</td>
+                    <td>Newline</td>
+                </tr>
+                <tr>
+                    <td>Up / Down</td>
+                    <td>Browse history</td>
+                </tr>
+                <tr>
+                    <td>Ctrl + l</td>
+                    <td>Clear display</td>
+                </tr>
+                <tr>
+                    <td>Ctrl + k</td>
+                    <td>Reset toplevel</td>
+                </tr>
+                <tr>
+                    <td>Tab</td>
+                    <td>Indent code</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <h4>Try to execute samples</h4>
+        <div id="toplevel-examples" class="list-group"></div>
+        <canvas width=200 height=200 id="test-canvas"></canvas>
+        <h4 class="clear">See the generated javascript code</h4>
+        <pre id="last-js">
+      </pre>
+    </div>
+</body>
+
+</html>
