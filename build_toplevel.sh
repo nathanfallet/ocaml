@@ -10,6 +10,7 @@ opam update
 eval $(opam env)
 
 # Then, install Js_of_ocaml and its dependencies
+opam option depext=false
 opam install -y Js_of_ocaml-toplevel
 opam install -y lwt graphics react reactiveData ocp-indent tyxml lwt_log #higlo
 
