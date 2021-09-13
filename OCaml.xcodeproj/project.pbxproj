@@ -120,6 +120,7 @@
 		6AFBF10D2637027000A55FFF /* DonateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateView.swift; sourceTree = "<group>"; };
 		6AFDC82D2635AB0E0050FA59 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 		6AFDC8342635AEE20050FA59 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		945FA4D026EFAC9100B1453D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +366,7 @@
 				en,
 				Base,
 				fr,
+				de,
 			);
 			mainGroup = 6A83942A25A4CF9A0033FA88;
 			packageReferences = (
@@ -521,6 +523,7 @@
 			children = (
 				6A35DC1525ECE8BA0092B6CA /* en */,
 				6A35DC1825ECE8CC0092B6CA /* fr */,
+				945FA4D026EFAC9100B1453D /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
