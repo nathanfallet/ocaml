@@ -1,4 +1,5 @@
 # First, install OCaml and OPAM
+brew install pkg-config
 brew install xquartz
 brew install xorgproto
 brew install ocaml
