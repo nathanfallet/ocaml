@@ -89,6 +89,7 @@ struct MainWindow: View {
                 }
             }
         }
+        #if os(macOS)
         .touchBar {
             Button(action: openDocumentation) {
                 Image(systemName: "book")
@@ -103,6 +104,7 @@ struct MainWindow: View {
                 Image(systemName: "play")
             }
         }
+        #endif
     }
 
     var placement: ToolbarItemPlacement {
