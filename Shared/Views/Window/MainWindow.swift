@@ -39,6 +39,30 @@ struct MainWindow: View {
         // Send file open
         DigiAnalytics.shared.send(path: "file")
     }
+    
+    func openDocumentation() {
+        if let url = URL(string: "https://ocaml-learn-code.com/learn") {
+            DigiAnalytics.shared.send(path: "learn")
+            openURL(url)
+        }
+    }
+    
+    func openPreferences() {
+        #if os(macOS)
+        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+        #else
+        showSettings = true
+        #endif
+    }
+    
+    func reloadConsole() {
+        consoleViewModel.reloadConsole()
+    }
+    
+    func play() {
+        consoleViewModel.showConsole.toggle()
+        consoleViewModel.execute(document.source)
+    }
 
     var body: some View {
         CodeView(
@@ -51,46 +75,32 @@ struct MainWindow: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: placement) {
-                Button(
-                    action: {
-                        if let url = URL(string: "https://ocaml-learn-code.com/learn") {
-                            DigiAnalytics.shared.send(path: "learn")
-                            openURL(url)
-                        }
-                    },
-                    label: {
-                        Image(systemName: "book")
-                    }
-                )
-                Button(
-                    action: {
-                        #if os(macOS)
-                        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
-                        #else
-                        showSettings = true
-                        #endif
-                    },
-                    label: {
-                        Image(systemName: "gearshape")
-                    }
-                )
-                Button(
-                    action: {
-                        consoleViewModel.reloadConsole()
-                    },
-                    label: {
-                        Image(systemName: "arrow.clockwise")
-                    }
-                )
-                Button(
-                    action: {
-                        consoleViewModel.showConsole.toggle()
-                        consoleViewModel.execute(document.source)
-                    },
-                    label: {
-                        Image(systemName: "play")
-                    }
-                )
+                Button(action: openDocumentation) {
+                    Image(systemName: "book")
+                }
+                Button(action: openPreferences) {
+                    Image(systemName: "gearshape")
+                }
+                Button(action: reloadConsole) {
+                    Image(systemName: "arrow.clockwise")
+                }
+                Button(action: play) {
+                    Image(systemName: "play")
+                }
+            }
+        }
+        .touchBar {
+            Button(action: openDocumentation) {
+                Image(systemName: "book")
+            }
+            Button(action: openPreferences) {
+                Image(systemName: "gearshape")
+            }
+            Button(action: reloadConsole) {
+                Image(systemName: "arrow.clockwise")
+            }
+            Button(action: play) {
+                Image(systemName: "play")
             }
         }
     }
