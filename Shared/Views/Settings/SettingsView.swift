@@ -91,6 +91,12 @@ struct SettingsView: View {
                             openURL(url)
                         }
                     }
+                SpacedAppView(name: "LaTeX Cards", description: "latexcards", image: "LaTeXCards")
+                    .onTapGesture {
+                        if let url = URL(string: "https://apps.apple.com/app/latex-cards/id1598813588") {
+                            openURL(url)
+                        }
+                    }
             }
         }
         .navigationTitle("settings")
@@ -158,6 +164,12 @@ struct SettingsView: View {
                 AppView(name: "BaseConverter: All in one", description: "baseconverter", image: "BaseConverter")
                     .onTapGesture {
                         if let url = URL(string: "https://apps.apple.com/app/baseconverter-all-in-one/id1446344899") {
+                            openURL(url)
+                        }
+                    }
+                AppView(name: "LaTeX Cards", description: "latexcards", image: "LaTeXCards")
+                    .onTapGesture {
+                        if let url = URL(string: "https://apps.apple.com/app/latex-cards/id1598813588") {
                             openURL(url)
                         }
                     }

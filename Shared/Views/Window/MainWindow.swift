@@ -63,16 +63,19 @@ struct MainWindow: View {
         consoleViewModel.showConsole.toggle()
         consoleViewModel.execute(document.source)
     }
+    
+    func onAppear() {
+        initAnalytics()
+        consoleViewModel.loadConsoleIfNeeded()
+    }
 
+    #if os(iOS)
     var body: some View {
         CodeView(
             consoleViewModel: consoleViewModel,
             document: $document
         )
-        .onAppear {
-            initAnalytics()
-            consoleViewModel.loadConsoleIfNeeded()
-        }
+        .onAppear(perform: onAppear)
         .toolbar {
             ToolbarItemGroup(placement: placement) {
                 Button(action: openDocumentation) {
@@ -89,7 +92,32 @@ struct MainWindow: View {
                 }
             }
         }
-        #if os(macOS)
+    }
+    #endif
+    
+    #if os(macOS)
+    var body: some View {
+        CodeView(
+            consoleViewModel: consoleViewModel,
+            document: $document
+        )
+        .onAppear(perform: onAppear)
+        .toolbar {
+            ToolbarItemGroup(placement: placement) {
+                Button(action: openDocumentation) {
+                    Image(systemName: "book")
+                }
+                Button(action: openPreferences) {
+                    Image(systemName: "gearshape")
+                }
+                Button(action: reloadConsole) {
+                    Image(systemName: "arrow.clockwise")
+                }
+                Button(action: play) {
+                    Image(systemName: "play")
+                }
+            }
+        }
         .touchBar {
             Button(action: openDocumentation) {
                 Image(systemName: "book")
@@ -104,8 +132,8 @@ struct MainWindow: View {
                 Image(systemName: "play")
             }
         }
-        #endif
     }
+    #endif
 
     var placement: ToolbarItemPlacement {
         #if os(macOS)

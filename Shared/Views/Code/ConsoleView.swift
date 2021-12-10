@@ -43,7 +43,7 @@ struct ConsoleView: View {
                                         ForEach(out, id: \.id) { line in
                                             switch line.span {
                                             case "sharp":
-                                                Text("# \(line.content)")
+                                                Text("# \(line.content)").foregroundColor(.gray)
                                             case "caml":
                                                 Text(line.content).foregroundColor(.blue)
                                             case "stderr":
