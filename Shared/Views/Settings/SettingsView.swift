@@ -19,6 +19,7 @@
 
 import SwiftUI
 import DigiAnalytics
+import MyAppsiOS
 
 struct SettingsView: View {
 
@@ -78,25 +79,10 @@ struct SettingsView: View {
                 }
             }
 
-            Section(header: Text("apps")) {
-                SpacedAppView(name: "Delta: Algorithms", description: "delta", image: "Delta")
-                    .onTapGesture {
-                        if let url = URL(string: "https://apps.apple.com/app/delta-algorithms/id1436506800") {
-                            openURL(url)
-                        }
-                    }
-                SpacedAppView(name: "BaseConverter: All in one", description: "baseconverter", image: "BaseConverter")
-                    .onTapGesture {
-                        if let url = URL(string: "https://apps.apple.com/app/baseconverter-all-in-one/id1446344899") {
-                            openURL(url)
-                        }
-                    }
-                SpacedAppView(name: "LaTeX Cards", description: "latexcards", image: "LaTeXCards")
-                    .onTapGesture {
-                        if let url = URL(string: "https://apps.apple.com/app/latex-cards/id1598813588") {
-                            openURL(url)
-                        }
-                    }
+            Section(header: MyAppHeader()) {
+                ForEach(MyApp.values) { app in
+                    MyAppView(app: app)
+                }
             }
         }
         .navigationTitle("settings")
@@ -155,24 +141,9 @@ struct SettingsView: View {
             }
 
             Form {
-                AppView(name: "Delta: Algorithms", description: "delta", image: "Delta")
-                    .onTapGesture {
-                        if let url = URL(string: "https://apps.apple.com/app/delta-algorithms/id1436506800") {
-                            openURL(url)
-                        }
-                    }
-                AppView(name: "BaseConverter: All in one", description: "baseconverter", image: "BaseConverter")
-                    .onTapGesture {
-                        if let url = URL(string: "https://apps.apple.com/app/baseconverter-all-in-one/id1446344899") {
-                            openURL(url)
-                        }
-                    }
-                AppView(name: "LaTeX Cards", description: "latexcards", image: "LaTeXCards")
-                    .onTapGesture {
-                        if let url = URL(string: "https://apps.apple.com/app/latex-cards/id1598813588") {
-                            openURL(url)
-                        }
-                    }
+                ForEach(MyApp.values) { app in
+                    MyAppView(app: app)
+                }
             }
             .tabItem {
                 Label("apps", systemImage: "app.badge")
