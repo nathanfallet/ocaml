@@ -146,7 +146,7 @@ struct SettingsView: View {
                 }
             }
             .tabItem {
-                Label("apps", systemImage: "app.badge")
+                Label(MyAppHeaderText.localizedString, systemImage: "app.badge")
             }
         }
         .padding()

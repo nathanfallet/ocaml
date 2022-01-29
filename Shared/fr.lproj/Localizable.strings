@@ -25,7 +25,6 @@
 "plainColor" = "Couleur du texte";
 "backgroundColor" = "Couleur d'arrière plan";
 "editor_settings" = "Paramètres de l'éditeur";
-"apps" = "Plus d'applications";
 "donate_thanks" = "Merci du don pour notre association !";
 "donate_footer" = "Ce don va aider notre association à développer ses projets, notamment Extopy, le réseau social que nous développons, qui va nécessiter principalement du stockage sur ses serveurs.";
 "donate_header" = "Sélectionnez le montant à donner :";
