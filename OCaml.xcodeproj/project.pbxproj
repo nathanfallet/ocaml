@@ -814,7 +814,7 @@
 		};
 		6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyAppsiOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/NathanFallet/MyAppsiOS";
+			repositoryURL = "https://github.com/NathanFallet/MyApps";
 			requirement = {
 				branch = main;
 				kind = branch;
