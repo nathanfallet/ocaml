@@ -14,8 +14,6 @@
 		6A65623A2634B3430064DD6C /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE850D826349BF5006BF4FE /* CodeEditorView.swift */; };
 		6A6562442634B5BA0064DD6C /* EditorColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562432634B5BA0064DD6C /* EditorColorView.swift */; };
 		6A6562452634B5BA0064DD6C /* EditorColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562432634B5BA0064DD6C /* EditorColorView.swift */; };
-		6A6562492634BE870064DD6C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562482634BE870064DD6C /* AppView.swift */; };
-		6A65624A2634BE880064DD6C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562482634BE870064DD6C /* AppView.swift */; };
 		6A6562572634CAEF0064DD6C /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562562634CAEF0064DD6C /* OpenSourceView.swift */; };
 		6A6562582634CAEF0064DD6C /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6562562634CAEF0064DD6C /* OpenSourceView.swift */; };
 		6A65625C2634CB280064DD6C /* OpenSourceRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65625B2634CB280064DD6C /* OpenSourceRepositoryView.swift */; };
@@ -91,7 +89,6 @@
 		6A35DC1825ECE8CC0092B6CA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A3C6E1A26383F7D00E40602 /* EnvironmentValuesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValuesExtension.swift; sourceTree = "<group>"; };
 		6A6562432634B5BA0064DD6C /* EditorColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorColorView.swift; sourceTree = "<group>"; };
-		6A6562482634BE870064DD6C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		6A6562562634CAEF0064DD6C /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
 		6A65625B2634CB280064DD6C /* OpenSourceRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceRepositoryView.swift; sourceTree = "<group>"; };
 		6A67C4BB2637FB470012BBF2 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -285,7 +282,6 @@
 		6AE8508226348239006BF4FE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				6A6562482634BE870064DD6C /* AppView.swift */,
 				6A6562432634B5BA0064DD6C /* EditorColorView.swift */,
 				6A65625B2634CB280064DD6C /* OpenSourceRepositoryView.swift */,
 				6A6562562634CAEF0064DD6C /* OpenSourceView.swift */,
@@ -379,7 +375,7 @@
 				6AE8509D26348743006BF4FE /* XCRemoteSwiftPackageReference "Sourceful" */,
 				6A6562602634CBC20064DD6C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				6AC0FA6F264FFE03007AD540 /* XCRemoteSwiftPackageReference "DigiAnalytics" */,
-				6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyAppsiOS" */,
+				6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyApps" */,
 			);
 			productRefGroup = 6A83943425A4CF9A0033FA88 /* Products */;
 			projectDirPath = "";
@@ -469,7 +465,6 @@
 				6AC0FA752650036C007AD540 /* DigiAnalyticsExtension.swift in Sources */,
 				6AE8506626347F22006BF4FE /* StringExtension.swift in Sources */,
 				6AFDC82E2635AB0E0050FA59 /* ConsoleView.swift in Sources */,
-				6A6562492634BE870064DD6C /* AppView.swift in Sources */,
 				6AFDC8352635AEE20050FA59 /* ViewExtension.swift in Sources */,
 				6AE8503426347B77006BF4FE /* OCamlApp.swift in Sources */,
 				6A6562442634B5BA0064DD6C /* EditorColorView.swift in Sources */,
@@ -500,7 +495,6 @@
 				6AFDC82F2635AB0E0050FA59 /* ConsoleView.swift in Sources */,
 				6A7425DA265947C800441B32 /* OCamlWebConsole.swift in Sources */,
 				6AC0FA762650036C007AD540 /* DigiAnalyticsExtension.swift in Sources */,
-				6A65624A2634BE880064DD6C /* AppView.swift in Sources */,
 				6AE8505626347ECD006BF4FE /* OCamlFile.swift in Sources */,
 				6AE8506B26347F23006BF4FE /* StringExtension.swift in Sources */,
 				6AFDC8362635AEE20050FA59 /* ViewExtension.swift in Sources */,
@@ -809,10 +803,10 @@
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.3.0;
+				minimumVersion = 7.0.0;
 			};
 		};
-		6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyAppsiOS" */ = {
+		6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyApps" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NathanFallet/MyApps";
 			requirement = {
@@ -856,12 +850,12 @@
 		};
 		6AA1778027A593FB00775DEC /* MyAppsiOS */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyAppsiOS" */;
+			package = 6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyApps" */;
 			productName = MyAppsiOS;
 		};
 		6AA1778227A5945100775DEC /* MyAppsiOS */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyAppsiOS" */;
+			package = 6AA1777F27A593FB00775DEC /* XCRemoteSwiftPackageReference "MyApps" */;
 			productName = MyAppsiOS;
 		};
 		6AC0FA70264FFE03007AD540 /* DigiAnalytics */ = {
