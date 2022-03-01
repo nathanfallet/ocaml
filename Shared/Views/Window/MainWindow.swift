@@ -113,9 +113,11 @@ struct MainWindow: View {
                 Button(action: reloadConsole) {
                     Image(systemName: "arrow.clockwise")
                 }
+                .keyboardShortcut("k", modifiers: [.command])
                 Button(action: play) {
                     Image(systemName: "play")
                 }
+                .keyboardShortcut("r", modifiers: [.command])
             }
         }
         .touchBar {
