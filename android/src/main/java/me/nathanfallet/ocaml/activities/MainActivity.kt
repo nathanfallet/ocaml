@@ -3,6 +3,7 @@ package me.nathanfallet.ocaml.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.provider.OpenableColumns
 import android.view.Menu
 import android.view.MenuItem
@@ -11,9 +12,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import me.nathanfallet.ocaml.R
+import me.nathanfallet.ocaml.extensions.DigiAnalyticsExtension
 import me.nathanfallet.ocaml.fragments.CodeFragment
 import me.nathanfallet.ocaml.fragments.ConsoleFragment
 import me.nathanfallet.ocaml.models.OCamlFile
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     // View models
     private val codeViewModel: CodeViewModel by viewModels()
-    private val consoleViewModel: ConsoleViewModel by viewModels { ConsoleViewModelProvider() }
+    private val consoleViewModel: ConsoleViewModel by viewModels()
 
     // Register
     private val openResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
         return super.onCreateOptionsMenu(menu)
@@ -109,7 +109,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Load console if needed
+        initializeAnalytics()
         consoleViewModel.loadConsoleIfNeeded()
+    }
+
+    private fun initializeAnalytics() {
+        // Send first open
+        val data = PreferenceManager.getDefaultSharedPreferences(this)
+        if (!data.getBoolean("first_open", false)) {
+            DigiAnalyticsExtension.shared.send("first_open", this)
+            data.edit().putBoolean("first_open", true).apply()
+        }
+
+        // Send open
+        DigiAnalyticsExtension.shared.send("file", this)
     }
 
     // Open a file
@@ -201,13 +214,6 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.popBackStack()
         } else {
             super.onBackPressed()
-        }
-    }
-
-    inner class ConsoleViewModelProvider: ViewModelProvider.NewInstanceFactory() {
-        @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return ConsoleViewModel(this@MainActivity) as T
         }
     }
 

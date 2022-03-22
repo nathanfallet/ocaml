@@ -1,12 +1,15 @@
 package me.nathanfallet.ocaml.viewmodels
 
+import android.app.Application
 import android.content.Context
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import me.nathanfallet.ocaml.extensions.DigiAnalyticsExtension
 import me.nathanfallet.ocaml.models.*
 
-class ConsoleViewModel(context: Context): ViewModel(), OCamlConsoleDelegate {
+class ConsoleViewModel(application: Application): AndroidViewModel(application), OCamlConsoleDelegate {
 
     // The environment to execute OCaml code
     private val console: OCamlConsole
@@ -14,36 +17,30 @@ class ConsoleViewModel(context: Context): ViewModel(), OCamlConsoleDelegate {
     // Initializer
     init {
         // Generate console
-        this.console = OCamlWebConsole(context)
+        this.console = OCamlWebConsole(getApplication())
         console.delegate = this
     }
 
     // State for the console
-    private val mutableShowConsole = MutableLiveData<Boolean>()
-    val showConsole: LiveData<Boolean> get() = mutableShowConsole
+    private val showConsole = MutableLiveData<Boolean>()
+    private val showLoading = MutableLiveData<Boolean>()
+    private val showExecuting = MutableLiveData<Boolean>()
+    private val output = MutableLiveData<ArrayList<ConsoleEntry>>()
 
-    private val mutableShowLoading = MutableLiveData<Boolean>()
-    val showLoading: LiveData<Boolean> get() = mutableShowLoading
-
-    private val mutableShowExecuting = MutableLiveData<Boolean>()
-    val showExecuting: LiveData<Boolean> get() = mutableShowExecuting
-
-    fun showConsole(showConsole: Boolean) {
-        mutableShowConsole.value = showConsole
-    }
-    fun showLoading(showLoading: Boolean) {
-        mutableShowLoading.value = showLoading
-    }
-    fun showExecuting(showExecuting: Boolean) {
-        mutableShowExecuting.value = showExecuting
+    fun isConsoleShown(): LiveData<Boolean> {
+        return showConsole
     }
 
-    // Content of the console
-    private val mutableOutput = MutableLiveData<ArrayList<ConsoleEntry>>()
-    val output: LiveData<ArrayList<ConsoleEntry>> get() = mutableOutput
+    fun isLoadingShown(): LiveData<Boolean> {
+        return showLoading
+    }
 
-    fun output(output: ArrayList<ConsoleEntry>) {
-        mutableOutput.value = output
+    fun isExecutingShown(): LiveData<Boolean> {
+        return showExecuting
+    }
+
+    fun getOutput(): LiveData<ArrayList<ConsoleEntry>> {
+        return output
     }
 
     // Load the console
@@ -53,13 +50,13 @@ class ConsoleViewModel(context: Context): ViewModel(), OCamlConsoleDelegate {
 
     // Refresh the output
     fun refreshOutput() {
-        output(console.output)
+        output.value = console.output
     }
 
     // Execute code
     fun execute(source: String) {
         // Start loading
-        showExecuting(true)
+        showExecuting.value = true
 
         // Check to execute on another thread?
         // Send to console
@@ -72,17 +69,17 @@ class ConsoleViewModel(context: Context): ViewModel(), OCamlConsoleDelegate {
     }
 
     override fun didStartLoading() {
-        showLoading(true)
+        showLoading.value = true
     }
 
     override fun didFinishLoading() {
-        showLoading(false)
+        showLoading.value = false
     }
 
     override fun didExecute() {
         // Go to main thread?
         refreshOutput()
-        showExecuting(false)
+        showExecuting.value = false
         executed()
     }
 
@@ -92,11 +89,12 @@ class ConsoleViewModel(context: Context): ViewModel(), OCamlConsoleDelegate {
     }
 
     // Run after execution
-    fun executed() {
+    private fun executed() {
         // Analytics
+        DigiAnalyticsExtension.shared.send("execute", getApplication())
 
         // Ask for a review
-
+        // TODO
     }
 
 }
