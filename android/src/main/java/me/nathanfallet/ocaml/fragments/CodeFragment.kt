@@ -33,13 +33,13 @@ class CodeFragment : Fragment(), TextWatcher {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        codeViewModel.file.observe(viewLifecycleOwner, { file ->
+        codeViewModel.file.observe(viewLifecycleOwner) { file ->
             editor?.let {
                 if (it.text != file.source) {
                     it.text = file.source
                 }
             }
-        })
+        }
     }
 
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {

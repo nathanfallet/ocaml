@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OCaml</string>
+    <string name="commentcolor">Couleur des commentaires</string>
+    <string name="keywordcolor">Couleur des mots clés</string>
+    <string name="identifiercolor">Couleur des identifiants</string>
+    <string name="stringcolor">Couleur des chaines de caractères</string>
+    <string name="numbercolor">Couleur des nombres</string>
+    <string name="plaincolor">Couleur du texte</string>
+    <string name="backgroundcolor">Couleur d\'arrière plan</string>
+    <string name="editor_settings">Paramètres de l\'éditeur</string>
+    <string name="donate_thanks">Merci du don pour notre association !</string>
+    <string name="donate_footer">Ce don va aider notre association à développer ses projets, notamment Extopy, le réseau social que nous développons, qui va nécessiter principalement du stockage sur ses serveurs.</string>
+    <string name="donate_header">Sélectionnez le montant à donner :</string>
+    <string name="donate_title">Faire un don</string>
+    <string name="button_cancel">Annuler</string>
+    <string name="console_failed">Erreur lors du chargement de la console</string>
+    <string name="button_ok">OK</string>
+    <string name="developer_text">Développé par Nathan Fallet</string>
+    <string name="console">Console</string>
+    <string name="about">A propos</string>
+    <string name="settings">Paramètres</string>
+    <string name="code">Coder</string>
+    <string name="learn">Apprendre</string>
+    <string name="opensource_repo_digianalytics">Analytique web en temps réel avec confidentialité et simplicité.</string>
+    <string name="opensource_repo_js_of_ocaml">Compilateur OCaml vers Javascript.</string>
+    <string name="opensource_repo_ocaml">L\'app elle-même</string>
+    <string name="opensource_others">Autres</string>
+    <string name="opensource_androidlibraries">Bibliothèques Android</string>
+    <string name="opensource">Open source</string>
+    <string name="button_reset">Réinitialiser</string>
+    <string name="console_load">Chargement de la console OCaml, veuillez patienter…</string>
+    <string name="open">Ouvrir</string>
+    <string name="save">Enregistrer</string>
+    <string name="play">Démarrer</string>
+    <string name="extension_not_supported_title">Extension non supportée</string>
+    <string name="extension_not_supported_message">Seuls les fichiers .ml et .mli sont supportés</string>
+    <string name="opensource_repo_kodeeditor">Un éditeur de code simple avec coloration syntaxique et pincement pour zoomer</string>
+</resources>

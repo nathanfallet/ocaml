@@ -1,5 +1,6 @@
 package me.nathanfallet.ocaml.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Typeface
 import android.os.Build
@@ -9,11 +10,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import me.nathanfallet.ocaml.R
 import me.nathanfallet.ocaml.viewmodels.ConsoleViewModel
 
 class ConsoleFragment : Fragment() {
@@ -21,27 +25,39 @@ class ConsoleFragment : Fragment() {
     private val consoleAdapter = ConsoleAdapter()
     private val consoleViewModel: ConsoleViewModel by activityViewModels()
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        context?.let {
-            // Create the view
-            val recyclerView = RecyclerView(it)
-            recyclerView.layoutManager = LinearLayoutManager(it)
-            recyclerView.setHasFixedSize(true)
+        // Create the view
+        val rootView = inflater.inflate(R.layout.fragment_console, container, false)
 
-            // Bind adapter
-            recyclerView.adapter = consoleAdapter
+        // Configure recycler view
+        val recyclerView = rootView.findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(rootView.context)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = consoleAdapter
 
-            // Listen for changes
-            consoleViewModel.output.observe(viewLifecycleOwner, {
-                consoleAdapter.notifyDataSetChanged()
-            })
+        // Configure field
+        val field = rootView.findViewById<EditText>(R.id.field)
+        field.setOnEditorActionListener { _, actionId, _ ->
+            var handled = false
+            if (actionId == EditorInfo.IME_ACTION_SEND) {
+                consoleViewModel.execute(field.text.toString())
+                field.setText("")
+                handled = true
+            }
+            handled
+        }
 
-            // Return it
-            return recyclerView
-        } ?: return null
+        // Listen for changes
+        consoleViewModel.getOutput().observe(viewLifecycleOwner) {
+            consoleAdapter.notifyDataSetChanged()
+        }
+
+        // Return the view
+        return rootView
     }
 
     inner class ConsoleAdapter: RecyclerView.Adapter<ConsoleAdapter.ConsoleViewHolder>() {
@@ -55,7 +71,7 @@ class ConsoleFragment : Fragment() {
 
         override fun onBindViewHolder(holder: ConsoleViewHolder, position: Int) {
             // Set view content
-            consoleViewModel.output.value?.get(position)?.let {
+            consoleViewModel.getOutput().value?.get(position)?.let {
                 when (it.span) {
                     "sharp" -> {
                         holder.textView.text = "# %s".format(it.content)
@@ -84,7 +100,7 @@ class ConsoleFragment : Fragment() {
 
         override fun getItemCount(): Int {
             // Number of lines
-            return consoleViewModel.output.value?.size ?: 0
+            return consoleViewModel.getOutput().value?.size ?: 0
         }
 
         private fun getColor(id: Int, context: Context): Int {

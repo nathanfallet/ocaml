@@ -11,7 +11,7 @@
 The all-in-one OCaml bundle for iOS, iPadOS and macOS! Learn the language and practice with a powerful editor and interactive top level available in the app, working offline.
 
 - [Download iOS version from the App Store](https://apps.apple.com/app/ocaml-learn-code/id1547506826)
-- [(beta) Download Android version from Play Store](https://play.google.com/store/apps/details?id=me.nathanfallet.ocaml)
+- [Download Android version from Play Store](https://play.google.com/store/apps/details?id=me.nathanfallet.ocaml)
 
 ## Contribute to the app
 
