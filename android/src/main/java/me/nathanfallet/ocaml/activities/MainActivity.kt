@@ -70,6 +70,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
+            R.id.settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
             R.id.play -> {
                 showConsole()
                 codeViewModel.file.value?.source?.let {

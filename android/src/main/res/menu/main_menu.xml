@@ -12,8 +12,13 @@
         android:icon="@drawable/ic_baseline_save_24"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/play"
         android:title="@string/play"
         android:icon="@drawable/ic_baseline_play_arrow_24"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 </menu>

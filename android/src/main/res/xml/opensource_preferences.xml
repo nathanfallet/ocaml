@@ -1,0 +1,46 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory>
+
+        <Preference
+            app:title="GroupeMINASTE/OCaml"
+            app:summary="@string/opensource_repo_ocaml">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://github.com/GroupeMINASTE/OCaml" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/opensource_androidlibraries" >
+
+        <Preference
+            app:title="markusressel/KodeEditor"
+            app:summary="@string/opensource_repo_kodeeditor">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://github.com/markusressel/KodeEditor" />
+        </Preference>
+
+        <Preference
+            app:title="GroupeMINASTE/DigiAnalytics"
+            app:summary="@string/opensource_repo_digianalytics">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://github.com/GroupeMINASTE/DigiAnalytics" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/opensource_others" >
+
+        <Preference
+            app:title="ocsigen/js_of_ocaml"
+            app:summary="@string/opensource_repo_js_of_ocaml">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://github.com/ocsigen/js_of_ocaml" />
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
