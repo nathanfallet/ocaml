@@ -667,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
 				PRODUCT_NAME = OCaml;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -695,7 +695,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
 				PRODUCT_NAME = OCaml;
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.nathanfallet.OCaml";
@@ -726,7 +726,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
 				PRODUCT_NAME = OCaml;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -755,7 +755,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathanfallet.OCaml;
 				PRODUCT_NAME = OCaml;
 				PROVISIONING_PROFILE_SPECIFIER = "";
