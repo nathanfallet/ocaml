@@ -61,6 +61,12 @@ struct SettingsView: View {
                             openURL(url)
                         }
                     }
+                Button("documentation") {
+                    if let url = URL(string: "https://ocaml-learn-code.com/learn") {
+                        DigiAnalytics.shared.send(path: "learn")
+                        openURL(url)
+                    }
+                }
                 Button("App Store") {
                     if let url = URL(string: "https://apps.apple.com/app/ocaml-learn-code/id1547506826") {
                         openURL(url)

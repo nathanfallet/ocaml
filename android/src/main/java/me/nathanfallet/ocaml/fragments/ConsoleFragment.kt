@@ -75,7 +75,7 @@ class ConsoleFragment : Fragment() {
                 when (it.span) {
                     "sharp" -> {
                         holder.textView.text = "# %s".format(it.content)
-                        holder.textView.setTextColor(getColorAttr(android.R.attr.textColorPrimary,
+                        holder.textView.setTextColor(getColorAttr(android.R.attr.textColorSecondary,
                             holder.textView.context))
                     }
                     "caml" -> {

@@ -40,13 +40,6 @@ struct MainWindow: View {
         DigiAnalytics.shared.send(path: "file")
     }
     
-    func openDocumentation() {
-        if let url = URL(string: "https://ocaml-learn-code.com/learn") {
-            DigiAnalytics.shared.send(path: "learn")
-            openURL(url)
-        }
-    }
-    
     func openPreferences() {
         #if os(macOS)
         NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
@@ -78,18 +71,17 @@ struct MainWindow: View {
         .onAppear(perform: onAppear)
         .toolbar {
             ToolbarItemGroup(placement: placement) {
-                Button(action: openDocumentation) {
-                    Image(systemName: "book")
-                }
                 Button(action: openPreferences) {
                     Image(systemName: "gearshape")
                 }
                 Button(action: reloadConsole) {
                     Image(systemName: "arrow.clockwise")
                 }
+                .keyboardShortcut("k", modifiers: [.command])
                 Button(action: play) {
                     Image(systemName: "play")
                 }
+                .keyboardShortcut("r", modifiers: [.command])
             }
         }
     }
@@ -104,9 +96,6 @@ struct MainWindow: View {
         .onAppear(perform: onAppear)
         .toolbar {
             ToolbarItemGroup(placement: placement) {
-                Button(action: openDocumentation) {
-                    Image(systemName: "book")
-                }
                 Button(action: openPreferences) {
                     Image(systemName: "gearshape")
                 }
@@ -121,9 +110,6 @@ struct MainWindow: View {
             }
         }
         .touchBar {
-            Button(action: openDocumentation) {
-                Image(systemName: "book")
-            }
             Button(action: openPreferences) {
                 Image(systemName: "gearshape")
             }

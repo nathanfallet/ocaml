@@ -10,6 +10,7 @@
     <string name="code">Code</string>
     <string name="settings">Settings</string>
     <string name="about">About</string>
+    <string name="documentation">Documentation</string>
     <string name="console">Console</string>
     <string name="developer_text">Developed by Nathan Fallet</string>
     <string name="opensource">Open source</string>

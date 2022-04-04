@@ -21,6 +21,7 @@
 "code" = "Code";
 "settings" = "Settings";
 "about" = "About";
+"documentation" = "Documentation";
 "console" = "Console";
 "developer_text" = "Developed by Nathan Fallet";
 "opensource" = "Open source";

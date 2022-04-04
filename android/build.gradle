@@ -10,8 +10,8 @@ android {
         applicationId "me.nathanfallet.ocaml"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 7
-        versionName "1.0"
+        versionCode 8
+        versionName "1.2.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,8 +43,10 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'com.otaliastudios:zoomlayout:1.9.0'
     implementation 'com.github.markusressel:KodeEditor:v4.0.1'
+    implementation 'com.github.markusressel.KodeHighlighter:core:3.1.0'
+    implementation 'com.github.markusressel.KodeHighlighter:ocaml:3.1.0'
     implementation 'me.nathanfallet.digianalytics:digianalytics:1.0.1'
-    implementation 'me.nathanfallet.myappsandroid:myappsandroid:1.1.0'
+    implementation 'me.nathanfallet.myappsandroid:myappsandroid:1.1.1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

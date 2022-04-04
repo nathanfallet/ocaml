@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import de.markusressel.kodeeditor.library.view.CodeEditorLayout
+import de.markusressel.kodehighlighter.language.ocaml.OCamlRuleBook
 import me.nathanfallet.ocaml.viewmodels.CodeViewModel
 
 class CodeFragment : Fragment(), TextWatcher {
@@ -26,6 +27,7 @@ class CodeFragment : Fragment(), TextWatcher {
         }
 
         editor?.codeEditorView?.codeEditText?.addTextChangedListener(this)
+        editor?.languageRuleBook = OCamlRuleBook()
 
         return editor
     }
