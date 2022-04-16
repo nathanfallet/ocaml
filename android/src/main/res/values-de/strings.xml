@@ -1,2 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="opensource_repo_js_of_ocaml">Compiler OCaml -&gt; Javascript.</string>
+    <string name="button_cancel">Abbrechen</string>
+    <string name="documentation">Dokumentation</string>
+    <string name="opensource_repo_digianalytics">Echtzeitwebanalyse mit Fokus auf Datenschutz und Simplizität.</string>
+    <string name="console">Konsole</string>
+    <string name="button_ok">OK</string>
+    <string name="opensource">Open source</string>
+    <string name="stringcolor">Zeichenketten</string>
+    <string name="donate_header">Wählen Sie einen Spendenbetrag:</string>
+    <string name="backgroundcolor">Hintergrund</string>
+    <string name="donate_title">Spenden</string>
+    <string name="editor_settings">Editor</string>
+    <string name="developer_text">Entwickelt von Nathan Fallet</string>
+    <string name="donate_footer">Ihre Spende wird zur Entwicklung unserer Organisation genutzt, hauptsächlich zum Erhalt der Server von Extopy, einem von uns entwickelten sozialen Netzwerk.</string>
+    <string name="about">Über</string>
+    <string name="console_load">OCaml Konsole wird geladen, bitte warten…</string>
+    <string name="opensource_repo_ocaml">Diese Applikation.</string>
+    <string name="commentcolor">Kommentare</string>
+    <string name="learn">Lernen</string>
+    <string name="numbercolor">Zahlen</string>
+    <string name="identifiercolor">Variablennamen</string>
+    <string name="button_reset">Zurücksetzen</string>
+    <string name="keywordcolor">Schlüsselwörter</string>
+    <string name="settings">Einstellungen</string>
+    <string name="opensource_others">Andere</string>
+    <string name="code">Code</string>
+    <string name="donate_thanks">Vielen Dank für Ihre Spende!</string>
+    <string name="plaincolor">Text</string>
+    <string name="console_failed">Fehler beim Laden der Konsole</string>
+</resources>
