@@ -810,8 +810,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NathanFallet/MyApps";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		6AC0FA6F264FFE03007AD540 /* XCRemoteSwiftPackageReference "DigiAnalytics" */ = {
