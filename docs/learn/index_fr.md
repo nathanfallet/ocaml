@@ -6,6 +6,8 @@ ref: learn_index
 
 # Apprendre OCaml
 
+Apprendre OCaml avec des flashcards : nous convertissons ce cours pour être utilisé avec [LaTeX Cards](https://www.latexcards.app).
+
 ## Installation
 
 - [Installer OCaml](install_fr.md)

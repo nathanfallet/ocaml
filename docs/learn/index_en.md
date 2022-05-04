@@ -8,6 +8,8 @@ redirect_from:
 
 # Learn OCaml
 
+Learn OCaml with flashcards: we are converting this course to be used with [LaTeX Cards](https://www.latexcards.app).
+
 ## Installation
 
 - [Install OCaml](install_en.md)
