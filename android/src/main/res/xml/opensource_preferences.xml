@@ -4,10 +4,10 @@
     <PreferenceCategory>
 
         <Preference
-            app:title="GroupeMINASTE/OCaml"
+            app:title="NathanFallet/OCaml"
             app:summary="@string/opensource_repo_ocaml">
             <intent android:action="android.intent.action.VIEW"
-                android:data="https://github.com/GroupeMINASTE/OCaml" />
+                android:data="https://github.com/NathanFallet/OCaml" />
         </Preference>
 
     </PreferenceCategory>

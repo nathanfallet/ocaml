@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 2022 Groupe MINASTE
+*  Copyright (C) 2023 Nathan Fallet
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -52,6 +52,6 @@ struct OpenSourceRepositoryView: View {
 
 struct OpenSourceRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
-        OpenSourceRepositoryView(user: "GroupeMINASTE", repo: "OCaml")
+        OpenSourceRepositoryView(user: "NathanFallet", repo: "OCaml")
     }
 }
