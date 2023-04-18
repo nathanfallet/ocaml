@@ -1,2 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="opensource_repo_js_of_ocaml">OCamlからJavaScriptへのコンパイラー。</string>
+    <string name="button_cancel">キャンセル</string>
+    <string name="save">保存する</string>
+    <string name="documentation">ドキュメント</string>
+    <string name="opensource_repo_digianalytics">プライバシーと簡潔さを核心に持つリアルタイムWebアナリティクス。</string>
+    <string name="console">コンソール</string>
+    <string name="opensource_androidlibraries">Androidライブラリ</string>
+    <string name="button_ok">OK</string>
+    <string name="opensource">オープンソース</string>
+    <string name="extension_not_supported_message">.mlおよび.mli形式のOCamlファイルのみサポートされています</string>
+    <string name="stringcolor">文字列の色</string>
+    <string name="donate_header">寄付する金額を選んでください:</string>
+    <string name="backgroundcolor">背景色</string>
+    <string name="donate_title">寄付する</string>
+    <string name="editor_settings">エディターの設定</string>
+    <string name="developer_text">制作: Nathan Fallet</string>
+    <string name="donate_footer">この寄付は当組織にとってプロジェクト開発の支援につながります、とりわけ私たちが取り組んでいるソーシャルネットワークExtopyはサーバーにストレージを必要とします。</string>
+    <string name="about">Appについて</string>
+    <string name="console_load">OCamlコンソールを読み込んでいます、お待ちください…</string>
+    <string name="opensource_repo_kodeeditor">つまんでズームとシンタックスハイライトを備えたシンプルなコードエディター</string>
+    <string name="opensource_repo_ocaml">App本体</string>
+    <string name="commentcolor">コメントの色</string>
+    <string name="extension_not_supported_title">サポートされない拡張子</string>
+    <string name="learn">学ぶ</string>
+    <string name="numbercolor">数字の色</string>
+    <string name="open">開く</string>
+    <string name="identifiercolor">識別子の色</string>
+    <string name="button_reset">リセット</string>
+    <string name="keywordcolor">キーワードの色</string>
+    <string name="settings">設定</string>
+    <string name="opensource_others">その他</string>
+    <string name="play">再生</string>
+    <string name="code">コード</string>
+    <string name="app_name">OCaml</string>
+    <string name="donate_thanks">当組織への寄付ありがとうございます！</string>
+    <string name="plaincolor">プレーンテキストの色</string>
+    <string name="console_failed">コンソールの読み込みに失敗しました</string>
+</resources>
