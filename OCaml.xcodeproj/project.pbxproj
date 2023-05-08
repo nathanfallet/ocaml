@@ -97,6 +97,7 @@
 		6A7425DB2659482900441B32 /* OCamlSystemConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCamlSystemConsole.swift; sourceTree = "<group>"; };
 		6A7425DE26594D8100441B32 /* ConsoleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewModel.swift; sourceTree = "<group>"; };
 		6A83945F25A4D4190033FA88 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		6A97F0932A092B560084646E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AA55ACB261097AF0021436C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		6AA55ACD261097AF0021436C /* toplevel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = toplevel.js; sourceTree = "<group>"; };
 		6AC0FA742650036C007AD540 /* DigiAnalyticsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiAnalyticsExtension.swift; sourceTree = "<group>"; };
@@ -369,6 +370,7 @@
 				Base,
 				fr,
 				de,
+				ja,
 			);
 			mainGroup = 6A83942A25A4CF9A0033FA88;
 			packageReferences = (
@@ -525,6 +527,7 @@
 				6A35DC1525ECE8BA0092B6CA /* en */,
 				6A35DC1825ECE8CC0092B6CA /* fr */,
 				945FA4D026EFAC9100B1453D /* de */,
+				6A97F0932A092B560084646E /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
