@@ -1,0 +1,35 @@
+
+
+"opensource_repo_js_of_ocaml" = "OCamlからJavaScriptへのコンパイラー。";
+"button_cancel" = "キャンセル";
+"documentation" = "ドキュメント";
+"console" = "コンソール";
+"numberColor" = "数字の色";
+"button_ok" = "OK";
+"plainColor" = "プレーンテキストの色";
+"opensource" = "オープンソース";
+"keywordColor" = "キーワードの色";
+"donate_header" = "寄付する金額を選んでください:";
+"donate_title" = "寄付する";
+"opensource_repo_DonateViewController" = "寄付のためのビューコントローラー。";
+"opensource_repo_Kingfisher" = "Webから画像をダウンロード・キャッシュするための軽量かつ純Swift製ライブラリ。";
+"editor_settings" = "エディターの設定";
+"developer_text" = "制作: Nathan Fallet";
+"backgroundColor" = "背景色";
+"donate_footer" = "この寄付は当組織にとってプロジェクト開発の支援につながります、とりわけ私たちが取り組んでいるソーシャルネットワークExtopyはサーバーにストレージを必要とします。";
+"about" = "Appについて";
+"console_load" = "OCamlコンソールを読み込んでいます、お待ちください…";
+"opensource_repo_DigiAnalytics" = "プライバシーと簡潔さを核心に持つリアルタイムWebアナリティクス。";
+"learn" = "学ぶ";
+"identifierColor" = "識別子の色";
+"button_reset" = "リセット";
+"opensource_repo_Sourceful" = "UITextViewとNSTextViewを使用したiOSおよびmaxOS向けのシンタックスハイライト付きソースエディター。";
+"stringColor" = "文字列の色";
+"commentColor" = "コメントの色";
+"settings" = "設定";
+"opensource_others" = "その他";
+"code" = "コード";
+"donate_thanks" = "当組織への寄付ありがとうございます！";
+"opensource_repo_OCaml" = "App本体";
+"console_failed" = "コンソールの読み込みに失敗しました";
+"opensource_swiftpackages" = "Swiftパッケージ";
