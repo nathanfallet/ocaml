@@ -44,6 +44,15 @@ extension View {
         return self
         #endif
     }
+    
+    func toolbarRoleAutomaticIfAvailable() -> some View {
+        if #available(iOS 16.0, macOS 13.0, *) {
+            // See https://developer.apple.com/forums/thread/714430
+            return self.toolbarRole(.automatic)
+        } else {
+            return self
+        }
+    }
 
 }
 

@@ -47,6 +47,7 @@ struct OCamlApp: App {
         // Main document group
         DocumentGroup(newDocument: OCamlFile()) { file in
             MainWindow(document: file.$document, showSettings: $showSettings)
+                .toolbarRoleAutomaticIfAvailable()
                 .environment(\.backgroundColor, $backgroundColor)
                 .environment(\.plainColor, $plainColor)
                 .environment(\.numberColor, $numberColor)
