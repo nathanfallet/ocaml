@@ -88,7 +88,7 @@ class SettingsActivity : AppCompatActivity(),
     class HeaderFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.header_preferences, rootKey)
-            MyAppPreferences().addPreferences(preferenceScreen)
+            MyAppPreferences.addPreferences(preferenceScreen)
         }
     }
 
