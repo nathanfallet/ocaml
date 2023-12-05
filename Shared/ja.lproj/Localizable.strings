@@ -23,7 +23,7 @@
 "learn" = "学ぶ";
 "identifierColor" = "識別子の色";
 "button_reset" = "リセット";
-"opensource_repo_Sourceful" = "UITextViewとNSTextViewを使用したiOSおよびmaxOS向けのシンタックスハイライト付きソースエディター。";
+"opensource_repo_Sourceful" = "UITextViewとNSTextViewを使用したiOSおよびmacOS向けのシンタックスハイライト付きソースエディター。";
 "stringColor" = "文字列の色";
 "commentColor" = "コメントの色";
 "settings" = "設定";
